@@ -44,8 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandUnitTests.cs" />
     <Compile Include="BaseCommand.cs" />
+    <Compile Include="CommandUnitTests.cs" />
     <Compile Include="ConcreteBaseCommand.cs" />
     <Compile Include="Invoker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
