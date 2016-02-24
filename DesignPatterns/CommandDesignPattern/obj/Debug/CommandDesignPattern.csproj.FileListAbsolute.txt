@@ -1,0 +1,6 @@
+D:\GitHub Development\SourceCode\DesignPatterns\CommandDesignPattern\bin\Debug\CommandDesignPattern.dll
+D:\GitHub Development\SourceCode\DesignPatterns\CommandDesignPattern\bin\Debug\CommandDesignPattern.pdb
+D:\GitHub Development\SourceCode\DesignPatterns\CommandDesignPattern\bin\Debug\nunit.framework.dll
+D:\GitHub Development\SourceCode\DesignPatterns\CommandDesignPattern\bin\Debug\nunit.framework.xml
+D:\GitHub Development\SourceCode\DesignPatterns\CommandDesignPattern\obj\Debug\CommandDesignPattern.dll
+D:\GitHub Development\SourceCode\DesignPatterns\CommandDesignPattern\obj\Debug\CommandDesignPattern.pdb
