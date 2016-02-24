@@ -4,10 +4,12 @@
     {
         public override void Execute()
         {
-            foreach (IReceiver receiver in Receiver)
-            {
-                receiver.Action();
-            }
+
+            this.Receiver.Action();
+            //foreach (IReceiver receiver in Receiver)
+            //{
+            //    receiver.Action();
+            //}
             
         }
 
