@@ -1,0 +1,6 @@
+﻿<fileRetriever>
+  <files>
+    <add name="file1" sourcePath="C:\files\file1.csv" destinationPath="C:\files\output\file1.html"></add>
+    <add name="file2" sourcePath="C:\files\file2.csv" destinationPath="C:\files\output\file2.html"></add>
+  </files>
+</fileRetriever>
