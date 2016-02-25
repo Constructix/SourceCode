@@ -2,7 +2,7 @@
 
 namespace Constructix.Config.FileRetrieve.Client
 {
-    class Program
+    static class Program
     {
 
         // get the settings from the config file.
