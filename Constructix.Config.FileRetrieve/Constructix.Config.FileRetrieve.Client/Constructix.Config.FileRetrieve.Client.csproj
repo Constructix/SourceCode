@@ -51,7 +51,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CustomConfigFileDemo\Constructix.Config.FileRetrieve.csproj">
+    <ProjectReference Include="..\Constructix.Config.FileRetrieve\Constructix.Config.FileRetrieve.csproj">
       <Project>{3b1cd1e6-74d4-4ef2-a4d7-4626aa980e21}</Project>
       <Name>Constructix.Config.FileRetrieve</Name>
     </ProjectReference>

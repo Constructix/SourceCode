@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constructix.Config.FileRetrieve", "CustomConfigFileDemo\Constructix.Config.FileRetrieve.csproj", "{3B1CD1E6-74D4-4EF2-A4D7-4626AA980E21}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constructix.Config.FileRetrieve", "Constructix.Config.FileRetrieve\Constructix.Config.FileRetrieve.csproj", "{3B1CD1E6-74D4-4EF2-A4D7-4626AA980E21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constructix.Config.FileRetrieve.Client", "ConsoleApplication1\Constructix.Config.FileRetrieve.Client.csproj", "{1D72BC64-4010-4006-8557-6C2A8EC3F8C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constructix.Config.FileRetrieve.Client", "Constructix.Config.FileRetrieve.Client\Constructix.Config.FileRetrieve.Client.csproj", "{1D72BC64-4010-4006-8557-6C2A8EC3F8C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
