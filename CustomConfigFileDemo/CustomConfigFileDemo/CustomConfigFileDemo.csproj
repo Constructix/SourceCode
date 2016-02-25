@@ -47,7 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="FileElementCollection.cs" />
+    <Compile Include="FileRetriever.cs" />
+    <Compile Include="FileRetrieverSection.cs" />
+    <Compile Include="FileElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
