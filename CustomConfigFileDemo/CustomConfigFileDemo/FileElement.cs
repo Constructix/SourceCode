@@ -1,37 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Configuration;
 
-namespace CustomConfigFileDemo
+namespace Constructix.Config.FileRetrieve
 {
+
+
     public class FileElement : ConfigurationElement
     {
+
+        private const string NameConfigurationProperty = "name";
+        private const string SourcePathConfigurationProperty = "sourcePath";
+        private const string DestinationConfigurationProperty = "destinationPath";
+
         public FileElement()
         {
         }
 
-        [ConfigurationProperty("name", DefaultValue = "", IsKey = true, IsRequired = true)]
+        [ConfigurationProperty(NameConfigurationProperty, DefaultValue = "", IsKey = true, IsRequired = true)]
         public string Name
         {
-            get { return (string) this["name"]; }
-            set { this["name"] = value; }
+            get { return (string) this[NameConfigurationProperty]; }
+            set { this[NameConfigurationProperty] = value; }
         }
 
-        [ConfigurationProperty("sourcePath", DefaultValue = "", IsRequired = true)]
+        [ConfigurationProperty(SourcePathConfigurationProperty, DefaultValue = "", IsRequired = true)]
         public string SourcePath
         {
-            get { return (string) this["sourcePath"]; }
-            set { this["sourcePath"] = value; }
+            get { return (string) this[SourcePathConfigurationProperty]; }
+            set { this[SourcePathConfigurationProperty] = value; }
         }
 
-        [ConfigurationProperty("destinationPath", DefaultValue = "", IsRequired = true)]
+        [ConfigurationProperty(DestinationConfigurationProperty, DefaultValue = "", IsRequired = true)]
         public string DestinationPath
         {
-            get { return (string)this["destinationPath"]; }
-            set { this["destinationPath"] = value; }
+            get { return (string)this[DestinationConfigurationProperty]; }
+            set { this[DestinationConfigurationProperty] = value; }
         }
     }
 }

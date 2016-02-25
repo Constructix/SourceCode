@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3B1CD1E6-74D4-4EF2-A4D7-4626AA980E21}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{1D72BC64-4010-4006-8557-6C2A8EC3F8C5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CustomConfigFileDemo</RootNamespace>
-    <AssemblyName>CustomConfigFileDemo</AssemblyName>
+    <RootNamespace>Constructix.Config.FileRetrieve.Client</RootNamespace>
+    <AssemblyName>Constructix.Config.FileRetrieve.Client</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,9 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -47,14 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileElementCollection.cs" />
-    <Compile Include="FileRetriever.cs" />
-    <Compile Include="FileRetrieverSection.cs" />
-    <Compile Include="FileElement.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ConfigSectionExample1.xml" />
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomConfigFileDemo\Constructix.Config.FileRetrieve.csproj">
+      <Project>{3b1cd1e6-74d4-4ef2-a4d7-4626aa980e21}</Project>
+      <Name>Constructix.Config.FileRetrieve</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

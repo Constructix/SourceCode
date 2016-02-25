@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace CustomConfigFileDemo
+namespace Constructix.Config.FileRetrieve
 {
     public class FileRetrieverSection : ConfigurationSection
     {

@@ -1,6 +1,6 @@
 using System.Configuration;
 
-namespace CustomConfigFileDemo
+namespace Constructix.Config.FileRetrieve
 {
     [ConfigurationCollection(typeof (FileElement))]
     public class FileElementCollection : ConfigurationElementCollection
