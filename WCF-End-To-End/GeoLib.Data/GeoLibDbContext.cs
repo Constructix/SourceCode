@@ -11,8 +11,7 @@ namespace GeoLib.Data
 {
     public class GeoLibDbContext : DbContext
     {
-        public GeoLibDbContext()
-            : base("name=main")
+        public GeoLibDbContext() : base("name=main")
         {
             Database.SetInitializer<GeoLibDbContext>(null);
         }
