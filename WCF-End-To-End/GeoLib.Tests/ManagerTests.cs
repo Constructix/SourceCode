@@ -1,5 +1,6 @@
 ﻿
 
+using System;
 using GeoLib.Contracts;
 using GeoLib.Data;
 using GeoLib.Services;
@@ -32,9 +33,10 @@ namespace GeoLib.Tests
 
             Assert.That(zipData != null);
             Assert.That(zipData.City.Equals("LINCOLN PARK"));
+            Assert.That(zipData.State.Equals("NJ"));
 
-
-
+            Console.WriteLine(zipData.State);
+            Console.WriteLine(zipData.City);
         }
 
     }
