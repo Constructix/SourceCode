@@ -19,6 +19,9 @@ namespace WCFServiceBus.ConsoleClient
 
             client.Close();
 
+
+            Console.ReadLine();
+
         }
     }
 }
