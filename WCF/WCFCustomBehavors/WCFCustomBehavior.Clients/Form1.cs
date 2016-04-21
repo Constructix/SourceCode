@@ -20,7 +20,7 @@ namespace WCFCustomBehaviors.Clients
 
             List<OrderItem> orderItems = new List<OrderItem>();
             orderItems.Add( new OrderItem() {   Quantity =  12,
-                                                SelectedProduct = new Product { Id = 1, Name = "90x90 Post", UnitPrice = 23.44m} });
+                                                Product = new Product { Id = 1, Name = "90x90 Post", UnitPrice = 23.44m} });
             Order newOrder = new Order
             {
                 Id = Guid.NewGuid(),

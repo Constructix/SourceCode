@@ -6,7 +6,7 @@ namespace WCFCustomBehaviors.Contracts
     public class OrderItem
     {
         [DataMember]
-        public Product SelectedProduct { get; set; }
+        public Product Product { get; set; }
         [DataMember]
         public int Quantity { get; set; }
     }
