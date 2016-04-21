@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFServiceBus.Service", "WCFServiceBus.Service\WCFServiceBus.Service.csproj", "{08C81B54-5225-457F-AAEB-8DA1B772DD28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFServiceBus.Contracts", "WCFServiceBus.Contracts\WCFServiceBus.Contracts.csproj", "{7E78FA0B-5094-4E04-8F35-D564487D6F30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFServiceBus.Proxies", "WCFServiceBus.Proxies\WCFServiceBus.Proxies.csproj", "{22ED6C3F-CC07-4CBE-AD2B-E2AA230E4826}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFServiceBus.ConsoleHost", "WCFServiceBus.ConsoleHost\WCFServiceBus.ConsoleHost.csproj", "{029CA4FC-1E7B-47EA-AF2D-5551A2AA5A76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFServiceBus.ConsoleClient", "WCFServiceBus.ConsoleClient\WCFServiceBus.ConsoleClient.csproj", "{E85D184A-D7C1-4716-ACE4-9F552695865B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08C81B54-5225-457F-AAEB-8DA1B772DD28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08C81B54-5225-457F-AAEB-8DA1B772DD28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08C81B54-5225-457F-AAEB-8DA1B772DD28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08C81B54-5225-457F-AAEB-8DA1B772DD28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E78FA0B-5094-4E04-8F35-D564487D6F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E78FA0B-5094-4E04-8F35-D564487D6F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E78FA0B-5094-4E04-8F35-D564487D6F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E78FA0B-5094-4E04-8F35-D564487D6F30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22ED6C3F-CC07-4CBE-AD2B-E2AA230E4826}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22ED6C3F-CC07-4CBE-AD2B-E2AA230E4826}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22ED6C3F-CC07-4CBE-AD2B-E2AA230E4826}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22ED6C3F-CC07-4CBE-AD2B-E2AA230E4826}.Release|Any CPU.Build.0 = Release|Any CPU
+		{029CA4FC-1E7B-47EA-AF2D-5551A2AA5A76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{029CA4FC-1E7B-47EA-AF2D-5551A2AA5A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{029CA4FC-1E7B-47EA-AF2D-5551A2AA5A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{029CA4FC-1E7B-47EA-AF2D-5551A2AA5A76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E85D184A-D7C1-4716-ACE4-9F552695865B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E85D184A-D7C1-4716-ACE4-9F552695865B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E85D184A-D7C1-4716-ACE4-9F552695865B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E85D184A-D7C1-4716-ACE4-9F552695865B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
