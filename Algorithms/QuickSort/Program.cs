@@ -34,7 +34,6 @@ namespace ConsoleApplication1
                 {
                     i++;
                     Swap(array, j, i);
-
                 }
             }
             Swap(array, i + 1, r);

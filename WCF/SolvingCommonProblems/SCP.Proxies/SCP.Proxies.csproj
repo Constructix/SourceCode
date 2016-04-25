@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,7 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LongRunningClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCP.Contracts\SCP.Contracts\SCP.Contracts.csproj">
+      <Project>{a4038093-6cf5-4a1e-8fe6-69199173d37f}</Project>
+      <Name>SCP.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCP.Services\SCP.Services.csproj">
+      <Project>{3da8023f-ff46-4613-a674-9c50badd86e7}</Project>
+      <Name>SCP.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
