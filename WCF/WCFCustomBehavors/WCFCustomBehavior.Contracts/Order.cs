@@ -7,6 +7,8 @@ namespace WCFCustomBehaviors.Contracts
     [DataContract]
     public class Order
     {
+
+        // adding documentation
         [DataMember]
         public Guid Id { get; set; }
         [DataMember]

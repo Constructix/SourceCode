@@ -95,6 +95,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCP.Contracts\SCP.Contracts\SCP.Contracts.csproj">
+      <Project>{a4038093-6cf5-4a1e-8fe6-69199173d37f}</Project>
+      <Name>SCP.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCP.Proxies\SCP.Proxies.csproj">
+      <Project>{5ecf2ea2-2e73-4170-a10c-5d3a8b924913}</Project>
+      <Name>SCP.Proxies</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
