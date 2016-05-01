@@ -22,6 +22,19 @@ namespace RepositoryDesignPattern
             AddPerson(personRepository, newPerson);
             AddPerson(personRepository,new Person() { Email = "t_jones@constructix.com.au", FirstName = "Teresa", LastName = "Jones"});
 
+            PrintList(personRepository);
+            // update person
+
+
+            var modifiedPerson = personRepository.FindById("r_jones@constructix.com.au");
+            modifiedPerson.FirstName = "Richard";
+            personRepository.Update(modifiedPerson);
+            Console.WriteLine();
+            PrintList(personRepository);
+        }
+
+        private static void PrintList(PersonRepository<DatabaseContext> personRepository)
+        {
             Console.WriteLine("List of Persons in Database");
             foreach (Person person in personRepository.List)
             {
