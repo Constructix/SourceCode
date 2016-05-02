@@ -24,7 +24,6 @@ namespace RepositoryDesignPattern
         public void Add(Person entity)
         {
             _database.Persons.Add(entity);
-            _database.SaveChanges();
         }
 
         public void Delete(Person entity)

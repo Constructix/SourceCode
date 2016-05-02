@@ -22,6 +22,7 @@ namespace RepositoryDesignPattern
             AddPerson(personRepository, newPerson);
             AddPerson(personRepository,new Person() { Email = "t_jones@constructix.com.au", FirstName = "Teresa", LastName = "Jones"});
 
+            _database.SaveChanges();
             PrintList(personRepository);
             // update person
 
