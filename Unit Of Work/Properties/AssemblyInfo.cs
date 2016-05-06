@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RepositoryUnitOfWorkDemo")]
+[assembly: AssemblyTitle("Constructix.Data.UnitOfWork")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("RepositoryUnitOfWorkDemo")]
+[assembly: AssemblyProduct("Constructix.Data.UnitOfWork")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("31c9a2ea-be28-452d-b62e-1fcc21457770")]
+[assembly: Guid("24dffbba-b300-4ee9-89ba-03c65f6955a3")]
 
 // Version information for an assembly consists of the following four values:
 //

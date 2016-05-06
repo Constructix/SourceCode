@@ -4,11 +4,11 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace RepositoryUnitOfWorkDemo
+namespace Constructix.Data.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T :class
     {
-        private readonly DbSet<T> _dbset;
+        private readonly IDbSet<T> _dbset;
 
 
         public GenericRepository()
@@ -16,7 +16,7 @@ namespace RepositoryUnitOfWorkDemo
             
         }
 
-        public GenericRepository(DbSet<T> dbset )
+        public GenericRepository(IDbSet<T> dbset )
         {
             _dbset = dbset;
         }
