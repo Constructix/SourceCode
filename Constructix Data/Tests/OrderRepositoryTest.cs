@@ -44,8 +44,8 @@ namespace Constructix.OnLineServices.Tests
             {
                 new Order {CustomerName = "Richard Jones", Id = 1},
                 new Order {CustomerName = "Bill Jennings", Id = 2},
-                new Order {CustomerName = "Teresa Jones", Id = 2},
-                new Order {CustomerName = "Steve Gibson", Id = 2}
+                new Order {CustomerName = "Teresa Jones", Id = 3},
+                new Order {CustomerName = "Steve Gibson", Id = 4}
             };
 
 
