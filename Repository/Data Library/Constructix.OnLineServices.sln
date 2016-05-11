@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constructix.OnLineServices.Data.Contracts", "Constructix.OnLineServices.Data.Contracts\Constructix.OnLineServices.Data.Contracts.csproj", "{B1AA2B82-F19E-4B4B-935D-ADB978FE3F42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constructix.OnLineServices.Data.Contracts.Tests", "Constructix.OnLineServices.Data.Contracts.Tests\Constructix.OnLineServices.Data.Contracts.Tests.csproj", "{AE6F6016-7B31-4E2E-BABD-A36A8000394A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constructix.OnLineServices.Data", "Constructix.OnLineServices.Data\Constructix.OnLineServices.Data.csproj", "{AB2F8E80-71B5-487C-97BB-6F4C1E6B5EFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constructix.Core.Common", "Constructix.Core.Common\Constructix.Core.Common.csproj", "{659B1A49-6DE9-473C-9D5F-70EFC68895B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constructix.Core.Contracts", "Constructix.Core.Contracts\Constructix.Core.Contracts.csproj", "{542DCDC2-85EF-48DD-9E66-DCEE970B1ABF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1AA2B82-F19E-4B4B-935D-ADB978FE3F42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1AA2B82-F19E-4B4B-935D-ADB978FE3F42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1AA2B82-F19E-4B4B-935D-ADB978FE3F42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1AA2B82-F19E-4B4B-935D-ADB978FE3F42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE6F6016-7B31-4E2E-BABD-A36A8000394A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE6F6016-7B31-4E2E-BABD-A36A8000394A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE6F6016-7B31-4E2E-BABD-A36A8000394A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE6F6016-7B31-4E2E-BABD-A36A8000394A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB2F8E80-71B5-487C-97BB-6F4C1E6B5EFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB2F8E80-71B5-487C-97BB-6F4C1E6B5EFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB2F8E80-71B5-487C-97BB-6F4C1E6B5EFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB2F8E80-71B5-487C-97BB-6F4C1E6B5EFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{659B1A49-6DE9-473C-9D5F-70EFC68895B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{659B1A49-6DE9-473C-9D5F-70EFC68895B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{659B1A49-6DE9-473C-9D5F-70EFC68895B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{659B1A49-6DE9-473C-9D5F-70EFC68895B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{542DCDC2-85EF-48DD-9E66-DCEE970B1ABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{542DCDC2-85EF-48DD-9E66-DCEE970B1ABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{542DCDC2-85EF-48DD-9E66-DCEE970B1ABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{542DCDC2-85EF-48DD-9E66-DCEE970B1ABF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
