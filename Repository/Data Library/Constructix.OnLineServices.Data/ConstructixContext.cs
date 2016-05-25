@@ -10,7 +10,7 @@ namespace Constructix.OnLineServices.Data
         public ConstructixContext() :
             base("name=ConstructixServices")
         {
-            //Database.SetInitializer<ConstructixContext>(null);
+            Database.SetInitializer<ConstructixContext>(null);
         }
 
 

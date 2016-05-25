@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConstructixContext.cs" />
+    <Compile Include="DataRepositoryBase.cs" />
     <Compile Include="Data Repositories\ProductCategoryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
