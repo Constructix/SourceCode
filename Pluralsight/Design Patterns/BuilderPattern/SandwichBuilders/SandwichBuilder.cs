@@ -3,8 +3,6 @@
     public abstract class SandwichBuilder
     {
         protected Sandwich sandwich;
-
-
         public Sandwich GetSandwich()
         {
             return sandwich;

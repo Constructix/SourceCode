@@ -22,16 +22,11 @@ namespace BuilderPattern
         }
         public void BuildSandwich()
         {
-           
             builder.CreateSandwich();
             builder.PrepareBread();
-
             builder.ApplyMeatAndCheese();
-
             builder.ApplyVegtables();
-
             builder.AddCondiments();
-
         }
     }
 }
