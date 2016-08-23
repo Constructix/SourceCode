@@ -17,6 +17,8 @@ namespace MsBuildDemo
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            
             BuildSolution();
             //Dictionary<string, string> globalProperty = new Dictionary<string, string>();
             //globalProperty.Add("Platform", "Any CPU");
@@ -43,9 +45,7 @@ namespace MsBuildDemo
 
         private static void BuildSolution()
         {
-// This does solution not projects
-            string projectFileName = @"D:\Files\MsBuild\MultiMake.proj";
-
+            string projectFileName = @"D:\GitHub\MSBuild\MultiMake.proj";
 
             ProjectCollection pc = new ProjectCollection();
             Dictionary<string, string> globalProperty = new Dictionary<string, string>();
