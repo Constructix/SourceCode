@@ -10,8 +10,7 @@ namespace MediatorPattern
     {
         static void Main(string[] args)
         {
-           ConcreteMediator chatroom = new ConcreteMediator();
-
+            ConcreteMediator chatroom = new ConcreteMediator();
 
             ConcreteColleague1 col1 = new ConcreteColleague1(chatroom);
             ConcreteColleague2 col2 = new ConcreteColleague2(chatroom);
@@ -19,13 +18,8 @@ namespace MediatorPattern
             chatroom.Colleague1 = col1;
             chatroom.Colleague2 = col2;
 
-
-
             col1.Send("Hello World");
             col2.Send("Testing");
-
-
-
         }
     }
 }
