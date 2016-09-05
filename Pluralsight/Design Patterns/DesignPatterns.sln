@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NullObject Pattern", "NullO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyDesignPattern", "ProxyDesignPattern\ProxyDesignPattern.csproj", "{993B3893-F368-4EFA-ADCD-5140A1F9B739}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatorPattern", "MediatorPattern\MediatorPattern.csproj", "{A8EB2EE9-088D-433E-8C4D-E5147556D295}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{993B3893-F368-4EFA-ADCD-5140A1F9B739}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{993B3893-F368-4EFA-ADCD-5140A1F9B739}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{993B3893-F368-4EFA-ADCD-5140A1F9B739}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8EB2EE9-088D-433E-8C4D-E5147556D295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8EB2EE9-088D-433E-8C4D-E5147556D295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8EB2EE9-088D-433E-8C4D-E5147556D295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8EB2EE9-088D-433E-8C4D-E5147556D295}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
