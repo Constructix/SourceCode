@@ -10,6 +10,11 @@ namespace MediatorPattern
     {
         static void Main(string[] args)
         {
+            //CreateMessageApplication();
+        }
+
+        private static void CreateMessageApplication()
+        {
             ConcreteMediator chatroom = new ConcreteMediator();
 
             ConcreteColleague1 col1 = new ConcreteColleague1(chatroom);
