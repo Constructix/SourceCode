@@ -23,6 +23,9 @@ namespace MockingWithMoq
             // act
             Assert.Throws<InvalidOperationException>(() => customerService.Create(customerToCreateDto));
             // assert
+			
+			
+			Console.WriteLine("HERE in Exception");
 
 
         }
