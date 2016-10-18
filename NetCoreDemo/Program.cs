@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Globalization;
+using System.Text;
 
 
 namespace ConsoleApplication
@@ -8,37 +8,23 @@ namespace ConsoleApplication
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
-            Console.WriteLine("Testing Person instance");
-
-            var p = new Person { FirstName = "Richard", LastName = "Jones"};
-
-            Console.WriteLine(p);
-            Console.WriteLine(p.Created);
-
             Console.WriteLine(System.Globalization.CultureInfo.CurrentCulture.EnglishName);
+            var persons   = ConsoleApplication.Helpers.InitialisePersonList();
+            persons.ForEach((x) =>Console.WriteLine(x));               
+
+
+            // write to file
+
+            StringBuilder personStringBuilder = new StringBuilder();
+            persons.ForEach((x) =>personStringBuilder.AppendLine(x.ToString()));
+
+
+            System.IO.File.WriteAllText(@"D:\Files\persons.dat", personStringBuilder.ToString());
+            Console.WriteLine("File has been written to disk.");
 
         }
+
+      
     }
-
-
-    public class Person
-    {
-        public string FirstName {get;set;}
-        public string LastName {get;set;}
-
-        public DateTime Created {get;set;}
-
-
-        public Person ()
-        {
-          Created = DateTime.Now;
-        }
-
-        public override string ToString()
-        {
-            return string.Format($"{FirstName} {LastName}");
-        }
-    }
+  
 }
