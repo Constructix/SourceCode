@@ -1,6 +1,6 @@
 ﻿namespace ACM.BusinessLogic
 {
-    public class Order
+    public class Order : IModel
     {
         
     }

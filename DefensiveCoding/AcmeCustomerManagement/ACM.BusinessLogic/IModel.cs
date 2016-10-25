@@ -1,7 +1,7 @@
 ﻿namespace ACM.BusinessLogic
 {
-   public class Inventory : IModel
-     {
+    public interface IModel
+    {
         
     }
 }

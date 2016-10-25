@@ -1,6 +1,6 @@
 ﻿namespace ACM.BusinessLogic
 {
-    public class Customer
+    public class Customer : IModel
     {
         public int CustomerId { get; set; }
         public string EmailAddress { get; set; }

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ACM.BusinessLogic;
+using ACM.Repository;
 
 namespace ACM.Win
 {
@@ -24,24 +26,27 @@ namespace ACM.Win
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // If this is a new customer, create the customer record
-            // determine whether the customer is an existing customer.
-            // if not, validate entered customer inforemation
-            // if not valid, notify th euser.
-            // if valid,
-            // open a connection
-            // set stored procedure parameters with the customer data
-            // call the  save stored procedure.
+
+            var allowSplitOrders = true;
+            var customer = new Customer();
+            // populate the customer instance
+            var customerRepository = new CustomerRepository();
+            customerRepository.Add(customer);
+
+            var order = new Order();
+            // populate order properties of instance.
+            var orderRepository = new OrderRepository();
+            orderRepository.Add(order);
+            
+            var inventoryRepository = new InventoryRepository();
+            inventoryRepository.OrderItems(order, allowSplitOrders);
+
+           
 
 
-            // create the order for the customer
-            // for each item ordered,
-            // validate teh entered information
-            // if not valid, notify the user
-            // if valid, 
-            // open a connection
-            // set stored procedure parameters with the order data.
-            // call the save stored procedure.
+
+
+
         }
     }
 }
