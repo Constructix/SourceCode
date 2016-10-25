@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ACM.BusinessLogic;
+using ACM.Controllers;
 using ACM.Repository;
+
 
 namespace ACM.Win
 {
@@ -26,27 +28,19 @@ namespace ACM.Win
 
         private void button1_Click(object sender, EventArgs e)
         {
+            PlaceOrder();
+        }
 
+        private void PlaceOrder()
+        {
             var allowSplitOrders = true;
-            var customer = new Customer();
-            // populate the customer instance
-            var customerRepository = new CustomerRepository();
-            customerRepository.Add(customer);
+            var emailReceipt = true;
 
-            var order = new Order();
-            // populate order properties of instance.
-            var orderRepository = new OrderRepository();
-            orderRepository.Add(order);
-            
-            var inventoryRepository = new InventoryRepository();
-            inventoryRepository.OrderItems(order, allowSplitOrders);
-
-           
-
-
-
-
-
+            var customer = new Customer(); // populate the customer instance
+            var order = new Order(); // populate order properties of instance.
+            var payment = new Payment();
+            // populate the payment instance.
+            new OrderController().PlaceOrder(customer, order, payment, allowSplitOrders, emailReceipt);
         }
     }
 }

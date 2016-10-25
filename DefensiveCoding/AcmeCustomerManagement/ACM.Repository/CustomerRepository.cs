@@ -15,5 +15,14 @@ namespace ACM.Repository
             // set stored procedure parameters with the customer data
             // call the  save stored procedure.
         }
+
+        public void Update()
+        {
+            // if Not,
+            // request an email address from the user.
+            // Open a connection
+            // Set stored procedure parameters with the Customer data.
+            // call the save stored procedure.
+        }
     }
 }

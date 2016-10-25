@@ -84,6 +84,10 @@
       <Project>{f1ed467f-9a9f-42c0-a10b-f7899bc30455}</Project>
       <Name>ACM.BusinessLogic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ACM.Controllers\ACM.Controllers.csproj">
+      <Project>{ce88f385-1ddc-4086-918e-1ebe62e17dc9}</Project>
+      <Name>ACM.Controllers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ACM.Repository\ACM.Repository.csproj">
       <Project>{6AF2191F-4544-4B68-B433-79BBE01E98D7}</Project>
       <Name>ACM.Repository</Name>

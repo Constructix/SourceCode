@@ -7,5 +7,12 @@
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
+        public void ValidateEmail()
+        {
+            // -- Send an email receipt --
+            // If the user requested a receipt
+            // Get the customer data
+            // Ensure a valid email address was provided.
+        }
     }
 }
