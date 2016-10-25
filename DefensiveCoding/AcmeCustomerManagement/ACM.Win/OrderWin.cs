@@ -33,14 +33,11 @@ namespace ACM.Win
 
         private void PlaceOrder()
         {
-            var allowSplitOrders = true;
-            var emailReceipt = true;
-
             var customer = new Customer(); // populate the customer instance
             var order = new Order(); // populate order properties of instance.
             var payment = new Payment();
             // populate the payment instance.
-            new OrderController().PlaceOrder(customer, order, payment, allowSplitOrders, emailReceipt);
+            new OrderController().PlaceOrder(customer, order, payment,allowSplitOrders:false,emailReceipt:true);
         }
     }
 }
