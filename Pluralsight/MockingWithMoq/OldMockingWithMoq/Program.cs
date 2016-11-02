@@ -9,6 +9,20 @@ namespace MockingWithMoq
     public class MockingClass
     {
         [Test]
+        public void Repository_Save_Should_be_Called()
+        {
+            //Arrange
+            var mockRepository = new Mock<ICustomerRepository>();
+            mockRepository.Setup(x => x.Save(It.IsAny<Customer>()));
+            var customerService = new CustomerService(mockRepository.Object);
+
+            // Act
+            customerService.Create(new CustomerToCreateDto() { FirstName = "Richard", LastName = "Jones"});
+            //Assert
+            mockRepository.VerifyAll();
+        }
+
+        [Test]
         public void Exception_Should_be_Thrown_ifAddress_is_not_created()
         {
             // Arrange
@@ -76,93 +90,5 @@ namespace MockingWithMoq
         }
 
         
-    }
-
-
-    public class CustomerService
-    {
-        private readonly ICustomerRepository _customerRepository;
-        private readonly ICustomerAddressBuilder _customerAddressBuilder;
-
-        public CustomerService(ICustomerAddressBuilder customerAddressBuilder, ICustomerRepository customerRepository)
-        {
-            _customerAddressBuilder = customerAddressBuilder;
-            _customerRepository = customerRepository;
-        }
-        public CustomerService(ICustomerRepository customerRepository)
-        {
-            _customerRepository = customerRepository;
-        }
-
-
-        public void Create(CustomerToCreateDto customerToCreateDto)
-        {
-            var customer = new Customer(customerToCreateDto.FirstName, customerToCreateDto.LastName);
-
-
-            customer.MailingAddress = _customerAddressBuilder.From(customerToCreateDto);
-
-            if (customer.MailingAddress == null)
-            {
-                throw new InvalidOperationException();
-            }
-
-            _customerRepository.Save(customer);
-        }
-
-        public void Create(IEnumerable<CustomerToCreateDto> customersToCreate)
-        {
-
-            
-
-
-            foreach (var customerToCreateDto in customersToCreate)
-            {
-                _customerRepository.Save(new Customer(customerToCreateDto.FirstName, customerToCreateDto.LastName));
-            }
-        }
-    }
-
-    public class CustomerToCreateDto
-    {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-    }
-
-
-    public interface ICustomerAddressBuilder
-    {
-        Address From(CustomerToCreateDto customerToCreateDto );
-    }
-
-    public class CustomerAddressBuilder : ICustomerAddressBuilder
-    {
-        public Address From(CustomerToCreateDto customerToCreateDto)
-        {
-            return new Address();
-        }
-    }
-
-    public  class Address
-    {
-    }
-
-    public interface ICustomerRepository    
-    {
-        void Save(Customer customer);
-    }
-
-    public class Customer
-    {
-        public Customer(string firstName, string lastName)
-        {
-            this.FirstName = firstName;
-            this.LastName = lastName;
-        }
-
-        public string LastName { get; set; }
-
-        public string FirstName { get; set; }
-        public Address MailingAddress { get; set; }
     }
 }
