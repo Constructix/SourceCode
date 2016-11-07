@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data.Entity;
 using System.Linq;
 using NUnit.Framework;
 
@@ -49,19 +48,9 @@ namespace BaseServiceTest
 
 
     [TestFixture]
-    public class OrderFactoryTests
+    public partial class OrderFactoryTests
     {
-        public class OnLineServicesContext : DbContext
-        {
-            public DbSet<Order> Orders { get; set; }
-            public DbSet<Customer> Customers { get; set; }
-
-
-            public OnLineServicesContext() : base("OnLineServices")
-            {
-                
-            }
-        }
+      
 
         [Test]
         public void OrderFactory_Instance()
@@ -94,32 +83,6 @@ namespace BaseServiceTest
 
             customerService.Create(customerInput);
         }
-
-
-        public class BaseService<TObject, TBaseFactory, TBaseRespository, TInputData>
-            where TObject : new()
-            where TBaseFactory : IFactory<TObject, TInputData>
-            where TBaseRespository : IRepository<TObject>
-        {
-            private TBaseFactory _factory;
-            private TBaseRespository _repository;
-
-            public BaseService(TBaseFactory factory, TBaseRespository repository)
-            {
-                _factory = factory;
-                _repository = repository;
-            }
-
-            public void Create(TInputData inputData)
-            {
-                var instance = _factory.Create(inputData);
-                if (instance != null)
-                {
-                   _repository.Add(instance);
-                }
-            }
-        }
-
 
 
         public class OrderService

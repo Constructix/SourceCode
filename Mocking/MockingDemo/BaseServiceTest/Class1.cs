@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,36 +39,6 @@ namespace BaseServiceTest
         void Add(TEntity entity);
         void Remove(TEntity entity);
         IQueryable<TEntity> Get(Func<TEntity, bool> query);
-    }
-
-    public abstract class BaseRepository<TEntity> : IRepository<TEntity>
-    {
-        protected List<TEntity> _entities;
-
-        public BaseRepository()
-        {
-            _entities = new List<TEntity>();
-        }
-        public virtual void Add(TEntity entity)
-        {
-            _entities.Add(entity);
-            Console.WriteLine($"Added {entity.GetType().FullName}");
-        }
-
-        public void Remove(TEntity entity)
-        {
-            _entities.Remove(entity);
-        }
-
-        public IQueryable<TEntity> Get(Func<TEntity, bool> query)
-        {
-            return _entities.Where(query).AsQueryable();
-        }
-
-        public IEnumerable<TEntity> Get()
-        {
-            return _entities.ToList();
-        }
     }
 
     public class CustomerRepository : BaseRepository<Customer>
