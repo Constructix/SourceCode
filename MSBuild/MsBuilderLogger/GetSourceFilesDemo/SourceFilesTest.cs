@@ -28,9 +28,7 @@ namespace GetSourceFilesDemo
         {
             XDocument doc = XDocument.Load(fileName);
             Dictionary<string, string> cSharpFiles = new Dictionary<string, string>();
-            var files =
-                doc.Descendants()
-                    .Where(x => x.Name.LocalName.Equals("Compile"));
+            var files = doc.Descendants().Where(x => x.Name.LocalName.Equals("Compile"));
 
             foreach (XElement xElement in files)
             {
@@ -41,6 +39,11 @@ namespace GetSourceFilesDemo
             Assert.True(cSharpFiles.Any());
             Assert.True(cSharpFiles.Count == 2);
 
+            PrintOutCSharpFiles(cSharpFiles);
+        }
+
+        private void PrintOutCSharpFiles(Dictionary<string, string> cSharpFiles)
+        {
             foreach (var keyValuePair in cSharpFiles)
             {
                 _helper.WriteLine(keyValuePair.Value);
