@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildLogger", "BuildLogger\BuildLogger.csproj", "{8805A0E3-92BC-4B10-B33D-5B6124C51B1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetSourceFilesDemo", "GetSourceFilesDemo\GetSourceFilesDemo.csproj", "{9763651A-EA5A-404B-AC8D-F81670CC03AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8805A0E3-92BC-4B10-B33D-5B6124C51B1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8805A0E3-92BC-4B10-B33D-5B6124C51B1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8805A0E3-92BC-4B10-B33D-5B6124C51B1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9763651A-EA5A-404B-AC8D-F81670CC03AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9763651A-EA5A-404B-AC8D-F81670CC03AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9763651A-EA5A-404B-AC8D-F81670CC03AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9763651A-EA5A-404B-AC8D-F81670CC03AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

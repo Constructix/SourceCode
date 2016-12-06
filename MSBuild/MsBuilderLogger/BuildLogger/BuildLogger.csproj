@@ -47,6 +47,9 @@
     <Compile Include="MsBuildLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="BuildProject.bat" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy /Y /V BuildLogger.dll ..\..\..\..\BuildLogger.dll</PostBuildEvent>
