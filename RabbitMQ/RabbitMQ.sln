@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{F2C07823-56EE-4CE2-856E-9A43BD8273D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQ.Tests", "RabbitMQ.Tests\RabbitMQ.Tests.csproj", "{490E893E-91FC-4DAC-9A76-B411C6568D07}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Standard Queue", "1. Standard Queue", "{F51DB521-B76D-4B73-8AAD-5B676F63D8FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Worker Queue", "2. Worker Queue", "{C03A53B6-C473-429A-882A-F129212E9306}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Publish Subscribe", "3. Publish Subscribe", "{281511E1-D315-4774-8331-EDF42C96B076}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Direct Routing", "4. Direct Routing", "{5545A06F-AB9A-49A1-A513-AD5C210D2E03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StandardQueue", "StandardQueue\StandardQueue.csproj", "{B3E57420-1A88-43EA-8A45-0D3F4A1EF3E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Send", "Send", "{BAB24598-26FD-4C7C-9DD9-47720BEF4AE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendRabbitMQDemo", "SendRabbitMQDemo\SendRabbitMQDemo.csproj", "{5130904C-42C2-4FB5-A3F0-994ED06C3D38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Receive", "Receive", "{93F8F78C-56D7-45C5-9FDD-505F1592ADBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReceiveRabbitMQ", "ReceiveRabbitMQ\ReceiveRabbitMQ.csproj", "{CD748534-3D4A-40D9-A66A-05820C16B866}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2C07823-56EE-4CE2-856E-9A43BD8273D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2C07823-56EE-4CE2-856E-9A43BD8273D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2C07823-56EE-4CE2-856E-9A43BD8273D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2C07823-56EE-4CE2-856E-9A43BD8273D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{490E893E-91FC-4DAC-9A76-B411C6568D07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{490E893E-91FC-4DAC-9A76-B411C6568D07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{490E893E-91FC-4DAC-9A76-B411C6568D07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{490E893E-91FC-4DAC-9A76-B411C6568D07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3E57420-1A88-43EA-8A45-0D3F4A1EF3E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3E57420-1A88-43EA-8A45-0D3F4A1EF3E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3E57420-1A88-43EA-8A45-0D3F4A1EF3E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3E57420-1A88-43EA-8A45-0D3F4A1EF3E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5130904C-42C2-4FB5-A3F0-994ED06C3D38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5130904C-42C2-4FB5-A3F0-994ED06C3D38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5130904C-42C2-4FB5-A3F0-994ED06C3D38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5130904C-42C2-4FB5-A3F0-994ED06C3D38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD748534-3D4A-40D9-A66A-05820C16B866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD748534-3D4A-40D9-A66A-05820C16B866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD748534-3D4A-40D9-A66A-05820C16B866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD748534-3D4A-40D9-A66A-05820C16B866}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B3E57420-1A88-43EA-8A45-0D3F4A1EF3E1} = {F51DB521-B76D-4B73-8AAD-5B676F63D8FF}
+		{5130904C-42C2-4FB5-A3F0-994ED06C3D38} = {BAB24598-26FD-4C7C-9DD9-47720BEF4AE5}
+		{CD748534-3D4A-40D9-A66A-05820C16B866} = {93F8F78C-56D7-45C5-9FDD-505F1592ADBD}
+	EndGlobalSection
+EndGlobal
