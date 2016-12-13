@@ -1,0 +1,6 @@
+C:\Users\ucihf\AppData\Local\Temporary Projects\INotifyPropertyChangedDemo\bin\Debug\INotifyPropertyChangedDemo.exe.config
+C:\Users\ucihf\AppData\Local\Temporary Projects\INotifyPropertyChangedDemo\bin\Debug\INotifyPropertyChangedDemo.exe
+C:\Users\ucihf\AppData\Local\Temporary Projects\INotifyPropertyChangedDemo\bin\Debug\INotifyPropertyChangedDemo.pdb
+C:\Users\ucihf\AppData\Local\Temporary Projects\INotifyPropertyChangedDemo\obj\Debug\INotifyPropertyChangedDemo.csprojResolveAssemblyReference.cache
+C:\Users\ucihf\AppData\Local\Temporary Projects\INotifyPropertyChangedDemo\obj\Debug\INotifyPropertyChangedDemo.exe
+C:\Users\ucihf\AppData\Local\Temporary Projects\INotifyPropertyChangedDemo\obj\Debug\INotifyPropertyChangedDemo.pdb
