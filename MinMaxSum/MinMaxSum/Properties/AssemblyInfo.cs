@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("OpenClosedPrinciple")]
+[assembly: AssemblyTitle("MinMaxSum")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("OpenClosedPrinciple")]
+[assembly: AssemblyProduct("MinMaxSum")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0e43f4b7-eaa9-4e0c-a001-ba837d1d2cf3")]
+[assembly: Guid("820ad309-79b3-4481-92cc-46af265a9469")]
 
 // Version information for an assembly consists of the following four values:
 //
