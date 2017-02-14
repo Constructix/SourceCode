@@ -1,0 +1,4 @@
+﻿1>------ Build started: Project: OrderServiceTests, Configuration: Debug Any CPU ------
+1>D:\GitHub\OrderService\ConstructixOrderingService\OrderService\Product.cs(8,21,8,38): warning CS0169: The field 'Product._quantityRequired' is never used
+1>  OrderServiceTests -> D:\GitHub\OrderService\ConstructixOrderingService\OrderService\bin\Debug\OrderService.dll
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========

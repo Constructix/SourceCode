@@ -11,8 +11,6 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-
-
             string[] tokens_n = Console.ReadLine().Split(' ');
             int n = Convert.ToInt32(tokens_n[0]);
             int k = Convert.ToInt32(tokens_n[1]);
@@ -20,21 +18,10 @@ namespace ConsoleApplication1
             string[] a_temp = Console.ReadLine().Split(' ');
             int[] a = Array.ConvertAll(a_temp, Int32.Parse);
 
-
-
             for (int a0 = 0; a0 < q; a0++)
             {
                 int m = Convert.ToInt32(Console.ReadLine());
             }
-
-
-            //int[] numberArray = new int[] {1, 2, 3};
-            //int rotations = 2;
-            //int newIndex, oldIndex;
-            //oldIndex = 0;
-            //newIndex = (oldIndex + rotations) % 3;
-            //Console.WriteLine($"Old Index: {oldIndex}");
-            //Console.WriteLine($"New Index: {newIndex}");
         }
 
         private static void OldCode()
