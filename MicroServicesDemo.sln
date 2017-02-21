@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicoServices.References", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServices.Orders", "MicroServices.Orders\MicroServices.Orders.csproj", "{957BAF2A-5123-45EA-B16C-FA777B7E3138}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependents", "Dependents", "{674137D1-0363-45E0-95EF-91DAF9886964}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3D367C4F-3F56-4F69-84BC-67D8561F8C4C} = {674137D1-0363-45E0-95EF-91DAF9886964}
 	EndGlobalSection
 EndGlobal
