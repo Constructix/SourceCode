@@ -1,53 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using MicroServices.DTO;
 
 namespace MicroServicesDemo
 {
-
-    public class ServiceManager
-    {
-        public void StartServices()
-        {
-        }
-
-        public void StartService(string serviceName)
-        {
-        }
-
-        public void StopServices()
-        {
-            
-        }
-
-        public void StopService(string serviceName)
-        {
-        }
-
-
-        public int ServiceInstances(string serviceName)
-        {
-            return 0;
-        }
-
-
-    }
-
-
-    public abstract class ServiceMonitor
-    {
-        public void ShutDownAllServices()
-        {
-        }
-
-        public List<string> ServicesStatus(string serviceType)
-        {
-            return new List<string>();
-
-        }
-
-    }
-
     public class OrderService : BaseMicroService<Order>
     {
 
