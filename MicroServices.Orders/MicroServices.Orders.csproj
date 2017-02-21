@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{817978F4-AA0D-4ADA-8158-67013D7F921F}</ProjectGuid>
+    <ProjectGuid>{957BAF2A-5123-45EA-B16C-FA777B7E3138}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MicroServices.Tests</RootNamespace>
-    <AssemblyName>MicroServices.Tests</AssemblyName>
+    <RootNamespace>MicroServices.Orders</RootNamespace>
+    <AssemblyName>MicroServices.Orders</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -38,56 +38,19 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\packages\xunit.abstractions.2.0.1\lib\net35\xunit.abstractions.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="xunit.assert, Version=2.2.0.3545, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\packages\xunit.assert.2.2.0\lib\netstandard1.1\xunit.assert.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="xunit.core, Version=2.2.0.3545, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\packages\xunit.extensibility.core.2.2.0\lib\netstandard1.1\xunit.core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="xunit.execution.desktop, Version=2.2.0.3545, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\packages\xunit.extensibility.execution.2.2.0\lib\net452\xunit.execution.desktop.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmailTest.cs" />
-    <Compile Include="OrderServiceTest.cs" />
-    <Compile Include="PayloadTest.cs" />
+    <Compile Include="OrderService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\names.json">
-      <Link>names.json</Link>
-    </None>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\MicoServices.References\MicoServices.References.csproj">
+    <ProjectReference Include="..\MicoServices.References\MicoServices.References.csproj">
       <Project>{3d367c4f-3f56-4f69-84bc-67d8561f8c4c}</Project>
       <Name>MicoServices.References</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\MicroServices.MailMessages\MicroServices.MailMessages.csproj">
-      <Project>{061A1AA8-434C-4A2E-9F42-61E9173CA6DE}</Project>
-      <Name>MicroServices.MailMessages</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\MicroServices.Orders\MicroServices.Orders.csproj">
-      <Project>{957baf2a-5123-45ea-b16c-fa777b7e3138}</Project>
-      <Name>MicroServices.Orders</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MicroServices.DTO\MicroServices.DTO.csproj">
+    <ProjectReference Include="..\Microservices\MicroServicesDemo\MicroServices.DTO\MicroServices.DTO.csproj">
       <Project>{323e2824-130e-437f-98fa-02cfeecac374}</Project>
       <Name>MicroServices.DTO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MicroServicesDemo\MicroServicesDemo.csproj">
-      <Project>{bfe9b7e1-5b6e-4295-ad59-9c94f8489b76}</Project>
-      <Name>MicroServicesDemo</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

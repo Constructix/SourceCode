@@ -10,13 +10,9 @@ namespace MicroServices.Tests
         public void PayloadInstanceWithOrderNotNull()
         {
             DateTime payloadCreated = DateTime.Now;
-            
             var order = new Order();
             var payload = new Payload<Order> { instance = order, Status = PayloadStatus.Waiting, Created = payloadCreated };
-
             Assert.NotNull(payload);
-
-
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using MicroServices.DTO;
+using MicroServices.Orders;
 using MicroServicesDemo;
 using Xunit;
 

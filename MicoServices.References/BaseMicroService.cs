@@ -1,5 +1,4 @@
 using System;
-
 namespace MicroServicesDemo
 {
     public abstract class BaseMicroService<T> : IMicroService<T>

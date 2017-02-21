@@ -1,7 +1,8 @@
 ﻿using System;
 using MicroServices.DTO;
+using MicroServicesDemo;
 
-namespace MicroServicesDemo
+namespace MicroServices.Orders
 {
     public class OrderService : BaseMicroService<Order>
     {
