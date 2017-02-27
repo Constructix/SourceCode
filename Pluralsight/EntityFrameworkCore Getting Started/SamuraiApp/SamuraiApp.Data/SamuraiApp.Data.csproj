@@ -217,6 +217,7 @@
       <DependentUpon>20170222110352_JoinTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SamuraiContextModelSnapshot.cs" />
+    <Compile Include="MyLoggerProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SamuraiContext.cs" />
   </ItemGroup>
