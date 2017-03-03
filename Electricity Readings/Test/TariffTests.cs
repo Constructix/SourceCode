@@ -2,11 +2,20 @@ using System;
 using Xunit;
 using System.Collections.Generic;
 using System.Linq;
+using Xunit.Abstractions;
 
 namespace Test
 {
     public class TariffTests
     {
+        private readonly ITestOutputHelper _helper;
+
+        public TariffTests(ITestOutputHelper helper)
+        {
+            _helper = helper;
+        }
+
+
         [Fact]
         public void TariffRateIsNotZero()
         {
@@ -77,6 +86,57 @@ namespace Test
             //
             Assert.Equal(electricityUsage,0.375m );
 
+
+        }
+
+        [Fact]
+        public void DecidingWhichIsBetterDeriveFromBaseTariffOrITariff()
+        {
+
+
+            var tariffs = new List<Tariff>()
+            {
+                new Tariff()
+                {
+                    TariffType = TariffType.Electricity,
+                    AccountType = TariffAccountType.Debit,
+                    Rate = 0.279m,
+                    EffectiveFrom = DateTime.Parse("01/01/2016"),
+                    EffectiveTo = DateTime.Parse("30/06/2016")
+                },
+                new Tariff()
+                {
+                    TariffType = TariffType.Hotwater,
+                    AccountType = TariffAccountType.Debit,
+                    Rate = 0.189m,
+                    EffectiveFrom = DateTime.Parse("01/01/2016"),
+                    EffectiveTo = DateTime.Parse("30/06/2016")
+                },
+                new Tariff()
+                {
+                    TariffType = TariffType.Solar,
+                    AccountType = TariffAccountType.Credit,
+                    Rate = 0.189m,
+                    EffectiveFrom = DateTime.Parse("01/01/2016"),
+                    EffectiveTo = DateTime.Parse("30/06/2016")
+                },
+
+
+            };
+
+
+            var tariffGroups = tariffs.GroupBy(x => x.TariffType);
+
+            _helper.WriteLine(tariffGroups.Count().ToString());
+
+            foreach (IGrouping<TariffType, Tariff> tariffGroup in tariffGroups)
+            {
+                _helper.WriteLine(tariffGroup.Key.ToString());
+                foreach (Tariff tariff in tariffGroup)
+                {
+                    _helper.WriteLine("\t" + tariff.Rate);
+                }
+            }
 
         }
     }
