@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ElectricityCalculator.cs" />
+    <Compile Include="ElectricityCalculatorTests.cs" />
     <Compile Include="ElectricityTariff.cs" />
     <Compile Include="ElectricityTestHelper.cs" />
     <Compile Include="Interfaces\IReading.cs" />
