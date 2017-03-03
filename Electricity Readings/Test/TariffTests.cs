@@ -21,7 +21,7 @@ namespace Test
             var totalUsage =   ElectricityCalculator.Calculate(usage, ElectricityTestHelper.GetCurrent().Rate);
 
 
-            Assert.Equal(totalUsage, 12.5m);
+            Assert.Equal(totalUsage, 12.50m);
 
             Console.WriteLine(totalUsage);
 
