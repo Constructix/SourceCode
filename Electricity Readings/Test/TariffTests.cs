@@ -10,23 +10,23 @@ namespace Test
         [Fact]
         public void TariffRateIsNotZero()
         {
-            ITariff tariff = new ElectricityTariff();
+            var tariff = new ElectricityTariff();
             Assert.NotNull(tariff);
         }
 
         [Fact]
         public void EffectiveFromIsNotNull()
         {
-            ITariff tariff = new ElectricityTariff() {EffectiveFrom = DateTime.Parse("01/06/2016")};
+           BaseTariff baseTariff = new ElectricityTariff() {EffectiveFrom = DateTime.Parse("01/06/2016")};
 
-            Assert.NotNull(tariff.EffectiveFrom);
+            Assert.NotNull(baseTariff.EffectiveFrom);
         }
 
         [Fact]
         public void EffectiveToIsNull()
         {
-            ITariff tariff = new ElectricityTariff() {EffectiveTo = null};
-            Assert.Null(tariff.EffectiveTo);
+           BaseTariff baseTariff = new ElectricityTariff() {EffectiveTo = null};
+            Assert.Null(baseTariff.EffectiveTo);
         }
 
         [Fact]
@@ -34,8 +34,8 @@ namespace Test
         {
             decimal expectedRate = 0.189m;
 
-            ITariff tariff = new ElectricityTariff() {Rate = 0.189m};
-            Assert.Equal(tariff.Rate, expectedRate);
+           BaseTariff baseTariff = new ElectricityTariff() {Rate = 0.189m};
+            Assert.Equal(baseTariff.Rate, expectedRate);
         }
 
         [Fact]
@@ -56,11 +56,28 @@ namespace Test
         [Fact]
         public void UsageCalculation()
         {
-            decimal amount = 100.00m;
             int totalUsage = 100;
             decimal rate = 0.0125m;
             decimal usage = ElectricityCalculator.Calculate(totalUsage, rate);
             Assert.Equal(usage,1.25m );
+        }
+
+        [Fact]
+        public void UsageCalculatorCallingWithCalculatorData()
+        {
+            var reading1 = new Reading() {RecordedOn = DateTime.Now.AddDays(-1), Value = 1000};
+            var reading2 = new Reading() {RecordedOn = DateTime.Now, Value = 1030};
+
+            var currentTariff = ElectricityTestHelper.LoadTariffCollection().FirstOrDefault(x=>!x.EffectiveTo.HasValue);
+
+            CalculatorData data = new CalculatorData() {Tariff = currentTariff, TotalUsage = Reading.CalculateUsage(reading1, reading2)};
+
+            decimal electricityUsage = ElectricityCalculator.Calculate(data);
+
+            //
+            Assert.Equal(electricityUsage,0.375m );
+
+
         }
     }
 }

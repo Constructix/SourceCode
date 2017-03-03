@@ -51,15 +51,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Tariffs\ElectricityTariff.cs" />
     <Compile Include="ElectricityCalculator.cs" />
     <Compile Include="ElectricityCalculatorTests.cs" />
-    <Compile Include="ElectricityTariff.cs" />
+    <Compile Include="Tariffs\BaseTariff.cs" />
     <Compile Include="ElectricityTestHelper.cs" />
+    <Compile Include="Tariffs\HotwaterTariff.cs" />
     <Compile Include="Interfaces\IReading.cs" />
-    <Compile Include="Interfaces\ITariff.cs" />
     <Compile Include="Reading.cs" />
     <Compile Include="ReadingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tariffs\SolarTariff.cs" />
     <Compile Include="TariffTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

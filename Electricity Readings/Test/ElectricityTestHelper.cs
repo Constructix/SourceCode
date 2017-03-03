@@ -8,15 +8,15 @@ namespace Test
     {
 
 
-        public static ITariff GetCurrent()
+        public static ElectricityTariff GetCurrent()
         {
             var tariffs = LoadTariffCollection();
             return tariffs.FirstOrDefault(x => !x.EffectiveTo.HasValue);
         }
 
-        public static List<ITariff> LoadTariffCollection()
+        public static List<ElectricityTariff> LoadTariffCollection()
         {
-            List<ITariff> tariffs = new List<ITariff>()
+            List<ElectricityTariff> tariffs = new List<ElectricityTariff>()
             {
                 new ElectricityTariff
                 {
