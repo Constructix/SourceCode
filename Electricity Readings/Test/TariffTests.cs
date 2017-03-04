@@ -1,7 +1,8 @@
 using System;
-using Xunit;
 using System.Collections.Generic;
 using System.Linq;
+using Test.Enums;
+using Xunit;
 using Xunit.Abstractions;
 
 namespace Test
@@ -26,7 +27,7 @@ namespace Test
         [Fact]
         public void EffectiveFromIsNotNull()
         {
-           BaseTariff baseTariff = new ElectricityTariff() {EffectiveFrom = DateTime.Parse("01/06/2016")};
+            BaseTariff baseTariff = new ElectricityTariff() {EffectiveFrom = DateTime.Parse("01/06/2016")};
 
             Assert.NotNull(baseTariff.EffectiveFrom);
         }
@@ -34,7 +35,7 @@ namespace Test
         [Fact]
         public void EffectiveToIsNull()
         {
-           BaseTariff baseTariff = new ElectricityTariff() {EffectiveTo = null};
+            BaseTariff baseTariff = new ElectricityTariff() {EffectiveTo = null};
             Assert.Null(baseTariff.EffectiveTo);
         }
 
@@ -43,7 +44,7 @@ namespace Test
         {
             decimal expectedRate = 0.189m;
 
-           BaseTariff baseTariff = new ElectricityTariff() {Rate = 0.189m};
+            BaseTariff baseTariff = new ElectricityTariff() {Rate = 0.189m};
             Assert.Equal(baseTariff.Rate, expectedRate);
         }
 
