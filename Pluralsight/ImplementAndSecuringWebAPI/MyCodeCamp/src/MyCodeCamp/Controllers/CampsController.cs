@@ -1,42 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Castle.Core.Logging;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MyCodeCamp.Data;
 using MyCodeCamp.Data.Entities;
+using MyCodeCamp.Models;
 
 namespace MyCodeCamp.Controllers
 {
-
-
-    //public class Order
-    //{
-    //    public Guid Id { get; set; }
-    //    public DateTime Created { get; set; }
-
-    //    public Order()
-    //    {
-    //        Id = Guid.NewGuid();
-    //        Created = DateTime.Now;
-
-    //    }
-    //}
-
-
-   
-
     [Route("api/[controller]")]
     public class CampsController : Controller
     {
         private ICampRepository _repo;
         private Microsoft.Extensions.Logging.ILogger _logger;
-       
-        public CampsController(ICampRepository repo, ILogger<CampsController> logger)
+        private IMapper _mapper;
+        public CampsController(ICampRepository repo, 
+                                ILogger<CampsController> logger,
+                                IMapper mapper)
         {
             _repo = repo;
             _logger = logger;
+            _mapper = mapper;   
 
         }
         // action
@@ -47,7 +35,7 @@ namespace MyCodeCamp.Controllers
             var camps = _repo.GetAllCamps();
 
             
-            return Ok( camps);
+            return Ok( _mapper.Map<IEnumerable<CampModel>>(camps));
         }
 
         [HttpGet("{id}", Name="CampGet")]
@@ -59,7 +47,7 @@ namespace MyCodeCamp.Controllers
                 var camp = includeSpeakers ? _repo.GetCampWithSpeakers(id) : _repo.GetCamp(id);
                 if (camp == null)
                     return NotFound($"Camp {id} was not found.");
-                return Ok(camp);
+                return Ok(_mapper.Map<CampModel>(camp));
             }
             catch 
             {
