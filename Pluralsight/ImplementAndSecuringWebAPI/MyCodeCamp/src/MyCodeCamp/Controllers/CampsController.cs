@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using MyCodeCamp.Data;
+using MyCodeCamp.Data.Entities;
 
 namespace MyCodeCamp.Controllers
 {
@@ -18,14 +21,46 @@ namespace MyCodeCamp.Controllers
     //    }
     //}
 
+
+   
+
     [Route("api/[controller]")]
     public class CampsController : Controller
     {
+        private ICampRepository _repo;
+
+       
+        public CampsController(ICampRepository repo)
+        {
+            _repo = repo;
+
+        }
         // action
         [HttpGet("")]
         public IActionResult Get()
         {
-            return Ok( new {Name = "Shawn", FavouriteColor = "Blue"});
+
+            var camps = _repo.GetAllCamps();
+
+            
+            return Ok( camps);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult Get(int id, bool includeSpeakers = false)
+        {
+            try
+            {
+                var camp = includeSpeakers ? _repo.GetCampWithSpeakers(id) : _repo.GetCamp(id);
+                if (camp == null)
+                    return NotFound($"Camp {id} was not found.");
+                return Ok(camp);
+            }
+            catch 
+            {
+             
+            }
+            return BadRequest();
         }
     }
 }

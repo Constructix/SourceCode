@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using MyCodeCamp.Data;
+using Newtonsoft.Json;
 
 namespace MyCodeCamp
 {
@@ -28,12 +30,25 @@ namespace MyCodeCamp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(_config);
+
+            // this is a setup 
+            services.AddDbContext<CampContext>(ServiceLifetime.Scoped);
+            services.AddScoped<ICampRepository, CampRepository>();
+            services.AddTransient<CampDbInitializer>();
+
             // Add framework services.
-            services.AddMvc();
+            services.AddMvc()
+                .AddJsonOptions(opt => { opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore; });
+
+            // configure Json Objects
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, 
+                                IHostingEnvironment env,
+                                ILoggerFactory loggerFactory,
+                                CampDbInitializer seeder)
         {
             loggerFactory.AddConsole(_config.GetSection("Logging"));
             loggerFactory.AddDebug();
@@ -42,6 +57,8 @@ namespace MyCodeCamp
             {
                // config.MapRoute("MainAPIRoute", "api/{controller}/{action}");
             });
+
+            seeder.Seed().Wait();
         }
     }
 }
