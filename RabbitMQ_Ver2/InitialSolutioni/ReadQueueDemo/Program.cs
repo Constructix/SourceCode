@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -29,7 +26,7 @@ namespace ReadQueueDemo
             // now go and get the Message off the queue.
             var consumer = new EventingBasicConsumer(channel);
             consumer.Received += Consumer_Received;
-            channel.BasicConsume("FirstQueue", true, consumer);
+            channel.BasicConsume(RabbitMqSettings.QueueName, true, consumer);
             Console.WriteLine("Completed Reading all messages in queue.");
         }
 
