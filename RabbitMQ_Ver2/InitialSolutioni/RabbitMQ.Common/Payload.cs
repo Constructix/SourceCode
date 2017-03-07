@@ -4,13 +4,6 @@ using Newtonsoft.Json;
 
 namespace RabbitMQ.Common
 {
-
-    public interface IBusinessObject
-    {
-        string ToJson();
-
-    }
-
     public class Payload : IBusinessObject
     {
         public DateTime Created { get; set; }
@@ -26,38 +19,6 @@ namespace RabbitMQ.Common
         public string ToJson()
         {
            return JsonConvert.SerializeObject(this);
-        }
-    }
-
-
-    public class Order
-    {
-        public Guid Id { get; set; }
-        public DateTime Created { get; set; }
-        public DateTime LastModified { get; set; }
-
-        public Customer Customer { get; set; }
-
-
-        public Order()
-        {
-            Id = Guid.NewGuid();
-            Customer = new Customer();
-        }
-
-        
-    }
-
-    public class Customer
-    {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-
-
-        public override string ToString()
-        {
-            return $"{FirstName} {LastName}";
         }
     }
 }
