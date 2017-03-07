@@ -47,7 +47,7 @@ namespace MyCodeCamp.Controllers
                 var camp = includeSpeakers ? _repo.GetCampWithSpeakers(id) : _repo.GetCamp(id);
                 if (camp == null)
                     return NotFound($"Camp {id} was not found.");
-                return Ok(_mapper.Map<CampModel>(camp));
+                return Ok(_mapper.Map<CampModel>(camp, opt=>opt.Items["UrlHelper"] = this.Url));
             }
             catch 
             {
