@@ -20,48 +20,52 @@ namespace InitialSolutioni
             IModel channel = connection.CreateModel();
 
             // Firstly need to make sure Exchange, Queue and Hook up Exchange to Queue.
-            channel.ExchangeDeclare("FirstRabbitMQExchange", ExchangeType.Direct);
-            channel.QueueDeclare("FirstQueue", false, false, false, null);
-            channel.QueueBind("FirstQueue", "FirstRabbitMQExchange", "first", null);
+            channel.ExchangeDeclare(RabbitMqSettings.ExchangeName, ExchangeType.Direct);
+            channel.QueueDeclare(RabbitMqSettings.QueueName, false, false, false, null);
+            channel.QueueBind(RabbitMqSettings.QueueName, RabbitMqSettings.ExchangeName, RabbitMqSettings.RoutingKeyName, null);
 
 
-            for(int i = 0; i < 10; i++)
+            string[] firstNames = new  string[] {"Richard", "Shaun", "Grahame", "Bill", "Steve", "Edward", "Julian", "Tom", "Geoffrey","Clinton","Ian", "David", "Michael", "John", "Barry", "Scott"};
+            string [] lastNames = new  string[] {"Jones", "Snowden", "Gilroy", "Jennings", "Smith", "Furry", "Dodds", "Huxley", "Williams", "Peters", "Jenkins" };
+
+            Random r = new Random((int)DateTime.Now.Ticks);
+            var orderFactory = new OrderFactory();
+            for (int i = 0; i < 100; i++)
             {
-
-                var payload = new Payload {Created = DateTime.Now, Message = "This is the payload Message"};
-                // serialise the payload
-
-                var payloadAsJson = JsonConvert.SerializeObject(payload);
+                var order = CreateOrder(r, firstNames, lastNames, orderFactory);
+                var payload = new Payload {Created = DateTime.Now,
+                                            Message = "This is the payload Message",
+                                            Order = order};
+                var payloadAsJson = SerialisePayload(payload);
 
                 Console.WriteLine(payloadAsJson);
                 Console.WriteLine();
                 byte[] messageBody = Encoding.ASCII.GetBytes(payloadAsJson);
                 IBasicProperties properties = channel.CreateBasicProperties();
                 properties.ContentType = "text/plain";
-                channel.BasicPublish("FirstRabbitMQExchange", "first", properties, messageBody);
+                channel.BasicPublish(RabbitMqSettings.ExchangeName, "first", properties, messageBody);
                 Console.WriteLine("Sent Data..");
             }
-
-
-
-            //// now go and get the Message off the queue.
-            //var consumer = new EventingBasicConsumer(channel);
-            //consumer.Received += Consumer_Received;
-            //channel.BasicConsume("FirstQueue", true, consumer);
-            //Console.WriteLine("Completed Reading all messages in queue.");
         }
 
-        private static void Consumer_Received(object sender, BasicDeliverEventArgs e)
+        private static Order CreateOrder(Random r, string[] firstNames, string[] lastNames, OrderFactory orderFactory)
         {
-            var body = e.Body;
-            var message = Encoding.ASCII.GetString(body);
+            int firstNameIndex = r.Next(0, firstNames.Length - 1);
+            int lastNameNameIndex = r.Next(0, lastNames.Length - 1);
+            var order = orderFactory.Create(new Customer
+            {
+                FirstName = firstNames[firstNameIndex],
+                LastName = lastNames[lastNameNameIndex],
+                Email = "Top@gmail.com"
+            });
+            return order;
+        }
 
-
-            Payload  payload = JsonConvert.DeserializeObject<Payload>(message);
-            Console.WriteLine($"Received : {payload.Created} {payload.Message}");
+        private static string SerialisePayload(Payload payload)
+        {
+            // serialise the payload
+            var payloadAsJson = JsonConvert.SerializeObject(payload);
+            return payloadAsJson;
         }
     }
-
-
-   
 }

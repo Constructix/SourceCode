@@ -45,7 +45,7 @@ namespace ReadQueueDemo
             var body = e.Body;
             var message = Encoding.ASCII.GetString(body);
             Payload payload = JsonConvert.DeserializeObject<Payload>(message);
-            Console.WriteLine($"Received : {payload.Created} {payload.Message}");
+            Console.WriteLine($"Received : {payload.Created} {payload.Message}  {payload.Order.Customer.ToString()}");
         }
     }
 }

@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrderFactory.cs" />
     <Compile Include="Payload.cs" />
     <Compile Include="RabbitMqSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
