@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FireOnWheels.Registration.Web", "FireOnWheels.Registration.Web\FireOnWheels.Registration.Web.xproj", "{0DB93DFD-5E62-4F7F-8020-B081816B6454}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FireOnWheels.Messaging", "FireOnWheels.Messaging\FireOnWheels.Messaging.xproj", "{F56FDE87-B59B-48E6-A7B0-0CBC033228C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0DB93DFD-5E62-4F7F-8020-B081816B6454}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DB93DFD-5E62-4F7F-8020-B081816B6454}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DB93DFD-5E62-4F7F-8020-B081816B6454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F56FDE87-B59B-48E6-A7B0-0CBC033228C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F56FDE87-B59B-48E6-A7B0-0CBC033228C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F56FDE87-B59B-48E6-A7B0-0CBC033228C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F56FDE87-B59B-48E6-A7B0-0CBC033228C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
