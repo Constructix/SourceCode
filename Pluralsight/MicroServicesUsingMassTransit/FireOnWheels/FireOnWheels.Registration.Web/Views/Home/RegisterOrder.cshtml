@@ -1,0 +1,22 @@
+﻿
+@model FireOnWheels.Registration.Web.Models.OverViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>title</h2>
+@using (Html.BeginForm("RegisterOrder", "Home", FormMethod.Post))
+{
+    <section class="form-group">
+        @Html.NameFor(m => m.FirstName)
+        @Html.TextBox("FirstName", string.Empty)
+        @Html.NameFor(m => m.LastName)
+        @Html.TextBox("LastName", string.Empty)
+        @Html.NameFor(m => m.Email)
+        @Html.TextBox("Email", string.Empty)
+
+        <input type="submit" name="Submit" value="Submit" />
+    </section>
+}

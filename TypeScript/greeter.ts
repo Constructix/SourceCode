@@ -18,5 +18,7 @@ function greeter(person: Person) {
 }
 
 var user = new Student( "Richard", "J", "Jones");
+var isDone : boolean;
 
+isDone = false;
 document.body.innerHTML = greeter(user);
