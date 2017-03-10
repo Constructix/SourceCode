@@ -1,4 +1,5 @@
-﻿namespace FireOnWheels.Messaging
+﻿using System;
+namespace FireOnWheels.Messaging
 {
     public class RabbitMqConstants
     {

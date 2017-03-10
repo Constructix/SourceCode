@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FireOnWheels.Registration.Web", "FireOnWheels.Registration.Web\FireOnWheels.Registration.Web.xproj", "{0DB93DFD-5E62-4F7F-8020-B081816B6454}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FireOnWheels.Registration.Web", "FireOnWheels.Registration.Web\FireOnWheels.Registration.Web.csproj", "{0DB93DFD-5E62-4F7F-8020-B081816B6454}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FireOnWheels.Messaging", "FireOnWheels.Messaging\FireOnWheels.Messaging.xproj", "{F56FDE87-B59B-48E6-A7B0-0CBC033228C7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FireOnWheels.Messaging", "FireOnWheels.Messaging_Ver2\FireOnWheels.Messaging.csproj", "{CD2BC3DF-BF1B-45E7-AEEC-9351844DB5AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{0DB93DFD-5E62-4F7F-8020-B081816B6454}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DB93DFD-5E62-4F7F-8020-B081816B6454}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DB93DFD-5E62-4F7F-8020-B081816B6454}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F56FDE87-B59B-48E6-A7B0-0CBC033228C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F56FDE87-B59B-48E6-A7B0-0CBC033228C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F56FDE87-B59B-48E6-A7B0-0CBC033228C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F56FDE87-B59B-48E6-A7B0-0CBC033228C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD2BC3DF-BF1B-45E7-AEEC-9351844DB5AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD2BC3DF-BF1B-45E7-AEEC-9351844DB5AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD2BC3DF-BF1B-45E7-AEEC-9351844DB5AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD2BC3DF-BF1B-45E7-AEEC-9351844DB5AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

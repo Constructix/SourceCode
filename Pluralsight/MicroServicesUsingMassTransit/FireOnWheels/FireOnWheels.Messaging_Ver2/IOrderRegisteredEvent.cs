@@ -1,4 +1,4 @@
-﻿namespace FireOnWheels.Messaging
+﻿namespace FireOnWheels.Messaging_Ver2
 {
     public interface IOrderRegisteredEvent
     {
