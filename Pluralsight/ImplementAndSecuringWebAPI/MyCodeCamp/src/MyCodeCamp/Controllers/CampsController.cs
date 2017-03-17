@@ -13,7 +13,7 @@ using MyCodeCamp.Models;
 namespace MyCodeCamp.Controllers
 {
     [Route("api/[controller]")]
-    public class CampsController : Controller
+    public class CampsController : BaseController
     {
         private ICampRepository _repo;
         private Microsoft.Extensions.Logging.ILogger _logger;
@@ -25,8 +25,9 @@ namespace MyCodeCamp.Controllers
             _repo = repo;
             _logger = logger;
             _mapper = mapper;   
-
         }
+
+        
         // action
         [HttpGet("")]
         public IActionResult Get()
@@ -38,16 +39,18 @@ namespace MyCodeCamp.Controllers
             return Ok( _mapper.Map<IEnumerable<CampModel>>(camps));
         }
 
-        [HttpGet("{id}", Name="CampGet")]
-        public IActionResult Get(int id, bool includeSpeakers = false)
+        [HttpGet("{moniker}", Name="CampGet")]
+        public IActionResult Get(string moniker, bool includeSpeakers = false)
         {
             try
             {
                 
-                var camp = includeSpeakers ? _repo.GetCampWithSpeakers(id) : _repo.GetCamp(id);
+                var camp = includeSpeakers ? _repo.GetCampByMonikerWithSpeakers(moniker) : _repo.GetCampByMoniker(moniker);
                 if (camp == null)
-                    return NotFound($"Camp {id} was not found.");
-                return Ok(_mapper.Map<CampModel>(camp, opt=>opt.Items["UrlHelper"] = this.Url));
+                    return NotFound($"Camp {moniker} was not found.");
+
+                
+                return Ok(_mapper.Map<CampModel>(camp));
             }
             catch 
             {
@@ -61,17 +64,21 @@ namespace MyCodeCamp.Controllers
         //
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Camp model)
+        public async Task<IActionResult> Post([FromBody] CampModel model)
         {
             try
             {
 
                 _logger.LogInformation("Creating a new Code Camp");
-                _repo.Add(model);
+
+                var camp = _mapper.Map<Camp>(model);
+
+
+                _repo.Add(camp);
                 if ( await _repo.SaveAllAsync())
                 {
-                    var newUri = Url.Link("CampGet", new {id = model.Id});
-                    return Created(newUri, model);
+                    var newUri = Url.Link("CampGet", new {moniker = model.Moniker});
+                    return Created(newUri, _mapper.Map<CampModel>(camp));
                 }
                 else
                     _logger.LogWarning("Coulde not save Camp to  the database.");
