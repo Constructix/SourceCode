@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using PipelineDesignPattern.Engine;
+using Xunit;
 using Xunit.Abstractions;
 
 namespace PipelineDesignPattern.Tests
@@ -12,14 +13,14 @@ namespace PipelineDesignPattern.Tests
         [Fact]
         public override void InstanceIsNotNull()
         {
-            _handler = new ConcreteHandler1();
+            _handler = new CarbineCourtHandler();
             Assert.NotNull(_handler);
         }
 
         [Fact]
         public void ProcessProcessesCommandObject()
         {
-            _handler = new ConcreteHandler1();
+            _handler = new CarbineCourtHandler();
             var cmd = new Command();
 
             _handler.Process(cmd);

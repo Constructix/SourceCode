@@ -3,6 +3,7 @@ using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PipelineDesignPattern.Engine;
 using Xunit;
 using Xunit.Abstractions;
 

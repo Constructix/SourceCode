@@ -1,4 +1,6 @@
-﻿namespace PipelineDesignPattern.Engine
+﻿using System.Collections.Generic;
+
+namespace PipelineDesignPattern.Engine
 {
     public class PipelineManager
     {

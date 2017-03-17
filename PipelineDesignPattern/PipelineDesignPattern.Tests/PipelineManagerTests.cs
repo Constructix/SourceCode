@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using PipelineDesignPattern.Engine;
+using Xunit;
 using Xunit.Abstractions;
 
 namespace PipelineDesignPattern.Tests
@@ -31,7 +32,7 @@ namespace PipelineDesignPattern.Tests
             string expectedValue = "11 CARBINE COURT";
             Command cmd = new Command() {Title = "This is a test for command"};
 
-           _pipeLineManager.Handlers.Add( new ConcreteHandler1());
+           _pipeLineManager.Handlers.Add( new CarbineCourtHandler());
            _pipeLineManager.Handlers.Add(new UpperCaseHandler());
 
             _pipeLineManager.Execute(cmd);

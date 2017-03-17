@@ -6,9 +6,6 @@ namespace PipelineDesignPattern.Tests
     public abstract class BaseTest
     {
         protected readonly ITestOutputHelper _helper;
-
-      
-
         protected BaseTest(ITestOutputHelper helper)
         {
             _helper = helper;

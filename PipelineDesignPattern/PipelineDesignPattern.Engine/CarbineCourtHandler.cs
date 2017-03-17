@@ -1,11 +1,11 @@
 ﻿namespace PipelineDesignPattern.Engine
 {
-    public class ConcreteHandler1 : IHandler
+    public class CarbineCourtHandler : IHandler
     {
       
 
 
-        public ConcreteHandler1()
+        public CarbineCourtHandler()
         {
             
         }
@@ -14,11 +14,7 @@
 
         public void Process(Command command)
         {
-
-
             command.Title = "11 carbine court";
-            // command has been run.
-
         }
     }
 }

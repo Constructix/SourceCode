@@ -55,16 +55,18 @@
   <ItemGroup>
     <Compile Include="BaseTest.cs" />
     <Compile Include="CommandTest.cs" />
-    <Compile Include="Command.cs" />
-    <Compile Include="ConcreteHandler_1.cs" />
     <Compile Include="HandlerTests.cs" />
-    <Compile Include="IHandler.cs" />
-    <Compile Include="PipelineManager.cs" />
     <Compile Include="PipelineManagerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PipelineDesignPattern.Engine\PipelineDesignPattern.Engine.csproj">
+      <Project>{48c61e22-ec47-4a19-82eb-dfb0202fc1a0}</Project>
+      <Name>PipelineDesignPattern.Engine</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

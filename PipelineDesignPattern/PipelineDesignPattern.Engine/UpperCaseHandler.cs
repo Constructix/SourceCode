@@ -1,6 +1,6 @@
 ﻿namespace PipelineDesignPattern.Engine
 {
-    class UpperCaseHandler : IHandler
+    public class UpperCaseHandler : IHandler
     {
         public void Process(Command command)
         {
