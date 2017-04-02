@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -20,18 +22,18 @@ class Solution
                 Console.SetIn(File.OpenText(args[0]));
             }
 
-            int t = Convert.ToInt32(Console.ReadLine());
-            for (int a0 = 0; a0 < t; a0++)
+            int tests = Convert.ToInt32(Console.ReadLine());
+            for (int a0 = 0; a0 < tests; a0++)
             {
                 StringBuilder currentText = new StringBuilder();
 
                 string[] tokens_R = Console.ReadLine().Split(' ');
-                int R = Convert.ToInt32(tokens_R[0]);
-                int C = Convert.ToInt32(tokens_R[1]);
-                string[] G = new string[R];
-                for (int G_i = 0; G_i < R; G_i++)
+                int totalRows = Convert.ToInt32(tokens_R[0]);
+                int TotalColumns = Convert.ToInt32(tokens_R[1]);
+                string[] dataGrid = new string[totalRows];
+                for (int currentGridRow = 0; currentGridRow < totalRows; currentGridRow++)
                 {
-                    currentText.Append(Console.ReadLine());
+                    dataGrid[currentGridRow] = Console.ReadLine();
                 }
                 string[] tokens_r = Console.ReadLine().Split(' ');
                 int r = Convert.ToInt32(tokens_r[0]);
@@ -46,14 +48,10 @@ class Solution
                 int previousPosition = -1;
                 currentRow = previousRow = 0;
                 string newText = currentText.ToString();
-                CheckValues(r, P, newText,  prevMatch, previousPosition, C, success);
+                CheckValues(r, P, newText,  prevMatch, previousPosition, TotalColumns, success);
             }
-
-
-
             Environment.Exit(Success);
         }
-
     private static void CheckValues(int r, string[] searchPattern, string newText, bool prevMatch,
         int previousPosition, int columnCount, bool success)
     {
@@ -90,4 +88,3 @@ class Solution
         Console.WriteLine(success == true ? "YES" : "NO");
     }
 }
-
