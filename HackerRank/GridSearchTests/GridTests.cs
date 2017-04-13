@@ -103,7 +103,10 @@ namespace GridSearchTests
             }
         }
 
-
-
+        [Fact]
+        public void SearchGrid_NoExceptions()
+        {
+            
+        }
 }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 
-namespace GridSearchTests
-{
+
     public class Grid
     {
 
@@ -19,10 +18,14 @@ namespace GridSearchTests
 
         public int this[int index, int columnIndex]
         {
-            get { return _internalGrid[index, columnIndex]; }
-            set { _internalGrid[index, columnIndex] = value; }
-
+            get => _internalGrid[index, columnIndex];
+            set => _internalGrid[index, columnIndex] = value;
         }
+
+
+        public int Rows => _internalGrid.GetLength(0);
+
+        public int Columns => _internalGrid.GetLength(1);
 
         public void AddRow(string testInputValue)
         {
@@ -43,11 +46,10 @@ namespace GridSearchTests
 
         private void Validate(string testInputValue)
         {
-            if (_rowsAllocated >= _internalGrid.GetLength(0))
-                throw new Exception("Tryin to add a row that is larger than Row length.");
+            //if (_rowsAllocated >= _internalGrid.GetLength(0))
+            //    throw new Exception("Tryin to add a row that is larger than Row length.");
 
             if (testInputValue.Length > _internalGrid.GetLength(1))
                 throw new Exception("Trying to add column that is larger than the column length.");
         }
     }
-}
