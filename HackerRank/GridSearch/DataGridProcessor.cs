@@ -25,25 +25,25 @@ public class DataGridProcessor
             int rowIncrement = searchGrid.Rows;
             int colIncrement = searchGrid.Columns;
 
-            for (int rowIndex = 0; rowIndex <= grid.Rows / searchGrid.Rows; rowIndex += rowIncrement)
+            int currentRowIndex = 0;
+            int currentColIndex = 0;
+
+
+            int searchGridRowIndex = 0;
+            int searchGridColIndex = 0;
+
+            while (currentRowIndex < grid.Rows)
             {
-                for (int colIndex = 0; colIndex < grid.Columns ; colIndex+= colIncrement )
+                while (currentColIndex < grid.Columns)
                 {
-                    //Console.Write(grid[rowIndex, colIndex]);
-
-
-
-
-                    for (int searchGridRowIndex = 0; searchGridRowIndex < searchGrid.Rows; searchGridRowIndex++)
+                    while (searchGridRowIndex < searchGrid.Rows)
                     {
-                        for (int searchGridColIndex = 0; searchGridColIndex < searchGrid.Columns; searchGridColIndex++)
-                        {
-                            
-                        }
+                        
                     }
-
+                    currentColIndex += searchGrid.Columns;
                 }
-                Console.WriteLine();
+
+                currentRowIndex += searchGrid.Rows;
             }
             //for (int currentRow = 0; currentRow < grid.Rows; currentRow++)
             //{
