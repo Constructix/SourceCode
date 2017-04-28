@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using MyCodeCamp.Data.Entities;
 
 namespace MyCodeCamp.Models
@@ -13,16 +14,12 @@ namespace MyCodeCamp.Models
                     opt => opt.MapFrom(camp => camp.EventDate))
                 .ForMember(c => c.EndDate,
                     opt => opt.ResolveUsing(camp => camp.EventDate.AddDays(camp.Length - 1)))
-                .ForMember(c => c.URl, 
-                    opt => opt.ResolveUsing((camp, model, unused, ctx)=>
-                        {
-                            var url = (IUrlHelper) ctx.Items["UrlHelper"];
-                            return url.Link("CampGet", new {id=camp.Id});
-                        }
-                    ));
-
-
-
+                .ForMember(c => c.URl,
+                    opt => opt.ResolveUsing<CampUrlResolver>())
+                .ReverseMap()
+                .ForMember(m => m.EventDate, opt => opt.MapFrom(model => model.StartDate))
+                .ForMember(m => m.Length,
+                    opt => opt.ResolveUsing(model => (model.EndDate - model.StartDate).Days + 1));
         }
     }
 }

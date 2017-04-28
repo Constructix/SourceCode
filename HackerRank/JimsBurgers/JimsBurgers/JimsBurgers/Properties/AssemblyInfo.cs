@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PipelineDesignPattern.Tests")]
+[assembly: AssemblyTitle("ConsoleApp1")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PipelineDesignPattern.Tests")]
+[assembly: AssemblyProduct("ConsoleApp1")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,11 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-<<<<<<< HEAD
-[assembly: Guid("7fe5b4fb-8183-4adb-b709-5ae9776592df")]
-=======
-[assembly: Guid("e4daf920-f0fd-4b41-9e15-0bf956d6c3f5")]
->>>>>>> 59d14908c9a97ee19689daf7eefa6ea22225810b
+[assembly: Guid("56b1be5b-53bb-47cd-8ef5-a9d1fb9c07ea")]
 
 // Version information for an assembly consists of the following four values:
 //
