@@ -1,3 +1,24 @@
+<<<<<<< HEAD
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Xunit;
+
+namespace PipelineDesignPattern.Tests
+{
+    public class PipelineManagerTests
+    {
+
+        [Fact]
+        public void PipelineManagerInstanceCreated()
+        {
+            var pipelineManager = new PipeLineManager();
+            Assert.NotNull(pipelineManager);
+        }
+    }
+}
+=======
 ﻿using PipelineDesignPattern.Engine;
 using Xunit;
 using Xunit.Abstractions;
@@ -44,3 +65,4 @@ namespace PipelineDesignPattern.Tests
 
 
 }
+>>>>>>> 59d14908c9a97ee19689daf7eefa6ea22225810b

@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
+<<<<<<< HEAD
+VisualStudioVersion = 15.0.26228.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipelineDesignPattern.Tests", "PipelineDesignPattern.Tests\PipelineDesignPattern.Tests.csproj", "{7FE5B4FB-8183-4ADB-B709-5AE9776592DF}"
+=======
 VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipelineDesignPattern.Tests", "PipelineDesignPattern.Tests\PipelineDesignPattern.Tests.csproj", "{E4DAF920-F0FD-4B41-9E15-0BF956D6C3F5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipelineDesignPattern.Engine", "PipelineDesignPattern.Engine\PipelineDesignPattern.Engine.csproj", "{48C61E22-EC47-4A19-82EB-DFB0202FC1A0}"
+>>>>>>> 59d14908c9a97ee19689daf7eefa6ea22225810b
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +19,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+<<<<<<< HEAD
+		{7FE5B4FB-8183-4ADB-B709-5AE9776592DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FE5B4FB-8183-4ADB-B709-5AE9776592DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FE5B4FB-8183-4ADB-B709-5AE9776592DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FE5B4FB-8183-4ADB-B709-5AE9776592DF}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
 		{E4DAF920-F0FD-4B41-9E15-0BF956D6C3F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E4DAF920-F0FD-4B41-9E15-0BF956D6C3F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4DAF920-F0FD-4B41-9E15-0BF956D6C3F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -21,6 +33,7 @@ Global
 		{48C61E22-EC47-4A19-82EB-DFB0202FC1A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48C61E22-EC47-4A19-82EB-DFB0202FC1A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48C61E22-EC47-4A19-82EB-DFB0202FC1A0}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> 59d14908c9a97ee19689daf7eefa6ea22225810b
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
