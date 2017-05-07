@@ -1,5 +1,0 @@
-﻿Build started ...
-D:\GitHub\HackerRank\GridSearch\Program.cs(55,13): warning CS0219: The variable 'previousRowFoundPos' is assigned but its value is never used 
-    GridSearch -> D:\GitHub\HackerRank\GridSearch\bin\Debug\GridSearch.exe
-    GridSearchTests -> D:\GitHub\HackerRank\GridSearchTests\bin\Debug\GridSearchTests.dll
-========== Build: 2 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
