@@ -159,7 +159,9 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\Pluralsight-AzureWebSite - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\ps-starter-Constructix - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Ps-StarterConstructix - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
