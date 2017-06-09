@@ -13,17 +13,12 @@ public static class ConsoleMain
 
 
         Aggregator.Publish(new OrderSelected { Order = newOrder });
-
-
-        
     }
 }
 
 public class SimpleEventAggregator : IEventAggregator
 {
-
-
-
+    // adding code here.
     public void Subscribe(object subscriber)
     {
 

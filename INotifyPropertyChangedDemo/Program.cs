@@ -19,6 +19,7 @@ namespace INotifyPropertyChangedDemo
             p.FirstName = "Bill";
 
             Console.WriteLine();
+            Console.ReadLine();
 
 
         }
