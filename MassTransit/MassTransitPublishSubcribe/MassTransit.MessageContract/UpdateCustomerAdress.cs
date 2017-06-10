@@ -1,11 +1,15 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.InteropServices;
 
 namespace MassTransit.MessageContract
 {
     public class UpdateCustomerAdress : IUpdateCustomerAddress
     {
+        [Key]
         public Guid CommandId { get; }
         public DateTime Timestamp { get; }
+        
         public string CustomerId { get; }
         public string HouseNumber { get; }
         public string Street { get; }
@@ -15,12 +19,15 @@ namespace MassTransit.MessageContract
 
         public UpdateCustomerAdress()
         {
-
+            this.Timestamp = DateTime.Now;
         }
 
-        public UpdateCustomerAdress(string customerId)
+        public UpdateCustomerAdress(Guid id, string customerId, DateTime timestamp)
         {
+            this.CommandId = id;
             this.CustomerId = customerId;
+            this.Timestamp = timestamp;
+
         }
 
         public UpdateCustomerAdress(Guid commandId, DateTime timestamp, string customerId, string houseNumber, string street, string city, string state, string postalCode)

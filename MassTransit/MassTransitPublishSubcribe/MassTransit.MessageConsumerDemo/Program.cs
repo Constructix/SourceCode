@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using MassTransit.Data;
 using MassTransit.MessageContract;
 
 namespace MassTransit.MessageConsumerDemo
@@ -55,19 +58,38 @@ namespace MassTransit.MessageConsumerDemo
 
     public class UpdateCustomerConsumer : IConsumer<IUpdateCustomerAddress>
     {
+
+        public UpdateCustomerConsumer()
+        {
+           
+        }
+
+
         public async Task Consume(ConsumeContext<IUpdateCustomerAddress> context)
         {
-            await Console.Out.WriteLineAsync($"Updating customer: {context.Message.CustomerId}");
+            // Mapping from Message object to a DTO to go here.
+            AddressDetails addressDetails = new AddressDetails { Id = context.Message.CommandId,
+                                                                 CustomerId = context.Message.CustomerId,
+                                                                 Created = context.Message.Timestamp};
 
+            using (MassTransitContext _db = new MassTransitContext())
+            {
+                _db.AddressDetails.Add(addressDetails);
+                _db.SaveChanges();
+            }
+
+            await Console.Out.WriteLineAsync($"Updating customer: {context.Message.CommandId}");
+           
             // write to file for test purpose.
             DateTime currentDateTimeReceived = DateTime.Now;
             StringBuilder resultBuilder = new StringBuilder();
             resultBuilder.AppendLine();
-            resultBuilder.AppendFormat($"Received: {currentDateTimeReceived.ToString()} CustomerId: {context.Message.CustomerId}");
+            resultBuilder.AppendFormat($"Received: {currentDateTimeReceived.ToString()} Id: {context.Message.CommandId} CustId: {context.Message.CustomerId}");
 
             System.IO.File.AppendAllText(@"D:\Temp\RabbitMQDemo.txt", resultBuilder.ToString());
 
-            // updating customer code here.......
+
+            
         }
     }
 

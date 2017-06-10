@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +9,10 @@ namespace MassTransit.MessageContract
 {
     public interface IUpdateCustomerAddress
     {
+        [Key]
         Guid CommandId { get; }
         DateTime Timestamp { get; }
+        
         string CustomerId { get; }
         string HouseNumber { get; }
         string Street { get; }

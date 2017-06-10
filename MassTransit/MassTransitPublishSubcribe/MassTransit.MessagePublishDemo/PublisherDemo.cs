@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,8 +18,8 @@ namespace MassTransit.MessagePublishDemo
             {
                 var host = cfg.Host(new Uri("rabbitmq://localhost/"), h =>
                 {
-                    h.Username("guest");
-                    h.Password("guest");
+                    h.Username(ConfigurationManager.AppSettings["UserId"]);
+                    h.Password(ConfigurationManager.AppSettings["Password"]);
                 });
             });
             busControl.Start();
@@ -29,7 +30,7 @@ namespace MassTransit.MessagePublishDemo
             for (int i = 0; i < 100; i++)
             {
                 var id = r.Next(1000, 9999).ToString();
-                var customerAddressData = new UpdateCustomerAdress(id);
+                var customerAddressData = new UpdateCustomerAdress(Guid.NewGuid(),  id, DateTime.Now);
                 Console.WriteLine($"Sending new customer Id value : {id}");
                 publisher.Send(busControl, customerAddressData);
                 System.Threading.Thread.Sleep(500);
