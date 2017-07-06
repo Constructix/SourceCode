@@ -55,6 +55,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ElectricityReading.cs" />
+    <Compile Include="ReadingTestings.cs" />
+    <Compile Include="Tariff.cs" />
+    <Compile Include="TariffTests.cs" />
     <Compile Include="TestHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
