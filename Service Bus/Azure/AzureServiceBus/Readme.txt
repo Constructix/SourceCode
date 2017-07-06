@@ -1,0 +1,1 @@
+Endpoint=sb://constructixonlineservices.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=663cqcIQtlczP/GPUkO4RKNHH4nwTxPBJQvDRCUdXCQ=

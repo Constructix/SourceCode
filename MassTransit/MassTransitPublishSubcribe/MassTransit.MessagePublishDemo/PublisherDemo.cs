@@ -31,7 +31,7 @@ namespace MassTransit.MessagePublishDemo
             {
                 var id = r.Next(1000, 9999).ToString();
                 var customerAddressData = new UpdateCustomerAdress(Guid.NewGuid(),  id, DateTime.Now);
-                Console.WriteLine($"Sending new customer Id value : {id}");
+                Console.WriteLine($"Sending new customer Id value : {customerAddressData.CustomerId}");
                 publisher.Send(busControl, customerAddressData);
                 System.Threading.Thread.Sleep(500);
             }

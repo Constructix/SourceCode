@@ -4,12 +4,13 @@ using System.Linq;
 
 public class Program
 {
-    public static void Main()
+    public static void Main(string[] args)
     {
-        int[,] matrix = new int[,] { { 2, 1, 1, 1, 1, 1, 3, 4 }, { 5, 6, 7, 8, 5, 6, 7, 8 }, { 2, 2, 2, 2, 2, 2, 2, 2 } };
-        int[,] search = new int[,] { { 2, 3, 4 }, { 6, 7, 8 }, { 2, 2, 2 } };
-        int[,] temp = new int[search.GetLength(0), search.GetLength(1)];
+        Console.WriteLine($"Number of arguements: {args.Length}");
 
+        int[,] matrix = new int[,] { { 2, 1, 1, 1, 1, 1, 3, 4 }, { 5, 6, 7, 8, 5, 6, 7, 8 }, { 2, 2, 2, 2, 2, 2, 2, 2 } };
+        int[,] search = new int[,] { { 1, 3, 4 }, { 6, 7, 8 }, { 2, 2, 2 } };
+        int[,] temp = new int[search.GetLength(0), search.GetLength(1)];
 
         List<Position> _positions = new List<Position>();
         // prescan
@@ -21,6 +22,7 @@ public class Program
             temp = new int[search.GetLength(0), search.GetLength(1)];
             bool isValid = false;
             int index = 0;
+
             while (index < _positions.Count)
             {
                 var currentPosition = _positions[index];
@@ -37,7 +39,6 @@ public class Program
                         if (startRow < matrix.GetLength(0) && startCol < matrix.GetLength(1))
                         {
                             temp[currentX, currentY] = matrix[startRow, startCol];
-                            
                         }
                         currentY++;
                         startCol++;
@@ -53,7 +54,6 @@ public class Program
                     index++;
                 else
                     break;
-
             }
 
             Console.WriteLine(isValid);
@@ -68,7 +68,7 @@ public class Program
             {
                 if (matrix[row, col] == search[0, 0])
                 {
-                    _positions.Add(new Position {Row = row, Col = col});
+                    _positions.Add(new Position { Row = row, Col = col });
                 }
             }
         }
@@ -84,7 +84,6 @@ public class Program
             }
             Console.WriteLine();
         }
-
     }
 
     public static bool IsValid(int[,] search, int[,] temp)
@@ -104,9 +103,6 @@ public class Program
         }
         return isValid;
     }
-
-
-
 }
 
 public class Position

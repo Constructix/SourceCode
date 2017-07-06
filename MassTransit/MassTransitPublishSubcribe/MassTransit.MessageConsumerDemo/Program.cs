@@ -42,17 +42,17 @@ namespace MassTransit.MessageConsumerDemo
         }
     }
 
-    public class SendCustomeerDetailsPublisher
-    {
-        public async void Send(IBusControl bus, IUpdateCustomerAddress addressDetails)
-        {
+    //public class SendCustomeerDetailsPublisher
+    //{
+    //    public async void Send(IBusControl bus, IUpdateCustomerAddress addressDetails)
+    //    {
 
          
 
 
-             await bus.Publish<IUpdateCustomerAddress>(addressDetails);
-        }
-    }
+    //         await bus.Publish<IUpdateCustomerAddress>(addressDetails);
+    //    }
+    //}
 
 
 
