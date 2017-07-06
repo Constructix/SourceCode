@@ -125,10 +125,18 @@ namespace UnitTestWriting
         [Fact]
         public void TariffInstanceCreated()
         {
-            Tariff tariff = new Tariff();
+            Tariff tariff = new Tariff(.235m);
             Assert.NotNull(tariff);
         }
 
+        [Fact]
+        public void InvalidRateAmountLessThanZero()
+        {
+           Exception ex =  Assert.Throws<Exception>(() =>  new Tariff(-2));
+
+            Assert.Equal(ex.Message, "Rate cannot be less than zero.");
+
+        }
         
     }
 
@@ -139,7 +147,7 @@ namespace UnitTestWriting
 
         public Tariff(decimal rate)
         {
-            _rate = rate;
+            Rate = rate;
         }
 
         public decimal Rate
@@ -148,8 +156,8 @@ namespace UnitTestWriting
             set
             {
 
-                if(value < 0m)
-                    throw new  Exception("Rate cannot be less than");
+                if(value < 0.00m)
+                    throw new  Exception("Rate cannot be less than zero.");
 
                 _rate = value;
             }
