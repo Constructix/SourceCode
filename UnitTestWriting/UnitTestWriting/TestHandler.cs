@@ -119,6 +119,43 @@ namespace UnitTestWriting
         }
     }
 
+
+    public class TariffTests
+    {
+        [Fact]
+        public void TariffInstanceCreated()
+        {
+            Tariff tariff = new Tariff();
+            Assert.NotNull(tariff);
+        }
+
+        
+    }
+
+
+    public class Tariff
+    {
+        private decimal _rate;
+
+        public Tariff(decimal rate)
+        {
+            _rate = rate;
+        }
+
+        public decimal Rate
+        {
+            get { return _rate; }
+            set
+            {
+
+                if(value < 0m)
+                    throw new  Exception("Rate cannot be less than");
+
+                _rate = value;
+            }
+        }
+    }
+
     public class ElectricityReading
     {
         private int _value;
