@@ -95,6 +95,17 @@ namespace UnitTestWriting
             Exception ex = Assert.Throws<Exception>(() => new ElectricityReading(-1));
             Assert.Equal(ex.Message, "Value cannot be less than zero.");
         }
+
+        [Fact]
+        public void AddingAnotherTest()
+        {
+            int value1 = 1;
+            int value2 = 2;
+
+            int result = value1 + value2;
+
+            Assert.True(result == 3);
+        }
     }
 
     public class ElectricityReading
