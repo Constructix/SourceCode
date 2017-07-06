@@ -55,9 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ElectricityReading.cs" />
     <Compile Include="ReadingTestings.cs" />
-    <Compile Include="Tariff.cs" />
     <Compile Include="TariffTests.cs" />
     <Compile Include="TestHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +66,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Constructix.Electricity\Constructix.Electricity.csproj">
+      <Project>{c39addb4-6aff-4856-b48e-4fdae1209049}</Project>
+      <Name>Constructix.Electricity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

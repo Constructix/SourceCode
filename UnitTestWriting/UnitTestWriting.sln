@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestWriting", "UnitTestWriting\UnitTestWriting.csproj", "{5E84CE90-59B3-41D1-ABF6-9C9E83231F00}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constructix.Electricity", "Constructix.Electricity\Constructix.Electricity.csproj", "{C39ADDB4-6AFF-4856-B48E-4FDAE1209049}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5E84CE90-59B3-41D1-ABF6-9C9E83231F00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E84CE90-59B3-41D1-ABF6-9C9E83231F00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E84CE90-59B3-41D1-ABF6-9C9E83231F00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C39ADDB4-6AFF-4856-B48E-4FDAE1209049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C39ADDB4-6AFF-4856-B48E-4FDAE1209049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C39ADDB4-6AFF-4856-B48E-4FDAE1209049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C39ADDB4-6AFF-4856-B48E-4FDAE1209049}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

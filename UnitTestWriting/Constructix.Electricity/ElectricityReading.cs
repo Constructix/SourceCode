@@ -1,6 +1,6 @@
 using System;
 
-namespace UnitTestWriting
+namespace Constructix.Electricity
 {
     public class ElectricityReading
     {

@@ -1,4 +1,5 @@
 ﻿using System;
+using Constructix.Electricity;
 using Xunit;
 
 namespace UnitTestWriting
