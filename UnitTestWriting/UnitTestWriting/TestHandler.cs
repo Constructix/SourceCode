@@ -137,7 +137,14 @@ namespace UnitTestWriting
             Assert.Equal(ex.Message, "Rate cannot be less than zero.");
 
         }
-        
+        [Fact]
+        public void InvalidRateAmountLessEqualsZero()
+        {
+            Exception ex = Assert.Throws<Exception>(() => new Tariff(0));
+
+            Assert.Equal(ex.Message, "Rate cannot be zero.");
+
+        }
     }
 
 
@@ -158,7 +165,8 @@ namespace UnitTestWriting
 
                 if(value < 0.00m)
                     throw new  Exception("Rate cannot be less than zero.");
-
+                if(value == 0.00m)
+                    throw new Exception("Rate cannot be zero.");
                 _rate = value;
             }
         }
