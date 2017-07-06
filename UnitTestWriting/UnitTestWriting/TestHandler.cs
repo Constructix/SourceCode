@@ -14,13 +14,13 @@ namespace UnitTestWriting
 {
 
 
-    public class Class1
+    public class TestHandler
     {
         private TraceListener[] listeners = new TraceListener[] {new TextWriterTraceListener(Console.Out)};
 
         
 
-        public Class1()
+        public TestHandler()
         {
             Debug.Listeners.AddRange(listeners);
             
@@ -29,6 +29,17 @@ namespace UnitTestWriting
 
         [Fact]
         public void AddNumbers()
+        {
+            int number1 = 2;
+            int number2 = 2;
+
+            int result = number1 + number2;
+
+            Assert.True(result == 4);
+        }
+
+        [Fact]
+        public void YetAnotherTestToAddNumbers()
         {
             int number1 = 2;
             int number2 = 2;
