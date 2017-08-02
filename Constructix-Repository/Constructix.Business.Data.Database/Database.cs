@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Security.Permissions;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using Constructix.Business.Data.Entities;
 
 namespace Constructix.Business.Data.Database
@@ -16,8 +10,6 @@ namespace Constructix.Business.Data.Database
         public DbSet<OrderItem> OrderItems { get; set; }
 
         public DbSet<Supplier> Suppliers { get; set; }
-        
-        
 
         public Database() : base("DataServices")
         {
