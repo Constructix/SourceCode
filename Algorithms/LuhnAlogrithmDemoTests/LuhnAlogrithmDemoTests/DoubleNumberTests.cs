@@ -14,10 +14,12 @@ namespace LuhnAlogrithmDemo
     {
 
         private Xunit.Abstractions.ITestOutputHelper _helper;
+        private readonly LuhnTests _luhnTests;
 
         public DoubleNumberTests(ITestOutputHelper helper)
         {
             _helper = helper;
+            _luhnTests = new LuhnTests();
         }
 
         [Fact]
@@ -62,6 +64,7 @@ namespace LuhnAlogrithmDemo
             }
             Assert.Equal(testArray.Reverse(), expectedResult);
         }
+
 
         public void WriteLine(string message)
         {

@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DoubleNumberTests.cs" />
+    <Compile Include="Luhn.cs" />
+    <Compile Include="LuhnTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
