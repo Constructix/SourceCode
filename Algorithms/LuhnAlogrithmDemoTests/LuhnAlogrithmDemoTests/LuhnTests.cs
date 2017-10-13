@@ -15,8 +15,7 @@ namespace LuhnAlogrithmDemo
         ]
         public void LuhnAlgorithm(string inputNumber, bool expectedResult)
         {
-            var result = Luhn.Check(inputNumber);
-            Assert.True(expectedResult == result);
+            Assert.True(expectedResult == Luhn.Check(inputNumber));
         }
     }
 }
