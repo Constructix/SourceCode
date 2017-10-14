@@ -23,9 +23,12 @@ namespace LuhnAlogrithmDemo
                 tempValues[index] = currentValue;
                 if (counter % 2 == 0)
                 {
-                    tempValues[index] *= 2;
-                    if (tempValues[index] > 9)
-                        tempValues[index] -= 9;
+                    const int MultiplyFactory = 2;
+
+                    tempValues[index] *= MultiplyFactory;
+                    const int Numerator = 9;
+                    if (tempValues[index] > Numerator)
+                        tempValues[index] -= Numerator;
                 }
                 counter++;
             }
