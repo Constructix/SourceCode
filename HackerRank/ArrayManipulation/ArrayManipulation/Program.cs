@@ -46,7 +46,7 @@ namespace ConsoleApp1
             }
             int arraySize = 0;
             int numberOfLines = 0;
-
+            int largestValue = -1;
             string[] parameters = Console.ReadLine().Split(' ');
             bool validData = false;
 
@@ -70,11 +70,13 @@ namespace ConsoleApp1
                             for (int index = a - 1; index <= (b - 1); index++)
                             {
                                 array[index] += k;
+                                if (array[index] >= largestValue)
+                                    largestValue = array[index];
                             }
                         }
                     }
                     if (validData)
-                        PrintArray(array);
+                        Console.WriteLine(largestValue);
                     else
                     {
                         throw new Exception("Invalid Data encountered in input supplied.");
@@ -83,11 +85,6 @@ namespace ConsoleApp1
             }
         }
 
-        private static void PrintArray(int[] array)
-        {
-
-            int maxValueInArray = array.Max();
-            Console.WriteLine(maxValueInArray);
-        }
+       
     }
 }
