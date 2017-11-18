@@ -14,29 +14,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             FindLargetValueInArray(args);
-
-            StringBuilder builder = new StringBuilder();
-
-            Random r = new Random((int) DateTime.Now.Ticks);
-            
-            int arraySize = CreateArraySize();
-            int numberOfLines = CreateLines();
-            builder.AppendLine($"{arraySize} {numberOfLines}");
-            Console.WriteLine(builder.ToString());
         }
-
-        private static int CreateLines()
-        {
-            Random r = new Random((int)DateTime.Now.Ticks);
-            return r.Next(3, MaxLines);
-        }
-
-        private static int CreateArraySize()
-        {
-            Random r = new Random((int)DateTime.Now.Ticks);
-            return r.Next(1, MaxArraySize);
-        }
-
         private static void FindLargetValueInArray(string[] args)
         {
             if (args.Length == 1)
@@ -44,43 +22,38 @@ namespace ConsoleApp1
                 TextReader reader = File.OpenText(args[0]);
                 Console.SetIn(reader);
             }
-            int arraySize = 0;
-            int numberOfLines = 0;
-
+            long arraySize = 0;
+            long numberOfLines = 0;
+            long max = 0;
             string[] parameters = Console.ReadLine().Split(' ');
+            long.TryParse(parameters[0], out arraySize);
+            long.TryParse(parameters[1], out numberOfLines);
+
             bool validData = false;
-
-
-            if (validData = (int.TryParse(parameters[0], out arraySize) && int.TryParse(parameters[1], out numberOfLines)))
+            long [] array = new long[arraySize + 1];
+            for (int currentLineIndex = 0; currentLineIndex < numberOfLines; currentLineIndex++)
             {
-                if (numberOfLines >= 3)
-                {
-                    int[] array = new int[arraySize];
-                    for (int currentLineIndex = 0; currentLineIndex < numberOfLines; currentLineIndex++)
-                    {
-                        int a = 0;
-                        int b = 0;
-                        int k = 0;
+                long a = 0;
+                long b = 0;
+                long k = 0;
 
-                        string[] arrayParameters = Console.ReadLine().Split(' ');
-                        if (validData = (int.TryParse(arrayParameters[0], out a) &&
-                                         int.TryParse(arrayParameters[1], out b) &&
-                                         int.TryParse(arrayParameters[2], out k)))
-                        {
-                            for (int index = a - 1; index <= (b - 1); index++)
-                            {
-                                array[index] += k;
-                            }
-                        }
-                    }
-                    if (validData)
-                        PrintArray(array);
-                    else
-                    {
-                        throw new Exception("Invalid Data encountered in input supplied.");
-                    }
-                }
+                string[] arrayParameters = Console.ReadLine().Split(' ');
+                long.TryParse(arrayParameters[0], out a);
+                long.TryParse(arrayParameters[1], out b);
+                long.TryParse(arrayParameters[2], out k);
+                array[a] += k;
+                if ((b + 1) <= arraySize)
+                    array[b + 1] -= k;
+                    
             }
+            long sum = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                sum +=  array[i];
+                if (max < sum)
+                    max = sum;
+            }
+            Console.WriteLine(max);
         }
 
         private static void PrintArray(int[] array)
