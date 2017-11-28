@@ -43,7 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChargesManager.cs" />
     <Compile Include="Charges\Charge.cs" />
+    <Compile Include="Helpers\ExtenstionHelpers.cs" />
+    <Compile Include="Header.cs" />
+    <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="TariffsModule.cs" />
     <Compile Include="Tariffs\Implementators\ElectricityTariff.cs" />
     <Compile Include="Tariffs\Implementators\HotWaterTariff.cs" />

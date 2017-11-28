@@ -5,16 +5,6 @@ using ConsoleApp1.Charges;
 
 namespace ConsoleApp1
 {
-
-    public static class Helpers
-    {
-        public static decimal TotalCosts(this List<Charge> charges, int numberOfDays)
-        {
-            var total = charges.Where(x=>x.IsDailyCharge).Sum(x => x.Rate * numberOfDays);
-            return total;
-        }
-    }
-
     class Program
     {
         static void Main(string[] args)
@@ -73,8 +63,6 @@ namespace ConsoleApp1
 
         private static void TestResult(ReadingCalculator calculator, ElectricityMeter meter )
         {
-           
-
             var firstReading = meter.Readings.First();
             var secondReading = meter.Readings.Last();
 
@@ -121,19 +109,8 @@ namespace ConsoleApp1
             Readings = new List<Reading>();
         }
     }
-
-  
-
     public class ElectricityMeter : BaseMeter
     {
-    }
-}
-
-public static class ExtenstionHelpers
-{
-    public static void Dump<T>(this T instance)
-    {
-         Console.WriteLine(instance);
     }
 }
 
