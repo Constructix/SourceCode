@@ -10,7 +10,7 @@ namespace ConsoleApp1
     {
         public static decimal TotalCosts(this List<Charge> charges, int numberOfDays)
         {
-            var total = charges.Sum(x => x.Rate * numberOfDays);
+            var total = charges.Where(x=>x.IsDailyCharge).Sum(x => x.Rate * numberOfDays);
             return total;
         }
     }
@@ -41,6 +41,7 @@ namespace ConsoleApp1
             TariffsModule.Run();
 
 
+            // charges Module
 
             var charges = new List<Charge> { new Charge("Metering Capital Charge", .8957m, DateTime.Parse("01/01/2017"), null)};
 
@@ -52,7 +53,8 @@ namespace ConsoleApp1
 
             Console.WriteLine(total2);
 
-
+            Console.WriteLine();
+            Console.WriteLine($"Total Charges for this period: {ChargesManager.CalculateCharges(90)}");
         }
 
         private static void AddReadings(ElectricityMeter electricityMeter)
