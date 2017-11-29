@@ -10,6 +10,8 @@ namespace ConsoleApp1
         {
             var charges = InitialiseCharges();
 
+
+             
             return charges.TotalCosts(days);
         }
 

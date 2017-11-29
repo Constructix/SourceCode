@@ -45,6 +45,14 @@ namespace ConsoleApp1
 
             Console.WriteLine();
             Console.WriteLine($"Total Charges for this period: {ChargesManager.CalculateCharges(90)}");
+
+            DateTime lastRecordingDateTime = DateTime.Parse("14/09/2017");
+            DateTime currentDateTime = DateTime.Today;
+
+            Console.WriteLine($"Number of days { currentDateTime.Subtract(lastRecordingDateTime).Days}");
+            decimal totalCharges = ChargesManager.CalculateCharges(currentDateTime.Subtract(lastRecordingDateTime).Days + 1);
+            Console.WriteLine($"Total Charges: {totalCharges}");
+
         }
 
         private static void AddReadings(ElectricityMeter electricityMeter)

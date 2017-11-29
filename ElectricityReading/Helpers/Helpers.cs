@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using ConsoleApp1.Charges;
 
@@ -8,8 +9,8 @@ namespace ConsoleApp1
     {
         public static decimal TotalCosts(this List<Charge> charges, int numberOfDays)
         {
-            var total = charges.Where(x=>x.IsDailyCharge).Sum(x => x.Rate * numberOfDays);
-            return total;
+            return charges.Where(x=>x.IsDailyCharge).Sum(x => x.Rate * numberOfDays);
+            
         }
     }
 }
