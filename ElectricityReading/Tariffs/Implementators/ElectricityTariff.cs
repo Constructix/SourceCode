@@ -5,7 +5,6 @@ namespace ConsoleApp1.Tariffs.Implementators
 {
     public class ElectricityTariff :  BaseTariff//ITariff
     {
-        private const string TariffName = "Electricity";
         public ElectricityTariff(decimal rate, DateTime effectiveFrom, DateTime? effectiveTo, bool isDayCharge = false) : base(rate, effectiveFrom, effectiveTo, isDayCharge)
         {
             
