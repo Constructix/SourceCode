@@ -52,6 +52,7 @@
     <Compile Include="Tariffs\Implementators\ElectricityTariff.cs" />
     <Compile Include="Tariffs\Implementators\HotWaterTariff.cs" />
     <Compile Include="Tariffs\Implementators\SolarTariff.cs" />
+    <Compile Include="Tariffs\Implementators\BaseTariff.cs" />
     <Compile Include="Tariffs\Interface\ITariff.cs" />
     <Compile Include="Validators\IValidator.cs" />
     <Compile Include="Program.cs" />

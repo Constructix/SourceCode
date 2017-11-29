@@ -17,9 +17,9 @@ namespace ConsoleApp1
             PrintTariffs(tariffs);
         }
 
-        private static List<ITariff> InitialiseTariffs()
+        private static List<BaseTariff> InitialiseTariffs()
         {
-            List<ITariff> tariffs = new List<ITariff>();
+            List<BaseTariff> tariffs = new List<BaseTariff>();
             decimal firstRate = 0.24m;
             var tariff = new ElectricityTariff(firstRate,
                 DateTime.Parse("01/01/2017"),
@@ -35,7 +35,7 @@ namespace ConsoleApp1
             return tariffs;
         }
 
-        static void PrintTariffs(List<ITariff> tariffs)
+        static void PrintTariffs(List<BaseTariff> tariffs)
         {
             const string TARIFF_DETAILS = "Tariff Details";
             const char LINE = '-';
@@ -43,7 +43,7 @@ namespace ConsoleApp1
             Console.WriteLine(new String(LINE, 80));
             Console.WriteLine("{0,-10}{1,-20}{2,-20}{3,-20}", Header.Tariff.Rate, Header.Tariff.EffectiveFrom, Header.Tariff.EffectiveTo, Header.Tariff.Name);
 
-            foreach (ITariff tariff in tariffs)
+            foreach (BaseTariff tariff in tariffs)
             {
                 Console.WriteLine("{0,-10}{1,-20}{2,-20}{3,-20}", tariff.Rate, tariff.EffectiveFrom.ToShortDateString(), tariff.EffectiveTo.GetValueOrDefault().ToShortDateString(), tariff.ToString());
             }
