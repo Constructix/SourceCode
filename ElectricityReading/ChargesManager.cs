@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using ConsoleApp1.Charges;
+using Constructix.Home.Electricity.Charges;
+using Constructix.Home.Electricity.Helpers;
 
-namespace ConsoleApp1
+namespace Constructix.Home.Electricity
 {
     public class ChargesManager
     {

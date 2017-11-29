@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ConsoleApp1.Charges;
+using Constructix.Home.Electricity.Calculators;
+using Constructix.Home.Electricity.Charges;
+using Constructix.Home.Electricity.Helpers;
+using Constructix.Home.Electricity.Validators;
 
-namespace ConsoleApp1
+namespace Constructix.Home.Electricity
 {
     class Program
     {

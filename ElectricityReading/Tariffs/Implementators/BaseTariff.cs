@@ -1,6 +1,7 @@
 ﻿using System;
+using Constructix.Home.Electricity.Tariffs.Interface;
 
-namespace ConsoleApp1.Tariffs.Interface
+namespace Constructix.Home.Electricity.Tariffs.Implementators
 {
     public abstract class BaseTariff : ITariff
     {
@@ -9,7 +10,7 @@ namespace ConsoleApp1.Tariffs.Interface
         public DateTime? EffectiveTo { get; private set; }
         public bool IsDayCharge { get; private set; }
 
-        public BaseTariff(decimal rate, DateTime effectiveFrom, DateTime? effectiveTo, bool isDayCharge)
+        protected BaseTariff(decimal rate, DateTime effectiveFrom, DateTime? effectiveTo, bool isDayCharge)
         {
             this.Rate = rate;
             this.EffectiveFrom = effectiveFrom;

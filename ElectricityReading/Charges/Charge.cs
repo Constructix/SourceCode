@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConsoleApp1.Charges
+namespace Constructix.Home.Electricity.Charges
 {
     public class Charge
     {

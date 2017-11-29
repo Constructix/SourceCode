@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1
+﻿namespace Constructix.Home.Electricity
 {
     public static class Header
     {

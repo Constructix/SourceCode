@@ -1,7 +1,6 @@
 ﻿using System;
-using ConsoleApp1.Tariffs.Interface;
 
-namespace ConsoleApp1.Tariffs.Implementators
+namespace Constructix.Home.Electricity.Tariffs.Implementators
 {
     public class ElectricityTariff :  BaseTariff//ITariff
     {

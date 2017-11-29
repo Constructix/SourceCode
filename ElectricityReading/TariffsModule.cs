@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using ConsoleApp1.Tariffs.Implementators;
-using ConsoleApp1.Tariffs.Interface;
+using Constructix.Home.Electricity.Tariffs.Implementators;
 
-namespace ConsoleApp1
+namespace Constructix.Home.Electricity
 {
     internal class TariffsModule
     {

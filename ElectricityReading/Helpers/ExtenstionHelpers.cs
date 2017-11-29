@@ -1,9 +1,12 @@
 ﻿using System;
 
-public static class ExtenstionHelpers
+namespace Constructix.Home.Electricity.Helpers
 {
-    public static void Dump<T>(this T instance)
+    public static class ExtenstionHelpers
     {
-        Console.WriteLine(instance);
+        public static void Dump<T>(this T instance)
+        {
+            Console.WriteLine(instance);
+        }
     }
 }

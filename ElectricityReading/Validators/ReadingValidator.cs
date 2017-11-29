@@ -1,5 +1,8 @@
-﻿public class ReadingValidator : IValidator
+﻿namespace Constructix.Home.Electricity.Validators
 {
-    public bool IsValid(Reading firstReading, Reading secondReading) => (secondReading.Value >= firstReading.Value);
+    public class ReadingValidator : IValidator
+    {
+        public bool IsValid(Reading firstReading, Reading secondReading) => (secondReading.Value >= firstReading.Value);
     
+    }
 }

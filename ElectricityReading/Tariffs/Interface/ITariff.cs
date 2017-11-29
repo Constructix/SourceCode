@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConsoleApp1.Tariffs.Interface
+namespace Constructix.Home.Electricity.Tariffs.Interface
 {
     public interface ITariff
     {

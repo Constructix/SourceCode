@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using ConsoleApp1.Charges;
+using Constructix.Home.Electricity.Charges;
 
-namespace ConsoleApp1
+namespace Constructix.Home.Electricity.Helpers
 {
     public static class Helpers
     {
