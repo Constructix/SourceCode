@@ -11,5 +11,10 @@ namespace Constructix.Home.Electricity
             this.Value = value;
             this.Recorded = recorded;
         }
+
+        public Reading()
+        {
+            
+        }
     }
 }

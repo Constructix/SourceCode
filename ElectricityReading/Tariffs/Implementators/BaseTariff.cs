@@ -9,6 +9,7 @@ namespace Constructix.Home.Electricity.Tariffs.Implementators
         public DateTime EffectiveFrom { get; private set; }
         public DateTime? EffectiveTo { get; private set; }
         public bool IsDayCharge { get; private set; }
+        
 
         protected BaseTariff(decimal rate, DateTime effectiveFrom, DateTime? effectiveTo, bool isDayCharge)
         {

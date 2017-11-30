@@ -1,7 +1,7 @@
 ﻿namespace Constructix.Home.Electricity.Validators
 {
-    public interface IValidator
+    public  interface IValidator<T> where T :  class, new()
     {
-        bool IsValid(Reading firstReading, Reading secondReading);
+       bool IsValid(T firstInstance, T secondInstance);
     }
 }

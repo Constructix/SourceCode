@@ -8,6 +8,6 @@ namespace Constructix.Home.Electricity.Tariffs.Implementators
         {
             
         }
-        public override string ToString() => this.GetType().Name.Substring(0,(this.GetType().Name.Length -  6));
+        public override string ToString() => this.GetType().Name.Substring(0,(this.GetType().Name.Length -  Settings.TariffDescriptor.Length));
     }
 }

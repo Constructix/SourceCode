@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,6 +52,7 @@
     <Compile Include="TariffsModule.cs" />
     <Compile Include="Tariffs\Implementators\ElectricityTariff.cs" />
     <Compile Include="Tariffs\Implementators\HotWaterTariff.cs" />
+    <Compile Include="Tariffs\Implementators\Settings.cs" />
     <Compile Include="Tariffs\Implementators\SolarTariff.cs" />
     <Compile Include="Tariffs\Implementators\BaseTariff.cs" />
     <Compile Include="Tariffs\Interface\ITariff.cs" />
@@ -66,4 +68,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>echo Copying Executable to Github Output folder
+XCOPY /Y/V $(TargetPath) D:\"Github Output"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

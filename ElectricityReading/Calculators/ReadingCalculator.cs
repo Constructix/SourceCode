@@ -5,8 +5,8 @@ namespace Constructix.Home.Electricity.Calculators
     public class ReadingCalculator
     {
         private const int ZERO = 0;
-        private readonly IValidator _validator;
-        public ReadingCalculator(IValidator validator)
+        private readonly IValidator<Reading> _validator;
+        public ReadingCalculator(IValidator<Reading> validator)
         {
             this._validator = validator;
         }
