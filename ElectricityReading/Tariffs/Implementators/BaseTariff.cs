@@ -11,12 +11,15 @@ namespace Constructix.Home.Electricity.Tariffs.Implementators
         public bool IsDayCharge { get; private set; }
         
 
+
         protected BaseTariff(decimal rate, DateTime effectiveFrom, DateTime? effectiveTo, bool isDayCharge)
         {
             this.Rate = rate;
             this.EffectiveFrom = effectiveFrom;
             this.EffectiveTo = effectiveTo;
             this.IsDayCharge = IsDayCharge;
+
+
         }
     }
 }

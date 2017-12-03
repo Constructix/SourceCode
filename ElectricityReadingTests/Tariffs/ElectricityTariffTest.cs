@@ -12,9 +12,6 @@ using Xunit.Abstractions;
 
 namespace ElectricityReadingTests.Tariffs
 {
-
-    
-
     public class TariffTests
     {
         private ITestOutputHelper _consoleHelper;
@@ -28,11 +25,10 @@ namespace ElectricityReadingTests.Tariffs
         {
             List<BaseTariff> debitTariffs = new List<BaseTariff>
             {
-                new ElectricityTariff(.2461m, DateTime.Parse("01/01/2017"), DateTime.Parse("30/06/2017"), false),
+                new ElectricityTariff(.2461m, DateTime.Parse("01/01/2017"), 
+                                                DateTime.Parse("30/06/2017"), false),
                 new ElectricityTariff(.26m, DateTime.Parse("01/07/2017"),null, false)
             };
-
-
 
             var lastReading = new Reading(37660, DateTime.Parse("16/06/2017"));
             var newReading = new Reading(38820, DateTime.Parse("14/09/2017"));

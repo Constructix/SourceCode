@@ -35,17 +35,12 @@ namespace Constructix.Home.Electricity
 
 
             // charges Module
-
             var charges = new List<Charge> { new Charge("Metering Capital Charge", .8957m, DateTime.Parse("01/01/2017"), null)};
-
             var total = charges.Sum(x => x.Rate * 90);
-
             Console.WriteLine(total.ToString("c"));
-
             var total2 = charges.TotalCosts(90);
 
             Console.WriteLine(total2);
-
             Console.WriteLine();
             Console.WriteLine($"Total Charges for this period: {ChargesManager.CalculateCharges(90)}");
 

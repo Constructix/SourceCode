@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Constructix.Home.Electricity.Tariffs.Interface
 {
@@ -8,5 +9,6 @@ namespace Constructix.Home.Electricity.Tariffs.Interface
         DateTime EffectiveFrom { get; }
         DateTime? EffectiveTo { get; }
         bool IsDayCharge { get; }
+        
     }
 }
