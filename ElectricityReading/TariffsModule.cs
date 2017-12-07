@@ -19,15 +19,15 @@ namespace Constructix.Home.Electricity
             List<BaseTariff> tariffs = new List<BaseTariff>();
             decimal firstRate = 0.24m;
             var tariff = new ElectricityTariff(firstRate,
-                DateTime.Parse("01/01/2017"),
+                DateTime.Parse("01/07/2016"),
                 DateTime.Parse("30/06/2017"), false);
             tariffs.Add(tariff);
             tariffs.Add(new HotWaterTariff(.19m,
-                DateTime.Parse("01/01/2017"),
+                DateTime.Parse("01/07/2016"),
                 DateTime.Parse("30/06/2017")));
 
             tariffs.Add(new SolarTariff(rate: .52m,
-                effectiveFrom: DateTime.Parse("01/01/2017"),
+                effectiveFrom: DateTime.Parse("01/07/2016"),
                 effectiveTo: DateTime.Parse("30/06/2017"), isDayCharge: false));
             return tariffs;
         }

@@ -8,7 +8,7 @@ using Constructix.Home.Electricity.Validators;
 
 namespace Constructix.Home.Electricity
 {
-    class Program
+    class OldProgram
     {
         static void Main(string[] args)
         {

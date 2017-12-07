@@ -58,7 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadingCalculatorServiceTests.cs" />
     <Compile Include="Readings\ReadingTests.cs" />
+    <Compile Include="Readings\ReadingValidatorTests.cs" />
     <Compile Include="Tariffs\ElectricityTariffTest.cs" />
   </ItemGroup>
   <ItemGroup>
