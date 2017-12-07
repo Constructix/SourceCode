@@ -49,9 +49,12 @@
   <ItemGroup>
     <Compile Include="ChargesManager.cs" />
     <Compile Include="Charges\Charge.cs" />
+    <Compile Include="Domain Models\ReadingResult.cs" />
     <Compile Include="Helpers\ExtenstionHelpers.cs" />
     <Compile Include="Header.cs" />
     <Compile Include="Helpers\Helpers.cs" />
+    <Compile Include="Services\ReadingCalculatorService.cs" />
+    <Compile Include="Services\TariffService.cs" />
     <Compile Include="TariffsModule.cs" />
     <Compile Include="Tariffs\Implementators\ElectricityTariff.cs" />
     <Compile Include="Tariffs\Implementators\HotWaterTariff.cs" />
@@ -62,7 +65,7 @@
     <Compile Include="Validators\IValidator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reading.cs" />
+    <Compile Include="Domain Models\Reading.cs" />
     <Compile Include="Calculators\ReadingCalculator.cs" />
     <Compile Include="ReadingResult.cs" />
     <Compile Include="Validators\ReadingValidator.cs" />
