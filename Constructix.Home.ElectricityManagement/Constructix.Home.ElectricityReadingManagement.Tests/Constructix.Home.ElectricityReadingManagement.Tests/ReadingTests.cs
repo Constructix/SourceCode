@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Constructix.Home.ElectricityReadingManagement.Models;
+using Constructix.Home.ElectricityReadingManagement.Services;
+using Xunit;
+using Xunit.Abstractions;
+
+namespace Constructix.Home.ElectricityReadingManagement
+{
+    public class ReadingTests
+    {
+
+
+
+        private ITestOutputHelper _helper;
+
+        private Reading previousReading;
+        private Reading currentReading;
+
+        public ReadingTests(ITestOutputHelper helper)
+        {
+            _helper = helper;
+        }
+
+        [Theory]
+        [InlineData(37660, 40287)]
+        public void CalculateLastQuarter2017(int previousReadingValue, int currentReadingValue)
+        {
+            previousReading = new Reading(previousReadingValue, DateTime.Parse("14/09/2017"), TariffType.Electricity);
+            currentReading = new Reading(currentReadingValue, DateTime.Parse("10/12/2017 5:32 PM"), tariffType: TariffType.Electricity);
+
+
+            var result = ReadingCalculatorService.CalculateReadings(previousReading, currentReading);
+
+            _helper.WriteLine($"Total Usage: {result.TotalUsage.ToString()}");
+            _helper.WriteLine($"Total Days: {result.TotalDays.ToString()}");
+        }
+    }
+}
