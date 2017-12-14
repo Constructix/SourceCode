@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Constructix.Home.Electricity.Business.DomainModels.Billing;
 using Constructix.Home.Electricity.Business.DomainModels.Readings;
+using Constructix.Home.Electricity.Business.DomainModels.Services;
 using Constructix.Home.Electricity.Business.DomainModels.Tariffs.Implementors;
 using Constructix.Home.Electricity.Business.DomainModels.Tariffs.Interfaces;
 using Xunit;

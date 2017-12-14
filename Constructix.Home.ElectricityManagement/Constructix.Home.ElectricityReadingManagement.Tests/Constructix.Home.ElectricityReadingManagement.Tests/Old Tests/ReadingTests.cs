@@ -1,5 +1,6 @@
 ﻿using System;
 using Constructix.Home.Electricity.Business.DomainModels.Readings;
+using Constructix.Home.Electricity.Business.DomainModels.Services;
 using Constructix.Home.Electricity.Business.DomainModels.Tariffs.Implementors;
 using Xunit;
 using Xunit.Abstractions;
