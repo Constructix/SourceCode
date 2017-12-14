@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Constructix.Home.ElectricityReadingManagement.Models.Interfaces
+namespace Constructix.Home.Electricity.Business.DomainModels.Tariffs.Interfaces
 {
     public interface ITariff
     {

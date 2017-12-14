@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Constructix.Home.ElectricityReadingManagement.Models;
-using Constructix.Home.ElectricityReadingManagement.Models.Interfaces;
-using Constructix.Home.ElectricityReadingManagement.Services;
+using Constructix.Home.Electricity.Business.DomainModels.Readings;
+using Constructix.Home.Electricity.Business.DomainModels.Tariffs.Implementors;
+using Constructix.Home.Electricity.Business.DomainModels.Tariffs.Interfaces;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Constructix.Home.ElectricityReadingManagement
+namespace Constructix.Home.ElectricityReadingManagement.Old_Tests
 {
 
     public class BillingServiceTests

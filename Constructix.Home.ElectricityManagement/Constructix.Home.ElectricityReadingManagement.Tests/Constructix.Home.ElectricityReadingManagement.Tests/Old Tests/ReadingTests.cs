@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Constructix.Home.ElectricityReadingManagement.Models;
-using Constructix.Home.ElectricityReadingManagement.Services;
+using Constructix.Home.Electricity.Business.DomainModels.Readings;
+using Constructix.Home.Electricity.Business.DomainModels.Tariffs.Implementors;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Constructix.Home.ElectricityReadingManagement
+namespace Constructix.Home.ElectricityReadingManagement.Old_Tests
 {
     public class ReadingTests
     {
-
-
-
         private ITestOutputHelper _helper;
 
         private Reading previousReading;

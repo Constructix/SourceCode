@@ -1,6 +1,7 @@
 ﻿using System;
+using Constructix.Home.Electricity.Business.DomainModels.Tariffs.Implementors;
 
-namespace Constructix.Home.ElectricityReadingManagement.Models
+namespace Constructix.Home.Electricity.Business.DomainModels.Readings
 {
     public class Reading
     {

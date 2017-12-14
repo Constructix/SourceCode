@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Constructix.Home.ElectricityReadingManagement.Command
+﻿namespace Constructix.Home.Electricity.Business.Command
 {
 
 

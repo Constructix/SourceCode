@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Constructix.Home.ElectricityReadingManagement.Models
+namespace Constructix.Home.Electricity.Business.DomainModels.Tariffs.Implementors
 {
     public class TariffType
     {

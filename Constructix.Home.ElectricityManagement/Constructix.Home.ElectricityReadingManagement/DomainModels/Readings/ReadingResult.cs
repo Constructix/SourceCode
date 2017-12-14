@@ -1,4 +1,4 @@
-namespace Constructix.Home.ElectricityReadingManagement.Utilities
+namespace Constructix.Home.Electricity.Business.DomainModels.Readings
 {
     public class ReadingResult
     {

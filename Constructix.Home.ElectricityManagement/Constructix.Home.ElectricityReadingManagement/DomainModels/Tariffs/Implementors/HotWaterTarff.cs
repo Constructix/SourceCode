@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Constructix.Home.ElectricityReadingManagement.Models
+namespace Constructix.Home.Electricity.Business.DomainModels.Tariffs.Implementors
 {
     public class HotWaterTarff : BaseTariff
     {

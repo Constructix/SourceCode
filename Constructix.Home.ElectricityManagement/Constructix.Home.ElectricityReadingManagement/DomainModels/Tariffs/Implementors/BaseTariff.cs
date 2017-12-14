@@ -1,11 +1,11 @@
 ﻿using System;
-using Constructix.Home.ElectricityReadingManagement.Models.Interfaces;
+using Constructix.Home.Electricity.Business.DomainModels.Tariffs.Interfaces;
 
-namespace Constructix.Home.ElectricityReadingManagement.Models
+namespace Constructix.Home.Electricity.Business.DomainModels.Tariffs.Implementors
 {
     public abstract class BaseTariff : ITariff
     {
-
+        
         public virtual string Name => "Base";
         public decimal Rate { get; }
         public DateTime EffectiveFrom { get; }

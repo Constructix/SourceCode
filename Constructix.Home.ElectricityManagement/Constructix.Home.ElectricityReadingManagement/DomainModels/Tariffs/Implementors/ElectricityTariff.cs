@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Runtime.Remoting.Messaging;
 
-namespace Constructix.Home.ElectricityReadingManagement.Models
+namespace Constructix.Home.Electricity.Business.DomainModels.Tariffs.Implementors
 {
     public class ElectricityTariff : BaseTariff
     {

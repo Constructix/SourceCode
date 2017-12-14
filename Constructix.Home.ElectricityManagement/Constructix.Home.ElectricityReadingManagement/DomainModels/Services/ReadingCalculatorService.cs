@@ -1,8 +1,7 @@
 using System;
-using Constructix.Home.ElectricityReadingManagement.Models;
-using Constructix.Home.ElectricityReadingManagement.Utilities;
+using Constructix.Home.Electricity.Business.DomainModels.Readings;
 
-namespace Constructix.Home.ElectricityReadingManagement.Services
+namespace Constructix.Home.Electricity.Business.DomainModels.Services
 {
     public class ReadingCalculatorService
     {

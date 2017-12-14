@@ -1,4 +1,4 @@
-﻿namespace Constructix.Home.ElectricityReadingManagement
+﻿namespace Constructix.Home.Electricity.Business.DomainModels.Billing
 {
     public class Invoice
     {
