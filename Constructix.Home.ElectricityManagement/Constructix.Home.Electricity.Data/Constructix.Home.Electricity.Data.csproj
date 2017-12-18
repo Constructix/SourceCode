@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B0D03B2B-6C67-41A9-A9B9-D6A8ED8ADF42}</ProjectGuid>
+    <ProjectGuid>{EFD5DAD2-0D35-40E1-9B9B-A3D09FD6BA79}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Constructix.Home.ElectricityReading.Data</RootNamespace>
-    <AssemblyName>Constructix.Home.ElectricityReading.Data</AssemblyName>
+    <RootNamespace>Constructix.Home.Electricity.Data.Models</RootNamespace>
+    <AssemblyName>Constructix.Home.Electricity.Data.Models</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,16 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseRepository.cs" />
-    <Compile Include="IRepository.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Models\Reading.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TariffRepository.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Constructix.Home.ElectricityReadingManagement\Constructix.Home.ElectricityReadingManagement.csproj">
-      <Project>{E2C7EF10-6E45-4607-AF51-82106A4B232F}</Project>
-      <Name>Constructix.Home.ElectricityReadingManagement</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

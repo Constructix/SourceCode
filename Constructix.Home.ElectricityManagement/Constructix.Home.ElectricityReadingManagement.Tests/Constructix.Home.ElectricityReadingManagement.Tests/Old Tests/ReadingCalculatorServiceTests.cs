@@ -14,11 +14,11 @@ namespace Constructix.Home.ElectricityReadingManagement.Old_Tests
 
     public class BillingServiceTests
     {
-        private List<ITariff> _tariffs;
+        private List<BaseTariff> _tariffs;
         private readonly TariffService _tariffSvc;
         public BillingServiceTests()
         {
-            _tariffs = new List<ITariff>
+            _tariffs = new List<BaseTariff>
             {
                 new ElectricityTariff(0.26m, DateTime.Parse("01/07/2016"), null),
                 new HotWaterTarff(0.22m, DateTime.Parse("01/07/2017"), null),
@@ -42,10 +42,9 @@ namespace Constructix.Home.ElectricityReadingManagement.Old_Tests
           
             BillingService billingSvc = new BillingService(_tariffSvc);
 
-            Reading previousReading = new Reading(1000, DateTime.Today, TariffType.Electricity);
-            Reading currentReading = new Reading(1100, DateTime.Now, TariffType.Electricity);
+            var meter = new Meter("12345", new Reading(1000, DateTime.Today, TariffType.Electricity), new Reading(1100, DateTime.Now, TariffType.Electricity));
 
-            Invoice invoice = billingSvc.Create(previousReading, currentReading);
+            Invoice invoice = billingSvc.Create(new List<Meter>{ meter});
 
             Assert.NotNull(invoice);
 
@@ -61,53 +60,6 @@ namespace Constructix.Home.ElectricityReadingManagement.Old_Tests
     {
         public Reading PreviousReading { get; set; }
         public Reading CurrentReading { get; set; }
-    }
-
-
-    public class BillingService
-    {
-        
-        private List<ITariff> _tariffs;
-        private readonly TariffService _tariffSvc;
-        public BillingService(TariffService tariffService)
-        {
-            _tariffSvc = tariffService;
-        }
-
-        public Invoice Create(Reading previousReading, Reading currentReading)
-        {
-            Invoice newInvoice = new Invoice();
-
-            // Need to see if the tariffs are > 1 then have to split up the bill and the amounts
-            // workout accordingley to break up the rates due to the rates increasing over the period from 
-            // readings.
-
-            var electricityTariffs = _tariffSvc.TariffsBetweenReadings(previousReading, currentReading, "Electricity");
-            var HotWaterTariffs = _tariffSvc.TariffsBetweenReadings(previousReading, currentReading, "HotWater");
-            var SolarTariffs = _tariffSvc.TariffsBetweenReadings(previousReading, currentReading, "Solar");
-            
-            newInvoice.ElectricityUsage = ReadingCalculatorService.CalculateReadings(previousReading, currentReading).TotalUsage * electricityTariffs.FirstOrDefault().Rate;
-            newInvoice.SupplyCharge = 10.00m;
-            return newInvoice;
-        }
-    }
-
-    public class TariffService
-    {
-        private List<ITariff> _tariffs;
-        public TariffService(List<ITariff> tariffs)
-        {
-            _tariffs = tariffs;
-        }
-
-        public List<ITariff> TariffsBetweenReadings(Reading previousReading, Reading latestReading, string tariffName)
-        {
-
-            var tariffsInReadingPeriod = _tariffs.Where(t => t.Name.Equals(tariffName) && t.EffectiveFrom < previousReading.Recorded &&
-                                                             t.EffectiveTo.GetValueOrDefault() >= previousReading.Recorded || t.Name.Equals(tariffName) &&
-                                                             (latestReading.Recorded > t.EffectiveFrom && !t.EffectiveTo.HasValue)).ToList();
-            return tariffsInReadingPeriod;
-        }
     }
 
 

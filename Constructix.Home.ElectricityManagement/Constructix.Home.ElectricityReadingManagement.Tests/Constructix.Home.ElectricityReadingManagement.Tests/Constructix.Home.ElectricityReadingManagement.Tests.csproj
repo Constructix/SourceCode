@@ -60,7 +60,8 @@
     <Compile Include="Old Tests\ReadingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Old Tests\TariffCharges.cs" />
-    <Compile Include="ReadingCalculatorServicTests.cs" />
+    <Compile Include="ReadingCalculatorServiceTests.cs" />
+    <Compile Include="TariffServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constructix.Home.Electricit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constructix.Home.Electricity.Services", "..\Constructix.Home.Electricity.Services\Constructix.Home.Electricity.Services.csproj", "{1E16C54E-FDA7-419F-AA32-45AAC7846911}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constructix.Home.ElectricityReading.Data", "..\Constructix.Home.ElectricityReading.Data\Constructix.Home.ElectricityReading.Data.csproj", "{B0D03B2B-6C67-41A9-A9B9-D6A8ED8ADF42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constructix.Home.ElectricityReading.Data.Repository", "..\Constructix.Home.ElectricityReading.Data\Constructix.Home.ElectricityReading.Data.Repository.csproj", "{B0D03B2B-6C67-41A9-A9B9-D6A8ED8ADF42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constructix.Home.Electricity.Data", "..\Constructix.Home.Electricity.Data\Constructix.Home.Electricity.Data.csproj", "{EFD5DAD2-0D35-40E1-9B9B-A3D09FD6BA79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B0D03B2B-6C67-41A9-A9B9-D6A8ED8ADF42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0D03B2B-6C67-41A9-A9B9-D6A8ED8ADF42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0D03B2B-6C67-41A9-A9B9-D6A8ED8ADF42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFD5DAD2-0D35-40E1-9B9B-A3D09FD6BA79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFD5DAD2-0D35-40E1-9B9B-A3D09FD6BA79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFD5DAD2-0D35-40E1-9B9B-A3D09FD6BA79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFD5DAD2-0D35-40E1-9B9B-A3D09FD6BA79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

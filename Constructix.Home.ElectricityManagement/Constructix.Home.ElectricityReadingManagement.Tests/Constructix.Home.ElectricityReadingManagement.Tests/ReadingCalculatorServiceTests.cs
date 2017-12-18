@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Constructix.Home.ElectricityReadingManagement
 {
-    public class ReadingCalculatorServicTests
+    public class ReadingCalculatorServiceTests
     {
         [Fact]
         public void CalculateReadingsTotalUsageReturns100()
