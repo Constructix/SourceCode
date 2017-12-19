@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Constructix.Home.Electricity.Business.DomainModels;
 using Constructix.Home.Electricity.Business.DomainModels.Billing;
 using Constructix.Home.Electricity.Business.DomainModels.Readings;
 using Constructix.Home.Electricity.Business.DomainModels.Services;

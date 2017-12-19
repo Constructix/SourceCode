@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Constructix.Home.Electricity.Business.DomainModels.Billing;
-using Constructix.Home.Electricity.Business.DomainModels.Readings;
 using Constructix.Home.Electricity.Business.DomainModels.Tariffs.Interfaces;
 
 namespace Constructix.Home.Electricity.Business.DomainModels.Services
@@ -32,23 +31,6 @@ namespace Constructix.Home.Electricity.Business.DomainModels.Services
                 newInvoice.SupplyCharge = 10.00m;
             }
             return newInvoice;
-        }
-    }
-
-
-    public class Meter
-    {
-        public Reading PreviousReading { get; }
-        public Reading LatestReading { get; }
-
-        public string MeterNum { get; }
-
-
-        public Meter(string meterNum, Reading previouReading, Reading latestReading)
-        {
-            this.MeterNum = meterNum;
-            this.PreviousReading = previouReading;
-            this.LatestReading = latestReading;
         }
     }
 }

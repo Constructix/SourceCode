@@ -42,7 +42,11 @@
   <ItemGroup>
     <Compile Include="Command\BaseCommand.cs" />
     <Compile Include="DomainModels\Billing\Invoice.cs" />
+    <Compile Include="DomainModels\Charges\ICharge.cs" />
+    <Compile Include="DomainModels\Charges\SupplyCharge.cs" />
+    <Compile Include="DomainModels\Meter.cs" />
     <Compile Include="DomainModels\Services\BillingService.cs" />
+    <Compile Include="DomainModels\Services\ChargeService.cs" />
     <Compile Include="DomainModels\Services\TariffService.cs" />
     <Compile Include="DomainModels\Tariffs\Implementors\BaseTariff.cs" />
     <Compile Include="DomainModels\Tariffs\Implementors\ElectricityTariff.cs" />
