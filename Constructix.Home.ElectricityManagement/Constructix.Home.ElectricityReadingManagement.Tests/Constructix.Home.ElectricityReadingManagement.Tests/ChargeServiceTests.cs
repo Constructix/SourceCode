@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Constructix.Home.Electricity.Business.DomainModels.Charges;
 using Constructix.Home.Electricity.Business.DomainModels.Services;
 using Xunit;
@@ -19,11 +20,7 @@ namespace Constructix.Home.ElectricityReadingManagement
         [Fact]
         public void CreateChargeServicesNoExceptionExpected()
         {
-
-
             ChargeService chargeSvc  = new ChargeService(_charges);
-
-
             Assert.NotNull(chargeSvc);
         }
 
@@ -50,5 +47,15 @@ namespace Constructix.Home.ElectricityReadingManagement
             var currentSupplyCharge  = new ChargeService(_charges).GetLatestCharge("Supply Charge");
             Assert.NotNull(currentSupplyCharge);
         }
+
+
+        [Fact]
+        public void GetSupplyChargeFor2016()
+        {
+            var supplyChargeFor2016 = new ChargeService(_charges).GetCharge("Supply Charge",DateTime.Parse("01/07/2016"),DateTime.Parse("30/06/2017"));
+
+            Assert.True(supplyChargeFor2016.Any());
+        }
+
     }
 }
