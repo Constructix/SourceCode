@@ -47,7 +47,7 @@ namespace Constructix.Home.ElectricityReadingManagement
         [Fact]
         public void GetCurrentSupplyChargeReturns8957AsExpected()
         {
-            var currentSupplyCharge  = new ChargeService(_charges).GetCharge("Supply Charge");
+            var currentSupplyCharge  = new ChargeService(_charges).GetLatestCharge("Supply Charge");
             Assert.NotNull(currentSupplyCharge);
         }
     }

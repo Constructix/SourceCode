@@ -12,7 +12,7 @@ namespace Constructix.Home.Electricity.Business.DomainModels.Services
             _charges = charges;
         }
 
-        public ICharge GetCharge(string supplyCharge)
+        public ICharge GetLatestCharge(string supplyCharge)
         {
             return _charges.FirstOrDefault(x => x.Description.Contains(supplyCharge) && !x.EffectiveTo.HasValue);
         }
