@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Constructix.Home.Electricity.Business.DomainModels.Billing;
+using Constructix.Home.Electricity.Business.DomainModels.Tariffs.Implementors;
 using Constructix.Home.Electricity.Business.DomainModels.Tariffs.Interfaces;
 
 namespace Constructix.Home.Electricity.Business.DomainModels.Services
@@ -27,7 +28,16 @@ namespace Constructix.Home.Electricity.Business.DomainModels.Services
             foreach (var meter in meters)
             {
                 var currentTariffs = _tariffSvc.GetTariffs(meter.PreviousReading, meter.LatestReading);
-                newInvoice.ElectricityUsage = ReadingCalculatorService.CalculateReadings(meter.PreviousReading, meter.LatestReading).TotalUsage * currentTariffs.FirstOrDefault<ITariff>().Rate;
+                ITariff first = null;
+                foreach (BaseTariff tariff in currentTariffs)
+                {
+                    first = tariff;
+                    break;
+                }
+                if (first != null)
+                    newInvoice.ElectricityUsage =
+                        ReadingCalculatorService.CalculateReadings(meter.PreviousReading, meter.LatestReading)
+                            .TotalUsage * first.Rate;
                 newInvoice.SupplyCharge = 10.00m;
             }
             return newInvoice;
