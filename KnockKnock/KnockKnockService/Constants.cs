@@ -1,4 +1,4 @@
-﻿namespace WebApplication1
+﻿namespace Services
 {
     public static class Constants
     {

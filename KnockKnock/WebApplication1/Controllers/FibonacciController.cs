@@ -4,24 +4,31 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
+using Services;
 
 namespace WebApplication1.Controllers
 {
     public class FibonacciController : ApiController
     {
-        public int Get(int n)
+
+        private KnockKnockService _service;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FibonacciController()
         {
-            return PrivateFibonacci(n);
+            _service = new KnockKnockService();
         }
-
-        private int PrivateFibonacci(int num1)
+        /// <summary>
+        /// Returns the nth number in the fibonacci sequence.
+        /// </summary>
+        /// <param name="n">The index(n) of the fibonacci sequence.</param>
+        /// <returns></returns>
+        public long Get(long n)
         {
-            int sum = 0;
-            if (num1 <= 2)
-                return 1;
-            sum += PrivateFibonacci(num1 - 1) + PrivateFibonacci(num1 - 2);
-            return sum;
-
+            return _service.Fibonacci(n);
+            
         }
     }
 }
