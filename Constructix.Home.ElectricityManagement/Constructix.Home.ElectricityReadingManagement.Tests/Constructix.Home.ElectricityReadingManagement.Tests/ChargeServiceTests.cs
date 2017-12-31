@@ -52,7 +52,7 @@ namespace Constructix.Home.ElectricityReadingManagement
         [Fact]
         public void GetSupplyChargeFor2016()
         {
-            var supplyChargeFor2016 = new ChargeService(_charges).GetCharge("Supply Charge",DateTime.Parse("01/07/2016"),DateTime.Parse("30/06/2017"));
+            var supplyChargeFor2016 = new ChargeService(_charges).GetCharges("Supply Charge",DateTime.Parse("01/07/2016"),DateTime.Parse("30/06/2017"));
 
             Assert.True(supplyChargeFor2016.Any());
         }

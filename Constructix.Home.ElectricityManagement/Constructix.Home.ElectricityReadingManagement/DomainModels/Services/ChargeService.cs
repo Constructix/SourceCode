@@ -10,7 +10,7 @@ namespace Constructix.Home.Electricity.Business.DomainModels.Services
     public interface IChargeService
     {
         ICharge GetLatestChange(string chargeName);
-        List<SupplyCharge> GetCharge(string chargeName, DateTime effectiveFrom, DateTime? effectiveTo);
+        List<SupplyCharge> GetCharges(string chargeName, DateTime effectiveFrom, DateTime? effectiveTo);
     }
     public class ChargeService : IChargeService
     {
@@ -24,7 +24,7 @@ namespace Constructix.Home.Electricity.Business.DomainModels.Services
             return _charges.FirstOrDefault(x => x.Description.Contains(chargeName) && !x.EffectiveTo.HasValue);
         }
 
-        public List<SupplyCharge> GetCharge(string chargeName, DateTime effectiveFrom, DateTime? effectiveTo)
+        public List<SupplyCharge> GetCharges(string chargeName, DateTime effectiveFrom, DateTime? effectiveTo)
         {
             return _charges.Where(x =>
                 x.Description.Contains(chargeName) && 
