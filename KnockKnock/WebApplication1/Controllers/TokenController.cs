@@ -1,19 +1,11 @@
-﻿using System.Configuration;
-using System.Web.Http;
+﻿using System.Web.Http;
 using Services;
 
-namespace WebApplication1.Controllers
+namespace KnockKnock.Controllers
 {
     public class TokenController : ApiController
     {
-
-        KnockKnockService _service;
-
-        public TokenController()
-        {
-            _service = new KnockKnockService();
-        }
-        
+      
         /// <summary>
         /// Your token.
         /// </summary>
@@ -22,7 +14,7 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public string Get()
         {
-            return _service.Token;
+            return  KnockKnockService.Service.Token;
         }
     }
 }

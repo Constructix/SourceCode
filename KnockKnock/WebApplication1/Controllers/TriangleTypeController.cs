@@ -1,16 +1,11 @@
 ﻿using System.Web.Http;
 using Services;
 
-namespace WebApplication1.Controllers
+namespace KnockKnock.Controllers
 {
     public class TriangleTypeController : ApiController
     {
-        KnockKnockService _service;
-
-        protected TriangleTypeController()
-        {
-            _service = new KnockKnockService();
-        }
+        
 
         /// <summary>
         /// Returns the type of triange given the lengths of its sides
@@ -25,14 +20,7 @@ namespace WebApplication1.Controllers
         {
 
             Triangle inputTriangle = new Triangle(a,b,c);
-
-
-            return _service.TriangleType(inputTriangle);
-
-
-
-
-        
+            return KnockKnockService.Service.TriangleType(inputTriangle);
         }
     }
 

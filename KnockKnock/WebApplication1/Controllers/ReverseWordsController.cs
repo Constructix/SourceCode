@@ -1,22 +1,14 @@
-﻿using System.Text;
-using System.Web.Http;
+﻿using System.Web.Http;
 using Services;
 
-namespace WebApplication1.Controllers
+namespace KnockKnock.Controllers
 {
     /// <summary>
     /// 
     /// </summary>
     public class ReverseWordsController : ApiController
     {
-        private KnockKnockService _service;
-        /// <summary>
-        /// 
-        /// </summary>
-        public ReverseWordsController()
-        {
-            _service = new KnockKnockService();
-        }
+      
         /// <summary>
         /// Reverses the letters of each word in a sentence.
         /// </summary>
@@ -26,7 +18,7 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public string Get(string sentence)
         {
-            return _service.ReverseStringsInSentence(sentence);
+            return  KnockKnockService.Service.ReverseStringsInSentence(sentence);
         }
     }
 }

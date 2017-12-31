@@ -1,25 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
-using System.Web.Mvc;
+﻿using System.Web.Http;
 using Services;
 
-namespace WebApplication1.Controllers
+namespace KnockKnock.Controllers
 {
     public class FibonacciController : ApiController
     {
 
-        private KnockKnockService _service;
+      
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public FibonacciController()
-        {
-            _service = new KnockKnockService();
-        }
+       
         /// <summary>
         /// Returns the nth number in the fibonacci sequence.
         /// </summary>
@@ -27,7 +16,7 @@ namespace WebApplication1.Controllers
         /// <returns></returns>
         public long Get(long n)
         {
-            return _service.Fibonacci(n);
+            return  KnockKnockService.Service.Fibonacci(n);
             
         }
     }

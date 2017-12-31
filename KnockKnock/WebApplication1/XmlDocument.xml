@@ -1,9 +1,43 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>WebApplication1</name>
+        <name>KnockKnock</name>
     </assembly>
     <members>
+        <member name="M:KnockKnock.Controllers.FibonacciController.Get(System.Int64)">
+            <summary>
+            Returns the nth number in the fibonacci sequence.
+            </summary>
+            <param name="n">The index(n) of the fibonacci sequence.</param>
+            <returns></returns>
+        </member>
+        <member name="T:KnockKnock.Controllers.ReverseWordsController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:KnockKnock.Controllers.ReverseWordsController.Get(System.String)">
+            <summary>
+            Reverses the letters of each word in a sentence.
+            </summary>
+            <param name="sentence">A sentence</param>
+            <returns></returns>
+        </member>
+        <member name="M:KnockKnock.Controllers.TokenController.Get">
+            <summary>
+            Your token.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KnockKnock.Controllers.TriangleTypeController.Get(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns the type of triange given the lengths of its sides
+            </summary>
+            <param name="a">The length of side a</param>
+            <param name="b">The length of side b</param>
+            <param name="c">The length of side c</param>
+            <returns></returns>
+        </member>
         <member name="M:WebApplication1.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
             <summary>
             Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
@@ -480,40 +514,6 @@
             Initializes a new instance of the <see cref="T:WebApplication1.Areas.HelpPage.XmlDocumentationProvider"/> class.
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
-        </member>
-        <member name="M:WebApplication1.Controllers.FibonacciController.Get(System.Int64)">
-            <summary>
-            Returns the nth number in the fibonacci sequence.
-            </summary>
-            <param name="n">The index(n) of the fibonacci sequence.</param>
-            <returns></returns>
-        </member>
-        <member name="T:WebApplication1.Controllers.ReverseWordsController">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:WebApplication1.Controllers.ReverseWordsController.Get(System.String)">
-            <summary>
-            Reverses the letters of each word in a sentence.
-            </summary>
-            <param name="sentence">A sentence</param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApplication1.Controllers.TokenController.Get">
-            <summary>
-            Your token.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:WebApplication1.Controllers.TriangleTypeController.Get(System.Int32,System.Int32,System.Int32)">
-            <summary>
-            Returns the type of triange given the lengths of its sides
-            </summary>
-            <param name="a">The length of side a</param>
-            <param name="b">The length of side b</param>
-            <param name="c">The length of side c</param>
-            <returns></returns>
         </member>
     </members>
 </doc>

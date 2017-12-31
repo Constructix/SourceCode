@@ -9,6 +9,18 @@ namespace Services
     public class KnockKnockService
     {
 
+        private static KnockKnockService _service;
+        public static KnockKnockService Service
+        {
+            get
+            {
+                if (_service == null)
+                    _service = new KnockKnockService();
+
+                return _service;
+            }
+        }
+
         public long Fibonacci(long num1)
         {
             long sum = 0;
@@ -33,7 +45,7 @@ namespace Services
             }
             sentenceBuilder.Remove(sentenceBuilder.Length - 1, 1);
 
-            return sentenceBuilder.ToString();
+            return sentenceBuilder.ToString().Trim();
         }
 
         public string TriangleType(Triangle inputTriangle)
