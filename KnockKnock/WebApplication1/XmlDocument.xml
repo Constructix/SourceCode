@@ -4,13 +4,6 @@
         <name>KnockKnock</name>
     </assembly>
     <members>
-        <member name="M:KnockKnock.Controllers.FibonacciController.Get(System.Int64)">
-            <summary>
-            Returns the nth number in the fibonacci sequence.
-            </summary>
-            <param name="n">The index(n) of the fibonacci sequence.</param>
-            <returns></returns>
-        </member>
         <member name="T:KnockKnock.Controllers.ReverseWordsController">
             <summary>
             
