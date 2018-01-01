@@ -5,7 +5,8 @@ namespace KnockKnock.Controllers
 {
     public class TokenController : ApiController
     {
-      
+        public string Token => "e789d4e2-fd2d-4ff7-b668-19f419186650";
+
         /// <summary>
         /// Your token.
         /// </summary>
@@ -14,7 +15,7 @@ namespace KnockKnock.Controllers
         [HttpGet]
         public string Get()
         {
-            return  KnockKnockService.Service.Token;
+            return  Token;
         }
     }
 }

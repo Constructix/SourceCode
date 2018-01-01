@@ -1,5 +1,6 @@
 ﻿using System.Web.Http;
 using Services;
+using Triangle = KnockKnock.Models.Triangle;
 
 namespace KnockKnock.Controllers
 {
@@ -20,7 +21,7 @@ namespace KnockKnock.Controllers
         {
 
             Triangle inputTriangle = new Triangle(a,b,c);
-            return KnockKnockService.Service.TriangleType(inputTriangle);
+            return Triangle.TriangleType(inputTriangle);
         }
     }
 

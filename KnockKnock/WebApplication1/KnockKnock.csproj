@@ -187,9 +187,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Triangle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\KnockKnockConstructix - Web Deploy.pubxml" />
     <None Include="XmlDocument.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -227,8 +229,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
-    <None Include="Properties\PublishProfiles\KnockKnock20171231051410 - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\KnockKnockConstructix - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -251,7 +251,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Views\Fibonacci\" />
   </ItemGroup>
   <ItemGroup>
