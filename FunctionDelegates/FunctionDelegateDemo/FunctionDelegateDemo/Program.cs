@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace FunctionDelegateDemo
 {
-
-
-    
     class Program
     {
         static void Main(string[] args)
