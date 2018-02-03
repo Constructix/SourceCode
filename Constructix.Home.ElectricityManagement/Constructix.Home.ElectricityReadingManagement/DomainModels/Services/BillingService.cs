@@ -8,15 +8,15 @@ namespace Constructix.Home.Electricity.Business.DomainModels.Services
 {
     public class BillingService
     {
-
-
         public List<Meter> _meters;
 
         private List<ITariff> _tariffs;
         private readonly TariffService _tariffSvc;
-        public BillingService(TariffService tariffService)
+        private readonly IChargeService _chargeService;
+        public BillingService(TariffService tariffService, IChargeService chargeService)
         {
             _tariffSvc = tariffService;
+            _chargeService = chargeService;
         }
 
         public Invoice Create(List<Meter> meters)
@@ -27,19 +27,19 @@ namespace Constructix.Home.Electricity.Business.DomainModels.Services
             // readings.
             foreach (var meter in meters)
             {
-                var currentTariffs = _tariffSvc.GetTariffs(meter.PreviousReading, meter.LatestReading);
-                ITariff first = null;
-                foreach (BaseTariff tariff in currentTariffs)
-                {
-                    first = tariff;
-                    break;
-                }
-                if (first != null)
-                    newInvoice.ElectricityUsage =
-                        ReadingCalculatorService.CalculateReadings(meter.PreviousReading, meter.LatestReading)
-                            .TotalUsage * first.Rate;
-                newInvoice.SupplyCharge = 10.00m;
+                var firstTariff = _tariffSvc.GetTariffs(meter.PreviousReading, meter.LatestReading).First();
+                if (firstTariff != null)
+                    newInvoice.ElectricityUsage =ReadingCalculatorService.CalculateReadings(meter.PreviousReading, meter.LatestReading)
+                            .TotalUsage * firstTariff.Rate;
+                
             }
+
+
+            
+
+
+
+
             return newInvoice;
         }
     }
