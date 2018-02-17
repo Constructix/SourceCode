@@ -8,7 +8,7 @@ namespace StockDemo
     {
 
         [OperationContract]
-        StockResponseDocument GetListing(string stockCode);
+        StockResponseDocument GetPrice(string stockCode);
 
     }
 }

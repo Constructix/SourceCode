@@ -4,7 +4,7 @@ namespace StockDemo
 {
     public class StockService : IStockService
     {
-        public StockResponseDocument GetListing(string stockCode)
+        public StockResponseDocument GetPrice(string stockCode)
         {
             StockResponseDocument response = null;
             
