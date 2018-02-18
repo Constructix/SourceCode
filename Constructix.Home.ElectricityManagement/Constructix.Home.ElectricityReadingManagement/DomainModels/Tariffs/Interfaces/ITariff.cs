@@ -1,4 +1,5 @@
 ﻿using System;
+using Constructix.Home.Electricity.Business.DomainModels.Tariffs.Implementors;
 
 namespace Constructix.Home.Electricity.Business.DomainModels.Tariffs.Interfaces
 {
@@ -10,7 +11,7 @@ namespace Constructix.Home.Electricity.Business.DomainModels.Tariffs.Interfaces
         decimal Rate { get; }
         DateTime EffectiveFrom { get; }
         DateTime? EffectiveTo { get; }
-
+        ChargeType ChargeType { get; }
        
     }
 }

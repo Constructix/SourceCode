@@ -10,9 +10,12 @@ namespace Constructix.Home.Electricity.Business.DomainModels.Tariffs.Implementor
         public decimal Rate { get; }
         public DateTime EffectiveFrom { get; }
         public DateTime? EffectiveTo { get; }
+        public ChargeType ChargeType { get; }
 
-        public BaseTariff(decimal rate, DateTime effectiveFrom, DateTime? effectiveTo)
+        public BaseTariff(ChargeType chargeType, decimal rate, DateTime effectiveFrom, DateTime? effectiveTo)
         {
+
+            ChargeType = chargeType;
             Rate = rate;
             EffectiveFrom = effectiveFrom;
             EffectiveTo = effectiveTo;

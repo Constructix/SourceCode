@@ -7,7 +7,7 @@ namespace Constructix.Home.Electricity.Business.DomainModels.Tariffs.Implementor
     {
         public override string Name => "Solar";
 
-        public SolarTariff(decimal rate, DateTime effectiveFrom, DateTime? effectiveTo) : base(rate, effectiveFrom, effectiveTo)
+        public SolarTariff(ChargeType chargeType, decimal rate, DateTime effectiveFrom, DateTime? effectiveTo) : base(chargeType, rate, effectiveFrom, effectiveTo)
         {
         }
     }

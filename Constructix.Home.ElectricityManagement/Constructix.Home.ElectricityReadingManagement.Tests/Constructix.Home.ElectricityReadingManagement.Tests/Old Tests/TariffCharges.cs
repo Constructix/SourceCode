@@ -10,7 +10,7 @@ namespace Constructix.Home.ElectricityReadingManagement.Old_Tests
         [Fact]
         public void NotNull()
         {
-            ITariff newTariff = new ElectricityTariff(0.2461m,
+            ITariff newTariff = new ElectricityTariff(ChargeType.Kwh,  0.2461m,
                                                     DateTime.Parse("01/07/2016"), 
                                                     DateTime.Parse("30/06/2017"));
         }

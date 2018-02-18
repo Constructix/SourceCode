@@ -16,10 +16,10 @@ namespace Constructix.Home.ElectricityReadingManagement
         {
             List<BaseTariff> baseTariffs = new List<BaseTariff>
             {
-                new ElectricityTariff(0.2461m, DateTime.Parse("01/07/2016"), DateTime.Parse("30/06/2017")),
-                new ElectricityTariff(0.26m, DateTime.Parse("01/07/2017"), null),
-                new  HotWaterTarff(0.1696m, DateTime.Parse("01/07/2016"), DateTime.Parse("30/06/2017")),
-                new  HotWaterTarff(0.1696m, DateTime.Parse("01/07/2016"), null),
+                new ElectricityTariff(ChargeType.Kwh,  0.2461m, DateTime.Parse("01/07/2016"), DateTime.Parse("30/06/2017")),
+                new ElectricityTariff(ChargeType.Kwh,  0.26m, DateTime.Parse("01/07/2017"), null),
+                new  HotWaterTarff(ChargeType.Kwh,  0.1696m, DateTime.Parse("01/07/2016"), DateTime.Parse("30/06/2017")),
+                new  HotWaterTarff(ChargeType.Kwh, 0.1696m, DateTime.Parse("01/07/2016"), null),
 
             };
 

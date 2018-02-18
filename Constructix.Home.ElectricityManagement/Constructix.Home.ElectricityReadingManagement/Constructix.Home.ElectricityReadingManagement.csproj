@@ -49,6 +49,7 @@
     <Compile Include="DomainModels\Services\ChargeService.cs" />
     <Compile Include="DomainModels\Services\TariffService.cs" />
     <Compile Include="DomainModels\Tariffs\Implementors\BaseTariff.cs" />
+    <Compile Include="DomainModels\Tariffs\Implementors\ChargeType.cs" />
     <Compile Include="DomainModels\Tariffs\Implementors\ElectricityTariff.cs" />
     <Compile Include="DomainModels\Tariffs\Implementors\HotWaterTarff.cs" />
     <Compile Include="DomainModels\Tariffs\Interfaces\ITariff.cs" />

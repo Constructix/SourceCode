@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Constructix.Home.Electricity.Business.DomainModels;
 using Constructix.Home.Electricity.Business.DomainModels.Billing;
+using Constructix.Home.Electricity.Business.DomainModels.Charges;
 using Constructix.Home.Electricity.Business.DomainModels.Readings;
 using Constructix.Home.Electricity.Business.DomainModels.Services;
 using Constructix.Home.Electricity.Business.DomainModels.Tariffs.Implementors;
@@ -17,15 +18,19 @@ namespace Constructix.Home.ElectricityReadingManagement.Old_Tests
     {
         private List<BaseTariff> _tariffs;
         private readonly TariffService _tariffSvc;
+        private readonly ChargeService _chargeService;
+
         public BillingServiceTests()
         {
             _tariffs = new List<BaseTariff>
             {
-                new ElectricityTariff(0.26m, DateTime.Parse("01/07/2016"), null),
-                new HotWaterTarff(0.22m, DateTime.Parse("01/07/2017"), null),
-                new SolarTariff(0.546m,DateTime.Parse("01/07/2016"),null)
+                new ElectricityTariff(ChargeType.Kwh,  0.26m, DateTime.Parse("01/07/2016"), null),
+                new HotWaterTarff(ChargeType.Kwh,0.22m, DateTime.Parse("01/07/2017"), null),
+                new SolarTariff(ChargeType.Kwh,0.546m,DateTime.Parse("01/07/2016"),null)
             };
             _tariffSvc = new TariffService(_tariffs);
+
+           _chargeService = new ChargeService(new List<SupplyCharge>());
         }
 
         [Fact]
@@ -33,27 +38,8 @@ namespace Constructix.Home.ElectricityReadingManagement.Old_Tests
         {
 
           
-            BillingService billingSvc = new BillingService(_tariffSvc);
+            BillingService billingSvc = new BillingService(_tariffSvc, _chargeService );
             Assert.NotNull(billingSvc);
-        }
-
-        [Fact]
-        public void CreateBill_NoExceptionExpected()
-        {
-          
-            BillingService billingSvc = new BillingService(_tariffSvc);
-
-            var meter = new Meter("12345", new Reading(1000, DateTime.Today, TariffType.Electricity), new Reading(1100, DateTime.Now, TariffType.Electricity));
-
-            Invoice invoice = billingSvc.Create(new List<Meter>{ meter});
-
-            Assert.NotNull(invoice);
-
-            decimal expectedSupplyCharge = Math.Round(10.00m,2);
-            decimal expectedElectricityCharge = Math.Round(26.00m, 2);
-
-            Assert.Equal(invoice.SupplyCharge, expectedSupplyCharge, 2);
-            Assert.Equal(invoice.ElectricityUsage, expectedElectricityCharge, 2);
         }
     }
 
@@ -96,16 +82,12 @@ namespace Constructix.Home.ElectricityReadingManagement.Old_Tests
             currentReading = new Reading(currentReadingValue, DateTime.Today,TariffType.Electricity);
 
             var result = ReadingCalculatorService.CalculateReadings(previousReading, currentReading);
-           // Assert.True(total.Equals(result.TotalUsage));
 
-
-            ITariff newTariff = new ElectricityTariff(0.26m,
+            ITariff newTariff = new ElectricityTariff(ChargeType.Kwh,  0.26m,
                 DateTime.Parse("01/07/2016"),
                 DateTime.Parse("30/06/2017"));
 
-
             decimal totalCost = newTariff.Rate * result.TotalUsage;
-
 
             _helper.WriteLine(totalCost.ToString());
             
@@ -125,7 +107,7 @@ namespace Constructix.Home.ElectricityReadingManagement.Old_Tests
             // Assert.True(total.Equals(result.TotalUsage));
 
 
-            ITariff newTariff = new ElectricityTariff(0.22m,
+            ITariff newTariff = new ElectricityTariff(ChargeType.Kwh, 0.22m,
                 DateTime.Parse("01/07/2017"), null);
 
 
@@ -147,7 +129,7 @@ namespace Constructix.Home.ElectricityReadingManagement.Old_Tests
             // Assert.True(total.Equals(result.TotalUsage));
 
 
-            ITariff newTariff = new ElectricityTariff(0.546m,DateTime.Parse("01/07/2016"),
+            ITariff newTariff = new ElectricityTariff(ChargeType.Kwh,  0.546m,DateTime.Parse("01/07/2016"),
                 DateTime.Parse("30/06/2017"));
 
 
@@ -178,7 +160,7 @@ namespace Constructix.Home.ElectricityReadingManagement.Old_Tests
             // Assert.True(total.Equals(result.TotalUsage));
 
              
-            ITariff newTariff = new ElectricityTariff(1.00m, DateTime.Parse("01/07/2017"),null);
+            ITariff newTariff = new ElectricityTariff(ChargeType.Day,  1.00m, DateTime.Parse("01/07/2017"),null);
 
 
             decimal totalCost = result.TotalDays * newTariff.Rate;
@@ -197,8 +179,8 @@ namespace Constructix.Home.ElectricityReadingManagement.Old_Tests
             // Assert.True(total.Equals(result.TotalUsage));
 
 
-            ITariff newTariff = new ElectricityTariff(.033m, DateTime.Parse("01/07/2017"), null);
-            ITariff solarMeterCharge = new ElectricityTariff(0.07m, DateTime.Parse("01/07/2107"), null);
+            ITariff newTariff = new ElectricityTariff(ChargeType.Kwh,  .033m, DateTime.Parse("01/07/2017"), null);
+            ITariff solarMeterCharge = new ElectricityTariff(ChargeType.Day,  0.07m, DateTime.Parse("01/07/2107"), null);
 
             decimal totalCost = result.TotalDays * newTariff.Rate;
             decimal totalSolarCharge = result.TotalDays * solarMeterCharge.Rate;
