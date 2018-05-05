@@ -22,7 +22,7 @@ namespace GenericRepositoryDemo
             ProductContext productContext = new ProductContext(ConfigurationManager.AppSettings["ProductDatabase"]);
 
             GenericRepository<CustomerContext, Customer, string> customerRepository = new GenericRepository<CustomerContext, Customer, string>(customerContext);
-            GenericRepository<OrderContext, Order, int> genericRepository = new GenericRepository<OrderContext, Order, int>(orderContext);
+            GenericRepository<OrderContext, Order, int> OrderRepository = new GenericRepository<OrderContext, Order, int>(orderContext);
             GenericRepository<OrderContext, OrderItem, Guid> orderItemRepository = new GenericRepository<OrderContext, OrderItem, Guid>(orderContext);
             GenericRepository<ProductContext, Product, int> productRepository = new GenericRepository<ProductContext, Product, int>(productContext);
 
@@ -49,14 +49,14 @@ namespace GenericRepositoryDemo
             newCustomer = customerRepository.Get("r_jones@constructix.com.au"); 
             var newOrder = new Order();
             newOrder.CustomerId = newCustomer.Id;
-            genericRepository.Add(newOrder);
-            genericRepository.SaveChanges();
+            OrderRepository.Add(newOrder);
+            OrderRepository.SaveChanges();
             Console.WriteLine("All Orders on Record");
 
             
             var t = new TaskFactory().StartNew(() =>
             {
-                var result = genericRepository.GetAllAsync();
+                var result = OrderRepository.GetAllAsync();
 
                 foreach (Order currentCustomer in result.Result.ToList())
                 {
@@ -65,7 +65,7 @@ namespace GenericRepositoryDemo
             });
             t.Wait();
 
-            var order = genericRepository.Get(1);
+            var order = OrderRepository.Get(1);
 
             if (order != null)
             {
