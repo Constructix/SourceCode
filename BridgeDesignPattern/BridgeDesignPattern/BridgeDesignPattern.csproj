@@ -46,6 +46,7 @@
     <Compile Include="BaseAbstraction.cs" />
     <Compile Include="ConcreteImplementorA.cs" />
     <Compile Include="ConcreteImplementorB.cs" />
+    <Compile Include="FolderManager.cs" />
     <Compile Include="IBaseImplementor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
