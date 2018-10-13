@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanSkinGenerator", "CleanSkinGenerator\CleanSkinGenerator.csproj", "{73370780-FBEC-4C8A-ACDF-150129EB8058}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanSkinGenerator.Tests", "CleanSkinGenerator.Tests\CleanSkinGenerator.Tests.csproj", "{7FF3CE7C-F2DB-46CF-8EA7-652D233705AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73370780-FBEC-4C8A-ACDF-150129EB8058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73370780-FBEC-4C8A-ACDF-150129EB8058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73370780-FBEC-4C8A-ACDF-150129EB8058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73370780-FBEC-4C8A-ACDF-150129EB8058}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FF3CE7C-F2DB-46CF-8EA7-652D233705AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FF3CE7C-F2DB-46CF-8EA7-652D233705AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FF3CE7C-F2DB-46CF-8EA7-652D233705AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FF3CE7C-F2DB-46CF-8EA7-652D233705AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FFB93F61-5DAE-4D81-A827-70FA42BB92A5}
+	EndGlobalSection
+EndGlobal
