@@ -22,7 +22,11 @@ namespace GenericRepositoryDemo
             ProductContext productContext = new ProductContext(ConfigurationManager.AppSettings["ProductDatabase"]);
 
             GenericRepository<CustomerContext, Customer, string> customerRepository = new GenericRepository<CustomerContext, Customer, string>(customerContext);
+<<<<<<< HEAD
             GenericRepository<OrderContext, Order, int> genericRepository = new GenericRepository<OrderContext, Order, int>(orderContext);
+=======
+            GenericRepository<OrderContext, Order, int> OrderRepository = new GenericRepository<OrderContext, Order, int>(orderContext);
+>>>>>>> 4c011fb0028430c0e9392e757d3e9aa1ec8f6ff5
             GenericRepository<OrderContext, OrderItem, Guid> orderItemRepository = new GenericRepository<OrderContext, OrderItem, Guid>(orderContext);
             GenericRepository<ProductContext, Product, int> productRepository = new GenericRepository<ProductContext, Product, int>(productContext);
 
@@ -49,14 +53,23 @@ namespace GenericRepositoryDemo
             newCustomer = customerRepository.Get("r_jones@constructix.com.au"); 
             var newOrder = new Order();
             newOrder.CustomerId = newCustomer.Id;
+<<<<<<< HEAD
             genericRepository.Add(newOrder);
             genericRepository.SaveChanges();
+=======
+            OrderRepository.Add(newOrder);
+            OrderRepository.SaveChanges();
+>>>>>>> 4c011fb0028430c0e9392e757d3e9aa1ec8f6ff5
             Console.WriteLine("All Orders on Record");
 
             
             var t = new TaskFactory().StartNew(() =>
             {
+<<<<<<< HEAD
                 var result = genericRepository.GetAllAsync();
+=======
+                var result = OrderRepository.GetAllAsync();
+>>>>>>> 4c011fb0028430c0e9392e757d3e9aa1ec8f6ff5
 
                 foreach (Order currentCustomer in result.Result.ToList())
                 {
@@ -65,7 +78,11 @@ namespace GenericRepositoryDemo
             });
             t.Wait();
 
+<<<<<<< HEAD
             var order = genericRepository.Get(1);
+=======
+            var order = OrderRepository.Get(1);
+>>>>>>> 4c011fb0028430c0e9392e757d3e9aa1ec8f6ff5
 
             if (order != null)
             {
