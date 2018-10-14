@@ -40,5 +40,14 @@ namespace TodoAPI.Controllers
 
             return item;
         }
+
+        [HttpPost]
+        public IActionResult Create(TodoItem newItem)
+        {
+            _context.TodoItems.Add(newItem);
+            _context.SaveChanges();
+
+            return CreatedAtRoute("GetTodo", new {id = newItem.Id}, newItem);
+        }
     }
 }
