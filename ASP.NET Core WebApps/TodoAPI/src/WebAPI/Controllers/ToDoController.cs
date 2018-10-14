@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using TodoAPI.Models;
@@ -49,5 +50,23 @@ namespace TodoAPI.Controllers
 
             return CreatedAtRoute("GetTodo", new {id = newItem.Id}, newItem);
         }
+
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, TodoItem itemToUpdate)
+        {
+            var todo = _context.TodoItems.Find(id);
+            if (todo == null)
+                return NotFound();
+
+            todo.IsComplete = itemToUpdate.IsComplete;
+            todo.Name = itemToUpdate.Name;
+            todo.LastUpdated = DateTime.Now;
+
+            _context.TodoItems.Update(todo);
+            _context.SaveChanges();
+
+            return NoContent();
+        }
+
     }
 }
