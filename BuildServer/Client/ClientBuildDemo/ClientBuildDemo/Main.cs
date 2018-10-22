@@ -13,6 +13,11 @@
             var lastName = "Jones";
             var person = new Person(firstName, lastName);
             Console.WriteLine(person.ToString());
+
+
+            var newOrder = new Order();
+
+            Console.WriteLine(newOrder.InternalId);
         }
     }
 }

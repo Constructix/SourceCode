@@ -29,14 +29,8 @@ namespace BuildServerConsole
         
         public override void Execute()
         {
-
             // Need to update the AssemblyInfo.cs
             XDocument doc  = XDocument.Load(this.ProjectName);
-
-            
-           
-            
-            
             var csFiles = doc.Descendants().Where(x=>x.Name.LocalName.Equals("Compile"));
             var propertyFile = csFiles.Attributes().FirstOrDefault(y => y.Value.Equals(@"Properties\AssemblyInfo.cs"));
 
@@ -46,24 +40,21 @@ namespace BuildServerConsole
 
                 var folderLocation = Directory.GetParent(this.ProjectName);
                 // Update assemblyVersion
-                string pattern = @"AssemblyVersion\(\""\d.\d.\d.\d\"")]";
+                //string pattern = "AssemblyVersion\(\""\d.\d.\d.\d\"")]";
+                //var contents = File.ReadAllText(string.Format($"{folderLocation}\\{fileName}"));
+                //Match m = Regex.Match(contents, pattern);
+                //if (m.Success)
+                //{
+                //    int startPosition = m.Index;
 
+                //    var temp =  m.Value;
 
-                var contents = File.ReadAllText(string.Format($"{folderLocation}\\{fileName}"));
+                //    int firstInvertedCommaPos = temp.IndexOfAny(new char[] { '\"'});
+                //    int lastindex = temp.LastIndexOf('\"');
 
-                Match m = Regex.Match(contents, pattern);
-                if (m.Success)
-                {
-                    int startPosition = m.Index;
+                //    Version v = new Version(temp.Substring(firstInvertedCommaPos+1, lastindex - firstInvertedCommaPos - 1));
 
-                    var temp =  m.Value;
-
-                    int firstInvertedCommaPos = temp.IndexOfAny(new char[] { '\"'});
-                    int lastindex = temp.LastIndexOf('\"');
-
-                    Version v = new Version(temp.Substring(firstInvertedCommaPos+1, lastindex - firstInvertedCommaPos - 1));
-
-                }
+                //}
 
             }
 

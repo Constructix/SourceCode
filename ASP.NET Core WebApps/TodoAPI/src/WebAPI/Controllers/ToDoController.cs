@@ -17,6 +17,8 @@ namespace TodoAPI.Controllers
         {
             _context = context;
 
+            //////////////////////////////////////////////////////////////////////////////
+            // Create dummy first Item.
             if (_context.TodoItems.Count() == 0)
             {
                 _context.TodoItems.Add(new TodoItem {Name = "Item1"});
@@ -60,8 +62,7 @@ namespace TodoAPI.Controllers
 
             todo.IsComplete = itemToUpdate.IsComplete;
             todo.Name = itemToUpdate.Name;
-            todo.LastUpdated = DateTime.Now;
-
+            
             _context.TodoItems.Update(todo);
             _context.SaveChanges();
 
