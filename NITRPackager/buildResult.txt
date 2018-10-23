@@ -1,0 +1,65 @@
+Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Building the projects in this solution one at a time. To enable parallel build, please add the "/m" switch.
+Build started 23/10/2018 9:09:13 PM.
+Project "D:\Development\GitHub\NITRPackager\NITRPackager.sln" on node 1 (default targets).
+ValidateSolutionConfiguration:
+  Building solution configuration "Debug|Any CPU".
+Project "D:\Development\GitHub\NITRPackager\NITRPackager.sln" (1) is building "D:\Development\GitHub\NITRPackager\NITRPackager.Tests\NITRPackager.Tests.csproj" (2) on node 1 (default targets).
+Project "D:\Development\GitHub\NITRPackager\NITRPackager.Tests\NITRPackager.Tests.csproj" (2) is building "D:\Development\GitHub\NITRPackager\NITRPackager\NITRPackager.csproj" (3:2) on node 1 (default targets).
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+CopyFilesToOutputDirectory:
+  NITRPackager -> D:\Development\GitHub\NITRPackager\NITRPackager\bin\Debug\NITRPackager.dll
+Done Building Project "D:\Development\GitHub\NITRPackager\NITRPackager\NITRPackager.csproj" (default targets).
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+_CopyFilesMarkedCopyLocal:
+  Touching "D:\Development\GitHub\NITRPackager\NITRPackager.Tests\obj\Debug\NITRPackager.Tests.csproj.CopyComplete".
+_CopyOutOfDateSourceItemsToOutputDirectory:
+Skipping target "_CopyOutOfDateSourceItemsToOutputDirectory" because all output files are up-to-date with respect to the input files.
+CopyFilesToOutputDirectory:
+  NITRPackager.Tests -> D:\Development\GitHub\NITRPackager\NITRPackager.Tests\bin\Debug\NITRPackager.Tests.dll
+Done Building Project "D:\Development\GitHub\NITRPackager\NITRPackager.Tests\NITRPackager.Tests.csproj" (default targets).
+Done Building Project "D:\Development\GitHub\NITRPackager\NITRPackager.sln" (default targets).
+Deferred Messages
+  
+  Detailed Build Summary
+  ======================
+      
+  
+  ============================== Build Hierarchy (IDs represent configurations) =====================================================
+  Id                  : Exclusive Time   Total Time   Path (Targets)
+  -----------------------------------------------------------------------------------------------------------------------------------
+  0                   : 0.025s           0.490s       D:\Development\GitHub\NITRPackager\NITRPackager.sln () 
+  | 2                 : 0.000s           0.000s       D:\Development\GitHub\NITRPackager\NITRPackager\NITRPackager.csproj () 
+  . 1                 : 0.390s           0.465s       D:\Development\GitHub\NITRPackager\NITRPackager.Tests\NITRPackager.Tests.csproj () 
+  | | 3               : 0.013s           0.013s       D:\Development\GitHub\NITRPackager\NITRPackager\NITRPackager.csproj (GetTargetFrameworks) 
+  | | 2               : 0.061s           0.061s       D:\Development\GitHub\NITRPackager\NITRPackager\NITRPackager.csproj () 
+  | . 4               : 0.001s           0.001s       D:\Development\GitHub\NITRPackager\NITRPackager\NITRPackager.csproj (GetNativeManifest) 
+  
+  ============================== Node Utilization (IDs represent configurations) ====================================================
+  Timestamp:            1        Duration   Cumulative
+  -----------------------------------------------------------------------------------------------------------------------------------
+  636758897531932467:   0        0.023s     0.023s 
+  636758897532162482:   1        0.094s     0.117s #
+  636758897533102482:   3        0.013s     0.130s 
+  636758897533232444:   1        0.109s     0.239s ##
+  636758897534322467:   2        0.061s     0.300s #
+  636758897534932434:   1        0.001s     0.301s 
+  636758897534942456:   4        0.001s     0.302s 
+  636758897534952447:   1        0.186s     0.488s ###
+  636758897536812820:   0        0.002s     0.490s 
+  -----------------------------------------------------------------------------------------------------------------------------------
+  Utilization:          100.0    Average Utilization: 100.0
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.61
