@@ -31,6 +31,7 @@ namespace ConstructixBuildLogger
         private void EventSource_ProjectFinished(object sender, ProjectFinishedEventArgs e)
         {
             Console.WriteLine("Constructix buildLogger has finished.");
+            Console.WriteLine(e.Timestamp.ToString());
             var result = e.Succeeded ? "Success" : "Failure";
             Console.WriteLine($"Build Status: {result}");
         }
