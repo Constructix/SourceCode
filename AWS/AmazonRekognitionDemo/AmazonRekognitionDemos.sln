@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmazonRekognitionDemo", "AmazonRekognitionDemo1\AmazonRekognitionDemo.csproj", "{7EBE2D72-5FE3-4BE9-9BE2-32291211CDB5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompareFacesRekognitionDemo", "CompareFacesRekognitionDemo\CompareFacesRekognitionDemo.csproj", "{59E7052F-5F06-4E93-88AF-1B12434EA1A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EBE2D72-5FE3-4BE9-9BE2-32291211CDB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EBE2D72-5FE3-4BE9-9BE2-32291211CDB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EBE2D72-5FE3-4BE9-9BE2-32291211CDB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EBE2D72-5FE3-4BE9-9BE2-32291211CDB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59E7052F-5F06-4E93-88AF-1B12434EA1A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59E7052F-5F06-4E93-88AF-1B12434EA1A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59E7052F-5F06-4E93-88AF-1B12434EA1A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59E7052F-5F06-4E93-88AF-1B12434EA1A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3DB044A4-8868-48E9-AB5E-AD1C0AC907B7}
+	EndGlobalSection
+EndGlobal
