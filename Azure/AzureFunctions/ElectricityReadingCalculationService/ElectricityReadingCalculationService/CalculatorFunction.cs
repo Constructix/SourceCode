@@ -19,18 +19,61 @@ namespace ElectricityReadingCalculationService
             try
             {
                 var  data = await req.Content.ReadAsStringAsync();
-                Reading request = JsonConvert.DeserializeObject<Reading>(data);
-                return req.CreateResponse(HttpStatusCode.OK, new ReadingResponse("Successfully completed calculation."));
+                ReadingRequest request =  JsonConvert.DeserializeObject<ReadingRequest>(data);
+                log.Info($"Reading request received.{ DateTime.Now.ToUniversalTime()}");
+
+                TimeSpan totalDays  = new TimeSpan();
+                Status status = Status.Ok;
+                int totalUsage = Reading.TotalUsage(request.FirstReading, request.LastReading);
+                if (totalUsage <0) 
+                    status = Status.UsageError;
+                else
+                {
+                    totalDays = Reading.TotalDays(request.FirstReading, request.LastReading);
+                    if (totalDays.Days <0 ) 
+                        status = Status.DateTimeError;
+                }
+                HttpResponseMessage httpResponseMessage =null;
+                switch (status)
+                {
+                    case Status.Ok:
+                         httpResponseMessage =  req.CreateResponse(HttpStatusCode.OK, new ReadingResponse(totalUsage, totalDays, "Successfully completed calculation."));                      
+                        break;
+                    case Status.UsageError:
+                        httpResponseMessage =  req.CreateErrorResponse(HttpStatusCode.BadRequest,"First Reading cannot be greater than the last reading.");
+                        break;
+                    case Status.DateTimeError:
+                        httpResponseMessage =  req.CreateErrorResponse(HttpStatusCode.BadRequest,"First Reading DateTime cannot be greater than the last reading.");                    
+                        break;
+                }
+                return httpResponseMessage;
             }
             catch (Exception ex)
             {
-
-
                 throw;
-            }
-           
+            }            
         }
     }    
+
+    public enum Status
+    {
+        Ok,
+        UsageError,
+        DateTimeError
+    }
+
+    public class ReadingRequest
+    {
+        public Reading FirstReading {get;set;}
+        public Reading LastReading {get;set;}
+
+        public ReadingRequest() { }
+        public ReadingRequest(Reading firstReading, Reading lastReading)
+        {
+            this.FirstReading = firstReading;
+            this.LastReading = lastReading;
+        }
+    }
 
     public class Reading
     {
@@ -47,46 +90,42 @@ namespace ElectricityReadingCalculationService
             this.Value = value;
             this.Recorded = recorded;
         }
+
+
+        public static int TotalUsage(Reading firstReading, Reading lastReading)
+        {
+
+            if(firstReading.Value > lastReading.Value)
+                return -1;
+            return lastReading.Value  - firstReading.Value;
+        }
+
+        internal static TimeSpan TotalDays(Reading firstReading, Reading lastReading)
+        {
+            return lastReading.Recorded.Subtract(firstReading.Recorded.Date);            
+        }
     }
 
     public class ReadingResponse
     {
+        public int TotalUsage {get;set;}
+        public int TotalDays {get;set;}
         public DateTime DateTimeStamp {get;set;}
         public string Message {get; }
 
+
+
+
         public ReadingResponse()
         {
+            
             DateTimeStamp = DateTime.Now;
         }
-         public ReadingResponse(string message) : this()
+         public ReadingResponse(int totalUsage, TimeSpan totalDays, string message) : this()
         {            
+            this.TotalUsage = totalUsage;
+            this.TotalDays = totalDays.Days;
             this.Message = message;
         }
-    }
-
-
-    //public static class CalculatorFunction
-    //{
-    //    [FunctionName("Function1")]
-    //    public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)]HttpRequestMessage req, TraceWriter log)
-    //    {
-    //        log.Info("C# HTTP trigger function processed a request.");
-
-    //        // parse query parameter
-    //        string name = req.GetQueryNameValuePairs()
-    //            .FirstOrDefault(q => string.Compare(q.Key, "name", true) == 0)
-    //            .Value;
-
-    //        if (name == null)
-    //        {
-    //            // Get request body
-    //            dynamic data = await req.Content.ReadAsAsync<object>();
-    //            name = data?.name;
-    //        }
-
-    //        return name == null
-    //            ? req.CreateResponse(HttpStatusCode.BadRequest, "Please pass a name on the query string or in the request body")
-    //            : req.CreateResponse(HttpStatusCode.OK, "Hello " + name);
-    //    }
-    //}
+    }  
 }
