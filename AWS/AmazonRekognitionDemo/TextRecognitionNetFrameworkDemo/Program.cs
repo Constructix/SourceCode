@@ -64,14 +64,19 @@ namespace TextRecognitionNetFrameworkDemo
             Console.WriteLine($"Bucket Location: { bucketLocation}");
 
             AmazonRekognitionClient rekognitionClient = new AmazonRekognitionClient();
+            ///////////////////////////////////////////////////////////////////////////////
+            // this is the item in the bucket, not the item on the client.
+            //
             var photo = @"20181231_123556.jpg";
+
+            S3ObjectDetails details = new S3ObjectDetails(photo);
             DetectTextRequest detectTextRequest = new DetectTextRequest()
             {
                 Image = new Image()
                 {
                     S3Object = new Amazon.Rekognition.Model.S3Object()
                     {
-                        Name = photo,
+                        Name = details.Name,
                         Bucket = bucketName
                     }
                 }
