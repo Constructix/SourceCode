@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace TextRecognitionNetFrameworkDemo
 {
-    public class S3ObjectDetails
+    public class S3ObjectDetail
     {
         public string Name { get; }
 
-        public S3ObjectDetails(string name)
+        public S3ObjectDetail(string name)
         {
             Name = name;
         }
