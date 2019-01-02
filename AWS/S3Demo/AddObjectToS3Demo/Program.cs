@@ -15,10 +15,7 @@ using Amazon.S3.Model;
 using System.Threading.Tasks;
 
 namespace AddObjectToS3Demo
-{
-
-
-   
+{ 
     
     class Program
     {
