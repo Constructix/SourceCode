@@ -16,6 +16,8 @@ namespace AzureBlobStorageQuickStartDemo
             Console.WriteLine($"{new string('-', 80)}");
 
             await UploadFileToStorage();
+
+            Console.WriteLine("Reading from Storage.....");
             await ReadBlobContainer();
         }
 
