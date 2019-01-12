@@ -1,8 +1,8 @@
-﻿using Microsoft.WindowsAzure.Storage;
-using Microsoft.WindowsAzure.Storage.Blob;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Blob;
 
 namespace AzureBlobStorageQuickStartDemo
 {
@@ -75,8 +75,6 @@ namespace AzureBlobStorageQuickStartDemo
         {
             CloudStorageAccount storageAccount = null;
             CloudBlobContainer cloudBlobContainer = null;
-
-
 
             // connection string to storage
             string connectionStringToCloudStorage = "DefaultEndpointsProtocol=https;AccountName=zeusconstructixstorage;AccountKey=vojDR4oWr4gZ6yKODaaq0/U1EffAd7iJJ4FfEa/9TYGG7l3yBzjveAl91vLyyIEjbn2vgA3ZqdGbE0vRkVl/3A==;EndpointSuffix=core.windows.net";
