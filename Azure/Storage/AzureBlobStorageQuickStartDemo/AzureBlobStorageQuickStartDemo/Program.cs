@@ -10,7 +10,6 @@ namespace AzureBlobStorageQuickStartDemo
     {
         public  static async Task Main(string[] args)
         {
-
             Console.WriteLine($"{ new string('-', 80)}");
             Console.WriteLine("Purpose of this demo is to demonstrates Azure Blob storage.");
             Console.WriteLine($"{new string('-', 80)}");
@@ -24,9 +23,10 @@ namespace AzureBlobStorageQuickStartDemo
         public static async Task ReadBlobContainer()
         {
             // connection string to storage
-            const string connectionStringToCloudStorage = "DefaultEndpointsProtocol=https;AccountName=zeusconstructixstorage;AccountKey=vojDR4oWr4gZ6yKODaaq0/U1EffAd7iJJ4FfEa/9TYGG7l3yBzjveAl91vLyyIEjbn2vgA3ZqdGbE0vRkVl/3A==;EndpointSuffix=core.windows.net";
+            
             CloudBlobContainer cloudBlobContainer = null;
             CloudStorageAccount storageAccount = null;
+            const string connectionStringToCloudStorage = "DefaultEndpointsProtocol=https;AccountName=zeusconstructixstorage;AccountKey=nCvFYKRFI/mKDdJFvFo5FNuM6bm1qOYQ80Vk9w1jjAi9NT0TRqhNE7sDI7Vh47gnvsZvx2lAd4myNfEFWvD57A==;EndpointSuffix=core.windows.net";
             if (CloudStorageAccount.TryParse(connectionStringToCloudStorage, out storageAccount))
             {
 
@@ -77,10 +77,7 @@ namespace AzureBlobStorageQuickStartDemo
         {
             CloudStorageAccount storageAccount = null;
             CloudBlobContainer cloudBlobContainer = null;
-
-            // connection string to storage
-            string connectionStringToCloudStorage = "DefaultEndpointsProtocol=https;AccountName=zeusconstructixstorage;AccountKey=vojDR4oWr4gZ6yKODaaq0/U1EffAd7iJJ4FfEa/9TYGG7l3yBzjveAl91vLyyIEjbn2vgA3ZqdGbE0vRkVl/3A==;EndpointSuffix=core.windows.net";
-
+            const string connectionStringToCloudStorage = "DefaultEndpointsProtocol=https;AccountName=zeusconstructixstorage;AccountKey=nCvFYKRFI/mKDdJFvFo5FNuM6bm1qOYQ80Vk9w1jjAi9NT0TRqhNE7sDI7Vh47gnvsZvx2lAd4myNfEFWvD57A==;EndpointSuffix=core.windows.net";
             if (CloudStorageAccount.TryParse(connectionStringToCloudStorage, out storageAccount))
             {
                 try
