@@ -10,7 +10,7 @@ namespace GetResponseFromOrderAPI.Tests
     public class UnitTest1
     {
         [Fact]
-        public void Test1()
+        public void mTest1()
         {
             HttpClient client = new HttpClient();
 

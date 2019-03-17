@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -28,7 +29,11 @@ namespace FirstDemo
 
         public OrderResponse()
         {
-            
+
+            EventId=  Guid.NewGuid();
+            DateTimeStamp =DateTime.Now;
+            Status = string.Empty;
+
         }
 
         public OrderResponse(Guid eventId, DateTime dateTimeStamp, string status)
@@ -83,12 +88,12 @@ namespace FirstDemo
             _client = new HttpClient { BaseAddress = new Uri(baseUri ?? "http://my-api") };
         }
 
-        public OrderResponse GetOrderResponse(string id)
+        public OrderResponse GetOrderResponse(string apiMethodName, OrderRequest request)
         {
             string reasonPhrase;
 
-            HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Post, $"{_client.BaseAddress}/api/getOrder");
-            requestMessage.Content = new StringContent(new OrderRequest("First", true).ToJSon(), Encoding.UTF8, "application/json");
+            HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Post, $"{_client.BaseAddress}{apiMethodName}");
+            requestMessage.Content = new StringContent(request.ToJSon(), Encoding.UTF8, "application/json");
 
             var response = _client.SendAsync(requestMessage);
             var content = response.Result.Content.ReadAsStringAsync().Result;
@@ -182,13 +187,13 @@ namespace FirstDemo
         }
 
         [Fact]
-        public void PutSomething()
+        public void SimulateSumulateSubmitResponse()
         {
             var expectedGuid = Guid.NewGuid();
             var testGuid = expectedGuid;
             // Arrange
-            _mockProviderService.Given("Submitting Test Data that is in OrderRequest and getting pricing response")
-                .UponReceiving("Order Request3, OrderResponse is to be returned.")
+            _mockProviderService.Given("Submitting Test Data that is in OrderRequest and getting pricing response.")
+                .UponReceiving("Order Request is the input, OrderResponse is to be returned.")
                 .With(new ProviderServiceRequest
                 {
                     Method = HttpVerb.Post,
@@ -206,22 +211,31 @@ namespace FirstDemo
                     {
                         {"Content-Type", "application/json; charset=utf-8"}
                     }
-                    ,Body = new OrderResponse
-                        {
-                            EventId = testGuid, DateTimeStamp = DateTime.Now, Status = "OK"
-                        }
-                        .ToJson()
+                    ,Body = OrderResponseFactory.Build(testGuid, DateTime.Now, "OK").ToJson()
+                    
                 });
 
+            // Act
             var consumer = new SomethingApiClient(_mockProviderServiceBaseUri);
-
-            var result = consumer.GetOrderResponse("AA");
-
-
+            var result = consumer.GetOrderResponse("/api/getOrder", new OrderRequest("First", true));
+            // Assert
             Assert.Equal(expectedGuid, result.EventId);
             Assert.Equal("OK", result.Status);
         }
 
+    }
+
+    public class OrderResponseFactory
+    {
+        public static OrderResponse BuildResponse()
+        {
+            return new OrderResponse();
+        }
+
+        public static OrderResponse Build(Guid id, DateTime dateTimeStamp, string status)
+        {
+            return new OrderResponse(id, dateTimeStamp, !string.IsNullOrWhiteSpace(status) ? status : string.Empty);
+        }
     }
         
 }
