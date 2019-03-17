@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using PactNet;
 using PactNet.Mocks.MockHttpService;
@@ -18,6 +20,60 @@ namespace FirstDemo
     }
 
 
+    public class OrderResponse
+    {
+        public Guid EventId { get; set; }
+        public DateTime DateTimeStamp { get; set; }
+        public string Status { get; set; }
+
+        public OrderResponse()
+        {
+            
+        }
+
+        public OrderResponse(Guid eventId, DateTime dateTimeStamp, string status)
+        {
+            EventId = eventId;
+            DateTimeStamp = dateTimeStamp;
+            Status = status;
+
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+        public string ToJson()
+        {
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
+        }
+    }
+
+    public class OrderRequest
+    {
+        public string Name { get; set; }
+        public bool IsASAP { get; set; }
+
+        public OrderRequest()
+        {
+            
+        }
+
+        public OrderRequest(string name, bool isAsap)
+        {
+            Name = name;
+            IsASAP = isAsap;
+        }
+
+        public string ToJSon()
+        {
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
+        }
+    }
+
+
+
     public class SomethingApiClient
     {
         private readonly HttpClient _client;
@@ -27,66 +83,26 @@ namespace FirstDemo
             _client = new HttpClient { BaseAddress = new Uri(baseUri ?? "http://my-api") };
         }
 
-        public Something GetSomething(string id)
+        public OrderResponse GetOrderResponse(string id)
         {
             string reasonPhrase;
 
-            var request = new HttpRequestMessage(HttpMethod.Get, "/somethings/" + id);
-            request.Headers.Add("Accept", "application/json");
+            HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Post, $"{_client.BaseAddress}/api/getOrder");
+            requestMessage.Content = new StringContent(new OrderRequest("First", true).ToJSon(), Encoding.UTF8, "application/json");
 
-            var response = _client.SendAsync(request);
-
+            var response = _client.SendAsync(requestMessage);
             var content = response.Result.Content.ReadAsStringAsync().Result;
             var status = response.Result.StatusCode;
 
-            reasonPhrase = response.Result.ReasonPhrase; //NOTE: any Pact mock provider errors will be returned here and in the response body
-
-            request.Dispose();
-            response.Dispose();
-
-            if (status == HttpStatusCode.OK)
+            if(status == HttpStatusCode.OK)
+                return JsonConvert.DeserializeObject<OrderResponse>(content);
+            else
             {
-                return !String.IsNullOrEmpty(content) ?
-                    JsonConvert.DeserializeObject<Something>(content)
-                    : null;
-            }
-
-            throw new Exception(reasonPhrase);
-        }
-
-        public void PutSomething(string value)
-        {
-            var dateTime = DateTime.Now.ToString("O");
-            var @event = new
-            {
-                EventId = constants.globalID,
-                Timestamp = "11",
-                EventType = "DetailsView"
-            };
-
-            var eventJson = JsonConvert.SerializeObject(@event, Formatting.Indented);
-            var requestContent = new StringContent(eventJson, Encoding.UTF8, "application/json");
-            var request = new HttpRequestMessage(HttpMethod.Post, "/events") { Content = requestContent };
-
-            var response = _client.SendAsync(request);
-
-            try
-            {
-                var result = response.Result;
-                var statusCode = result.StatusCode;
-                if (statusCode == HttpStatusCode.Created)
-                {
-                    var okResponse = "OK";
-                    Console.WriteLine(okResponse);
-                }
-
-                RaiseResponseError(request, result);
-            }
-            finally
-            {
-                Dispose(request, response);
+                return null;
             }
         }
+
+       
         private static void RaiseResponseError(HttpRequestMessage failedRequest, HttpResponseMessage failedResponse)
         {
             throw new HttpRequestException(
@@ -168,81 +184,44 @@ namespace FirstDemo
         [Fact]
         public void PutSomething()
         {
-            var id = Guid.NewGuid().ToString();
-            _mockProviderService.UponReceiving("a request to create a new event")
+            var expectedGuid = Guid.NewGuid();
+            var testGuid = expectedGuid;
+            // Arrange
+            _mockProviderService.Given("Submitting Test Data that is in OrderRequest and getting pricing response")
+                .UponReceiving("Order Request3, OrderResponse is to be returned.")
                 .With(new ProviderServiceRequest
                 {
                     Method = HttpVerb.Post,
-                    Path = "/events",
+                    Path = "/api/getOrder",
                     Headers = new Dictionary<string, object>
                     {
-                        { "Content-Type", "application/json; charset=utf-8" }
-                    },
-                    Body = new
-                    {
-                        constants.globalID,
-                        timestamp = "11",
-                        eventType = "DetailsView"
+                        {"Content-Type", "application/json; charset=utf-8"}
                     }
-                })
-                .WillRespondWith(new ProviderServiceResponse
-                {
-                    Status = 201
-                });
 
-            var consumer = new SomethingApiClient(_mockProviderServiceBaseUri);
-
-            //Act / Assert
-            consumer.PutSomething("eventId");
-        }
-
-
-
-        [Fact]
-        public void GetSomething_WhenTheTesterSomethingExists_ReturnsTheSomething()
-        {
-
-
-            
-            //Arrange
-            _mockProviderService
-                .Given("There is a something with id 'tester'")
-                .UponReceiving("A GET request to retrieve the something")
-                .With(new ProviderServiceRequest
-                {
-                    Method = HttpVerb.Get,
-                    Path = "/somethings/tester",
-                    Headers = new Dictionary<string, object>
-                    {
-                        { "Accept", "application/json" }
-                    }
                 })
                 .WillRespondWith(new ProviderServiceResponse
                 {
                     Status = 200,
                     Headers = new Dictionary<string, object>
                     {
-                        { "Content-Type", "application/json; charset=utf-8" }
-                    },
-                    Body = new //NOTE: Note the case sensitivity here, the body will be serialised as per the casing defined
-                    {
-                        id = "tester",
-                        firstName = "Totally",
-                        lastName = "Awesome"
+                        {"Content-Type", "application/json; charset=utf-8"}
                     }
-                }); //NOTE: WillRespondWith call must come last as it will register the interaction
+                    ,Body = new OrderResponse
+                        {
+                            EventId = testGuid, DateTimeStamp = DateTime.Now, Status = "OK"
+                        }
+                        .ToJson()
+                });
 
             var consumer = new SomethingApiClient(_mockProviderServiceBaseUri);
 
-            //Act
-            var result = consumer.GetSomething("tester");
+            var result = consumer.GetOrderResponse("AA");
 
-            
 
-            //Assert
-            Assert.Equal("tester", result.id);
-
-            _mockProviderService.VerifyInteractions(); //NOTE: Verifies that interactions registered on the mock provider are called at least once
+            Assert.Equal(expectedGuid, result.EventId);
+            Assert.Equal("OK", result.Status);
         }
+
     }
+        
 }

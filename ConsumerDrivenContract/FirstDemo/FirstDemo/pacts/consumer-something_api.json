@@ -7,13 +7,31 @@
   },
   "interactions": [
     {
-      "description": "A GET request to retrieve the something",
-      "providerState": "There is a something with id 'tester'",
+      "description": "Order Request, OrderResponse is to be returned.",
+      "providerState": "Submitting Data and getting pricing response",
       "request": {
-        "method": "get",
-        "path": "/somethings/tester",
+        "method": "post",
+        "path": "/api/getOrder",
         "headers": {
           "Accept": "application/json"
+        }
+      },
+      "response": {
+        "status": 201,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": "{\r\n  \"EventId\": \"b6e403f6-4171-444c-b685-409a0c8d1b25\",\r\n  \"DateTimeStamp\": \"2019-03-17T11:46:43.8759156+10:00\",\r\n  \"Status\": \"OK\"\r\n}"
+      }
+    },
+    {
+      "description": "Order Request3, OrderResponse is to be returned.",
+      "providerState": "Submitting3 Data and getting pricing response",
+      "request": {
+        "method": "post",
+        "path": "/api/getOrder",
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
         }
       },
       "response": {
@@ -21,11 +39,25 @@
         "headers": {
           "Content-Type": "application/json; charset=utf-8"
         },
-        "body": {
-          "id": "tester",
-          "firstName": "Totally",
-          "lastName": "Awesome"
+        "body": "{\r\n  \"EventId\": \"ae9ddf24-5068-4d37-9cd1-774ff40ee6d5\",\r\n  \"DateTimeStamp\": \"2019-03-17T13:17:09.0262894+10:00\",\r\n  \"Status\": \"OK\"\r\n}"
+      }
+    },
+    {
+      "description": "Order Request3, OrderResponse is to be returned.",
+      "providerState": "Submitting Test Data that is in OrderRequest and getting pricing response",
+      "request": {
+        "method": "post",
+        "path": "/api/getOrder",
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
         }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": "{\r\n  \"EventId\": \"2a3d3bb2-3dcc-48dd-96e1-e2b3b0b4dab3\",\r\n  \"DateTimeStamp\": \"2019-03-17T13:22:57.2179765+10:00\",\r\n  \"Status\": \"OK\"\r\n}"
       }
     }
   ],
