@@ -5,30 +5,29 @@ using Amazon.SimpleNotificationService.Model;
 
 namespace SendSMSDemo
 {
-    class Program
+    public class SendMessageCommand
     {
-        static async Task Main(string[] args)
+        public async Task Execute(SMSMessage message)
         {
             AmazonSimpleNotificationServiceClient client = new AmazonSimpleNotificationServiceClient(Amazon.RegionEndpoint.APSoutheast2);
 
             PublishRequest request = new PublishRequest();
-            request.Message = "Sending SMS via AWS";
-            request.Subject = "Sending SMS-AWS";
+            request.Message = message.Contents;
 
-            request.PhoneNumber = string.Empty;
+
+            request.PhoneNumber = message.Number;
 
             if (!string.IsNullOrWhiteSpace(request.PhoneNumber))
             {
+
+                
                 PublishResponse response = await client.PublishAsync(request);
                 Console.WriteLine($"Message Id : {response.MessageId} {response.HttpStatusCode}");
             }
             else
             {
-                
                 Console.WriteLine(Constants.Messages.MobileNumberMissingMessage);
             }
-            SendMessageCommand cmd = new SendMessageCommand();
-
         }
     }
 }
