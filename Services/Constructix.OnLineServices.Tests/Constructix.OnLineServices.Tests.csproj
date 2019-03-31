@@ -33,8 +33,4 @@
     <ProjectReference Include="..\Constructix.OnLineServices.Services\Constructix.OnLineServices.Services.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Contexts\" />
-  </ItemGroup>
-
 </Project>

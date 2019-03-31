@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
 using Constructix.OnlineServices.Data;
-using Constructix.OnlineServices.Data.Contexts;
 using Constructix.OnLineServices.DTO;
 using Constructix.OnLineServices.Services;
+using Constructix.OnLineServices.Tests.Contexts;
+using Constructix.OnLineServices.Tests.Repository;
 using Newtonsoft.Json;
 using NSubstitute;
 using Xunit;
@@ -19,6 +20,8 @@ namespace Constructix.OnLineServices.Tests.Services
 {
     public class OrderRepositoryTests
     {
+        private readonly GenericRepositoryTests _genericRepositoryTests = new GenericRepositoryTests();
+        private readonly AwsContextTests AwsContextTests = new AwsContextTests();
 
         [Fact]
         public void OrderServiceInstanceCreatedNoExceptionExpected()
@@ -50,24 +53,6 @@ namespace Constructix.OnLineServices.Tests.Services
             ordersRepository.Get(testGuid).Returns(ordersList[1]);
             IService<Order> orderService = new OrderService(ordersRepository);
             orderService.Get(testGuid).ShouldNotBe(null);
-
-        }
-
-        [Fact]
-        public void CreateGenericRepository()
-        {
-            var repo = new GenericRepository<Order>();
-        }
-
-        [Fact]
-        public void CreateContexts()
-        {
-            AmazonDynamoDBConfig config = new AmazonDynamoDBConfig { ServiceURL = "http://localhost:8000" };
-            IAmazonDynamoDB client = new AmazonDynamoDBClient(config);
-            DynamoDBContext context = new DynamoDBContext(client);
-            var awsContext =new AWSContext(context);
-            var ordersContext = new OrdersContext();
-            var entityFramework = new EntityFrameworkContext<OrdersContext>(ordersContext);
 
         }
 

@@ -11,5 +11,11 @@ namespace Constructix.OnLineServices.Domain
         {
             
         }
+
+        public OrderLine(int lineOrderNumber, Guid orderId)
+        {
+            LineOrderNumber = lineOrderNumber;
+            OrderId = orderId;
+        }
     }
 }

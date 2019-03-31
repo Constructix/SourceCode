@@ -11,6 +11,12 @@ namespace Constructix.OnLineServices.Domain
         {
             
         }
+
+        public OrderStatus(Guid orderId, Guid customerId)
+        {
+            OrderId = orderId;
+            CustomerId = customerId;
+        }
         
     }
 }
