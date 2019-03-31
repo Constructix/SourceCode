@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
 using Constructix.OnlineServices.Data;
+using Constructix.OnlineServices.Data.Contexts;
+using Constructix.OnLineServices.DTO;
 using Constructix.OnLineServices.Services;
-using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using NSubstitute;
 using Xunit;
 using Shouldly;
+
 
 namespace Constructix.OnLineServices.Tests.Services
 {
@@ -146,121 +148,4 @@ namespace Constructix.OnLineServices.Tests.Services
             return orders;
         }
     }
-
-    public interface IContext<T>
-    {
-        T Value { get; set; }
-
-    }
-
-    public class AWSContext : IContext<DynamoDBContext>
-    {
-        public DynamoDBContext Value { get; set; }
-
-        public AWSContext()
-        {
-            
-        }
-
-        public AWSContext(DynamoDBContext value)
-        {
-            Value = value;
-        }
-    }
-
-    public class EntityFrameworkContext<T> : IContext<T>
-    {
-        public T Value { get; set; }
-
-        public EntityFrameworkContext()
-        {
-            
-        }
-
-        public EntityFrameworkContext(T value)
-        {
-            Value = value;
-        }
-    }
-
-    public class OrdersContext : DbContext
-    {
-        public DbSet<Order> Orders { get; set; }
-        
-    }
-
-    
-
-    public class OrderLine
-    {
-        public int LineOrderNumber { get; set; }
-        public Guid OrderId { get; set; }
-
-        public OrderLine()
-        {
-            
-        }
-    }
-
-    public class OrderStatus
-    {
-        public Guid OrderId { get; set; }
-        public Guid CustomerId { get; set; }
-
-        public OrderStatus()
-        {
-            
-        }
-        
-    }
-
-    [DynamoDBTable("Orders")]
-    public class DynamoOrder
-    {
-        [DynamoDBHashKey]
-        public Guid Id { get; set; }
-        [DynamoDBRangeKey]
-        public string SortKey { get; set; }
-        [DynamoDBProperty]
-        public string Body { get; set; }
-        [DynamoDBProperty]
-        public string OrderStatus { get; set; }
-
-        public DynamoOrder()
-        {
-            
-        }
-        public DynamoOrder(Guid id, string sortKey, string body, string orderStatus)
-        {
-            Id = id;
-            SortKey = sortKey;
-            Body = body;
-            OrderStatus = orderStatus;
-        }
-    }
-
-    public class GenericRepository<T> : IRepository<T>
-    {
-        public T Get(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<T> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Add(T itemToAdd)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(T itemToDelete)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-   
 }

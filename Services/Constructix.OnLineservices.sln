@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Constructix.OnLineservices.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Constructix.OnLineServices.Tests", "Constructix.OnLineServices.Tests\Constructix.OnLineServices.Tests.csproj", "{C02C398D-E9F6-405A-ADEC-E7E8140813B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constructix.OnLineServices.DTO", "Constructix.OnLineServices.DTO\Constructix.OnLineServices.DTO.csproj", "{B37D4CD5-C103-4434-B94F-9EDD76D46585}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C02C398D-E9F6-405A-ADEC-E7E8140813B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C02C398D-E9F6-405A-ADEC-E7E8140813B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C02C398D-E9F6-405A-ADEC-E7E8140813B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B37D4CD5-C103-4434-B94F-9EDD76D46585}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B37D4CD5-C103-4434-B94F-9EDD76D46585}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B37D4CD5-C103-4434-B94F-9EDD76D46585}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B37D4CD5-C103-4434-B94F-9EDD76D46585}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

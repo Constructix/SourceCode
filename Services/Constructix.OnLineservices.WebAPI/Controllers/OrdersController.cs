@@ -9,10 +9,7 @@ namespace Constructix.OnLineservices.WebAPI.Controllers
     [ApiController]
     public class OrdersController : ControllerBase
     {
-
         private readonly IService<Order> orderService;
-
-
         public OrdersController(IService<Order> orderService)
         {
             this.orderService = orderService;
@@ -43,7 +40,5 @@ namespace Constructix.OnLineservices.WebAPI.Controllers
         {
             return new OkObjectResult(orderService.GetAll());
         }
-
-
     }
 }

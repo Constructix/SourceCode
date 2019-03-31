@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -29,7 +29,12 @@
   <ItemGroup>
     <ProjectReference Include="..\Constructix.OnlineServices.Data\Constructix.OnlineServices.Data.csproj" />
     <ProjectReference Include="..\Constructix.OnLineServices.Domain\Constructix.OnLineServices.Domain.csproj" />
+    <ProjectReference Include="..\Constructix.OnLineServices.DTO\Constructix.OnLineServices.DTO.csproj" />
     <ProjectReference Include="..\Constructix.OnLineServices.Services\Constructix.OnLineServices.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Contexts\" />
   </ItemGroup>
 
 </Project>
