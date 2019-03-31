@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.539
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Constructix.OnlineServices.Data", "Constructix.OnlineServices.Data\Constructix.OnlineServices.Data.csproj", "{55CC1F5B-7750-4E8D-823E-808AFD5008F3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Constructix.OnLineServices.Domain", "Constructix.OnLineServices.Domain\Constructix.OnLineServices.Domain.csproj", "{D7CE4C80-3573-466F-B395-E8590F8AEC64}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Constructix.OnLineServices.Services", "Constructix.OnLineServices.Services\Constructix.OnLineServices.Services.csproj", "{A0E07069-949A-428C-A5B7-70FBE25D634B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Constructix.OnLineservices.WebAPI", "Constructix.OnLineservices.WebAPI\Constructix.OnLineservices.WebAPI.csproj", "{B0C9475D-CCAC-4670-994B-24EA06FB679B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Constructix.OnLineServices.Tests", "Constructix.OnLineServices.Tests\Constructix.OnLineServices.Tests.csproj", "{C02C398D-E9F6-405A-ADEC-E7E8140813B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55CC1F5B-7750-4E8D-823E-808AFD5008F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55CC1F5B-7750-4E8D-823E-808AFD5008F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55CC1F5B-7750-4E8D-823E-808AFD5008F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55CC1F5B-7750-4E8D-823E-808AFD5008F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7CE4C80-3573-466F-B395-E8590F8AEC64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7CE4C80-3573-466F-B395-E8590F8AEC64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7CE4C80-3573-466F-B395-E8590F8AEC64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7CE4C80-3573-466F-B395-E8590F8AEC64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0E07069-949A-428C-A5B7-70FBE25D634B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0E07069-949A-428C-A5B7-70FBE25D634B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0E07069-949A-428C-A5B7-70FBE25D634B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0E07069-949A-428C-A5B7-70FBE25D634B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0C9475D-CCAC-4670-994B-24EA06FB679B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0C9475D-CCAC-4670-994B-24EA06FB679B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0C9475D-CCAC-4670-994B-24EA06FB679B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0C9475D-CCAC-4670-994B-24EA06FB679B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C02C398D-E9F6-405A-ADEC-E7E8140813B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C02C398D-E9F6-405A-ADEC-E7E8140813B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C02C398D-E9F6-405A-ADEC-E7E8140813B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C02C398D-E9F6-405A-ADEC-E7E8140813B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D8EB206-09D6-4E85-BEEA-4A50556B9779}
+	EndGlobalSection
+EndGlobal
