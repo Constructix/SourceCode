@@ -4,9 +4,9 @@ using Constructix.OnLineServices.Domain;
 
 namespace Constructix.OnlineServices.Data
 {
-    public class OrderRepository : IRepository<Order>
+    public class MemoryOrderRepository : IRepository<Order>
     {
-        private readonly  List<Order> orders = new List<Order>();
+        private readonly List<Order> orders = new List<Order>();
 
         public Order Get(Guid id)
         {
@@ -15,11 +15,12 @@ namespace Constructix.OnlineServices.Data
 
         public List<Order> GetAll()
         {
+
             return orders;
         }
 
         public void Add(Order itemToAdd)
-        { 
+        {
             orders.Add(itemToAdd);
         }
 

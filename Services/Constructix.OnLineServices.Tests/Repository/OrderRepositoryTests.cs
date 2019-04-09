@@ -60,77 +60,77 @@ namespace Constructix.OnLineServices.Tests.Services
         [Fact]
         public async Task CreateDynamoDBClient()
         {
-            AmazonDynamoDBConfig config = new AmazonDynamoDBConfig {ServiceURL = "http://localhost:8000"};
-            IAmazonDynamoDB client = new AmazonDynamoDBClient(config);
-            DynamoDBContext context = new DynamoDBContext(client);
+        //    AmazonDynamoDBConfig config = new AmazonDynamoDBConfig {ServiceURL = "http://localhost:8000"};
+        //    IAmazonDynamoDB client = new AmazonDynamoDBClient(config);
+        //    DynamoDBContext context = new DynamoDBContext(client);
 
-            var testGuid = "8acd2b55-64c2-4917-a857-3fb550b12ae9";
-            var newOrderId = Guid.Empty;
-            Guid.TryParse(testGuid, out newOrderId);
+        //    var testGuid = "8acd2b55-64c2-4917-a857-3fb550b12ae9";
+        //    var newOrderId = Guid.Empty;
+        //    Guid.TryParse(testGuid, out newOrderId);
             
-            //var db = await context.LoadAsync<DynamoOrder>(newOrderId, "master");
-            //if (db != null)
-            //    await context.DeleteAsync<DynamoOrder>(db);
-            // Query
-            var orders = await GetOrdersThatMatchGuid(context, newOrderId);
-            var deleteBatch = context.CreateBatchWrite<DynamoOrder>();
-            deleteBatch.AddPutItems(orders.AsEnumerable());
-            await deleteBatch.ExecuteAsync();
+        //    //var db = await context.LoadAsync<DynamoOrder>(newOrderId, "master");
+        //    //if (db != null)
+        //    //    await context.DeleteAsync<DynamoOrder>(db);
+        //    // Query
+        //    var orders = await GetOrdersThatMatchGuid(context, newOrderId);
+        //    var deleteBatch = context.CreateBatchWrite<DynamoOrder>();
+        //    deleteBatch.AddPutItems(orders.AsEnumerable());
+        //    await deleteBatch.ExecuteAsync();
 
 
 
-            // create Order
-            var order = new Order(newOrderId, DateTime.Now, DateTime.Now);
-            var dbOrder = new DynamoOrder(order.Id, "master", JsonConvert.SerializeObject(order), string.Empty);
-            var dbOrderStatus = new DynamoOrder(order.Id,"status", JsonConvert.SerializeObject(new OrderStatus { OrderId = order.Id}), "-1");
+        //    // create Order
+        //    var order = new Order(newOrderId, DateTime.Now, DateTime.Now);
+        //    var dbOrder = new DynamoOrder(order.Id, "master", JsonConvert.SerializeObject(order), string.Empty);
+        //    var dbOrderStatus = new DynamoOrder(order.Id,"status", JsonConvert.SerializeObject(new OrderStatus { OrderId = order.Id}), "-1");
 
-            var batchConfig = new DynamoDBOperationConfig();
-            batchConfig.SkipVersionCheck = false;
-            var orderBatch = context.CreateBatchWrite<DynamoOrder>(batchConfig);
+        //    var batchConfig = new DynamoDBOperationConfig();
+        //    batchConfig.SkipVersionCheck = false;
+        //    var orderBatch = context.CreateBatchWrite<DynamoOrder>(batchConfig);
 
-            for (int i = 0; i < 50; i++)
-            {
-                var dbOrderLineItem = new DynamoOrder(order.Id,i.ToString() , JsonConvert.SerializeObject(new OrderLine{LineOrderNumber = i,
-                    OrderId = order.Id }), string.Empty);
+        //    for (int i = 0; i < 50; i++)
+        //    {
+        //        var dbOrderLineItem = new DynamoOrder(order.Id,i.ToString() , JsonConvert.SerializeObject(new OrderLine{LineOrderNumber = i,
+        //            OrderId = order.Id }), string.Empty);
 
-                orderBatch.AddPutItem(dbOrderLineItem);
-            }
+        //        orderBatch.AddPutItem(dbOrderLineItem);
+        //    }
 
-            orderBatch.AddPutItem(dbOrder);
-            orderBatch.AddPutItem(dbOrderStatus);
+        //    orderBatch.AddPutItem(dbOrder);
+        //    orderBatch.AddPutItem(dbOrderStatus);
 
-            await orderBatch.ExecuteAsync();
+        //    await orderBatch.ExecuteAsync();
 
 
-            //await context.SaveAsync(dbOrder);
-            // Query
-            AsyncSearch<DynamoOrder>  result = context.QueryAsync<DynamoOrder>(newOrderId);
-            orders = new List<DynamoOrder>();
-            orders.AddRange(await result.GetRemainingAsync());
-            while (!result.IsDone)
-            {
-                orders.AddRange(await result.GetRemainingAsync());
-            }
-            var number = orders.Count;
+        //    //await context.SaveAsync(dbOrder);
+        //    // Query
+        //    AsyncSearch<DynamoOrder>  result = context.QueryAsync<DynamoOrder>(newOrderId);
+        //    orders = new List<DynamoOrder>();
+        //    orders.AddRange(await result.GetRemainingAsync());
+        //    while (!result.IsDone)
+        //    {
+        //        orders.AddRange(await result.GetRemainingAsync());
+        //    }
+        //    var number = orders.Count;
 
-            // load method
+        //    // load method
 
-            var dynamoOrder = await context.LoadAsync<DynamoOrder>(newOrderId, "master");
+        //    var dynamoOrder = await context.LoadAsync<DynamoOrder>(newOrderId, "master");
 
-            dynamoOrder.ShouldNotBeNull();
-        }
+        //    dynamoOrder.ShouldNotBeNull();
+        //}
 
-        private static async Task<List<DynamoOrder>> GetOrdersThatMatchGuid(DynamoDBContext context, Guid newOrderId)
-        {
-            AsyncSearch<DynamoOrder> result = context.QueryAsync<DynamoOrder>(newOrderId);
-            List<DynamoOrder> orders = new List<DynamoOrder>();
-            orders.AddRange(await result.GetRemainingAsync());
-            while (!result.IsDone)
-            {
-                orders.AddRange(await result.GetRemainingAsync());
-            }
+        //private static async Task<List<DynamoOrder>> GetOrdersThatMatchGuid(DynamoDBContext context, Guid newOrderId)
+        //{
+        //    AsyncSearch<DynamoOrder> result = context.QueryAsync<DynamoOrder>(newOrderId);
+        //    List<DynamoOrder> orders = new List<DynamoOrder>();
+        //    orders.AddRange(await result.GetRemainingAsync());
+        //    while (!result.IsDone)
+        //    {
+        //        orders.AddRange(await result.GetRemainingAsync());
+        //    }
 
-            return orders;
+        //    return orders;
         }
     }
 }
