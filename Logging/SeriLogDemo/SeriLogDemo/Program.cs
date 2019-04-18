@@ -28,12 +28,7 @@ namespace SeriLogDemo
 
             categories.Add("Barks & Mulches", new Category("Bark & Mulches"));
             categories.Add("Organic Soil Mixes", new Category("Organic Soil Mixes"));
-            categories.Add("Barks & Mulches", new Category("Bark & Mulches"));
-            categories.Add("Barks & Mulches", new Category("Bark & Mulches"));
-            categories.Add("Barks & Mulches", new Category("Bark & Mulches"));
-            categories.Add("Barks & Mulches", new Category("Bark & Mulches"));
-            categories.Add("Barks & Mulches", new Category("Bark & Mulches"));
-
+            
 
         }
     }
