@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\rjjon\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\rjjon\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_CQRS_FirstDemo.241191734.00" t="ExcludeRecursive" />
+    <e p="D:\Development\GitHub\RiderProjects\CQRS_FirstDemo" t="IncludeRecursive">
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Class1.cs" t="Include" />
+      <e p="Commands" t="Include">
+        <e p="ICommand.cs" t="Include" />
+        <e p="RateProduct.cs" t="Include" />
+      </e>
+      <e p="CQRS_FirstDemo.csproj" t="IncludeRecursive" />
+      <e p="CQRS_FirstDemo.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp2.2" t="Include">
+            <e p="CQRS_FirstDemo.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
