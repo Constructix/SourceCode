@@ -11,48 +11,79 @@ using Newtonsoft.Json;
 
 namespace S3Demo
 {
+
+    
+
+
+
+    public class S3Data
+    {
+        public string TradingDay { get; set; }
+        public string PaymentProvider { get; set; }
+        public string OrderId { get; set; }
+        public override string ToString()
+        {
+            return $"{TradingDay}/CyberSourcePayment/{OrderId.ToString()}";
+        }
+    }
+    
+    /// <summary>
+    /// </summary>
+    // DynamoDB
+
+
+
     class Program
     {
         static  async Task Main(string[] args)
         {
+            // Create s3Bucket instance and add folder structure
+
+            var s3Bucket = new S3Bucket<Order>(RegionEndpoint.APSoutheast2, "constructixtest");
+
+            var newOrder = new OrderBuilder().Build();
+            var tradingDay = DateTime.Today.ToString("yyyyMMdd");
+
+            var testKey = $"{tradingDay}/CyberSourcePayment/{newOrder.Id.ToString()}";;
+            var result = await s3Bucket.PutData(newOrder, testKey);
+            
+
+
 
             // create region
-            var bucketRegion = Amazon.RegionEndpoint.APSoutheast2;
-            var client = new AmazonS3Client(bucketRegion);
-            try
-            {
-                GetObjectRequest request = new GetObjectRequest
-            {
-                BucketName = "constructixtest",
-                Key = "e92204c8-6212-4550-9e3d-20341d369217"
-            };
+            //var bucketRegion = Amazon.RegionEndpoint.APSoutheast2;
+            //var client = new AmazonS3Client(bucketRegion);
+            //try
+            //{
+            //    GetObjectRequest request = new GetObjectRequest
+            //{
+            //    BucketName = "constructixtest",
+            //    Key = "e92204c8-6212-4550-9e3d-20341d369217"
+            //};
 
-                var responseBody = string.Empty;
-                using (GetObjectResponse response = await client.GetObjectAsync(request))
-                using (Stream streamReader = response.ResponseStream)
-                using (StreamReader reader = new StreamReader(streamReader))
-                {
-                    responseBody = reader.ReadToEnd();
-                    Order order = JsonConvert.DeserializeObject<Order>(responseBody);
+            //    var responseBody = string.Empty;
+            //    using (GetObjectResponse response = await client.GetObjectAsync(request))
+            //    using (Stream streamReader = response.ResponseStream)
+            //    using (StreamReader reader = new StreamReader(streamReader))
+            //    {
+            //        responseBody = reader.ReadToEnd();
+            //        Order order = JsonConvert.DeserializeObject<Order>(responseBody);
 
-                    Console.WriteLine($"Serialised object: {responseBody}");
-                    Console.WriteLine($"Order Id: {order.Id}");
+            //        Console.WriteLine($"Serialised object: {responseBody}");
+            //        Console.WriteLine($"Order Id: {order.Id}");
 
-                }
-
-                
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-
-            var orderBuilder=  new OrderBuilder();
-            await WriteDataTosS3(orderBuilder, client);
+            //    }
 
 
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e);
+            //    throw;
+            //}
 
+            //var orderBuilder=  new OrderBuilder();
+            //await WriteDataTosS3(orderBuilder, client);
         }
 
         private static async Task WriteDataTosS3(OrderBuilder orderBuilder, AmazonS3Client client)
