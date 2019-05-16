@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using ToDoAPI.Models;
+using ToDoAPI.Service;
 
 namespace ToDoAPI.Controllers
 {
@@ -11,30 +10,21 @@ namespace ToDoAPI.Controllers
     [ApiController]
     public class TodoController : ControllerBase
     {
-        private readonly TodoContext _context;
-
-        public TodoController(TodoContext context)
+        private readonly ITodoService _service;
+        public TodoController( ITodoService service)
         {
-            _context = context;
-
-            if (!_context.TodoItems.Any())
-            {
-                _context.TodoItems.Add(new TodoItem {Name = "Item1"});
-                _context.SaveChanges();
-            }
+            _service = service;
         }
-
-
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TodoItem>>> GetToDoItems()
         {
-            return await _context.TodoItems.ToListAsync();
+            return await _service.GetAllItems(); 
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<TodoItem>> GetToDoItem(long id)
         {
-            var todoItem = _context.TodoItems.Find(id);
+            var todoItem = await _service.Get(id); 
             if (todoItem == null)
                 return NotFound();
             return todoItem;
@@ -43,10 +33,8 @@ namespace ToDoAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<TodoItem>> PostTodoItem(TodoItem item)
         {
-            _context.TodoItems.Add(item);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(GetToDoItem), new { id = item.Id }, item);
+            var newItem = await _service.Add(item);
+            return CreatedAtAction(nameof(GetToDoItem), new { id = newItem.Id }, newItem);
         }
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTodoItem(long id, TodoItem item)
@@ -55,10 +43,7 @@ namespace ToDoAPI.Controllers
             {
                 return BadRequest();
             }
-
-            _context.Entry(item).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
-
+            await _service.Update(item);
             return NoContent();
         }
 
@@ -66,16 +51,13 @@ namespace ToDoAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTodoItem(long id)
         {
-            var todoItem = await _context.TodoItems.FindAsync(id);
+            var todoItem = await _service.Get(id); 
 
             if (todoItem == null)
             {
                 return NotFound();
             }
-
-            _context.TodoItems.Remove(todoItem);
-            await _context.SaveChangesAsync();
-
+            await _service.Remove(todoItem);
             return NoContent();
         }
     }
