@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Azure.ServiceBus;
-using Newtonsoft.Json;
 using OrdersDomain;
 
 namespace SubmitOrdersToServiceBusDemo
 {
-
- 
-
     class Program
     {
         private const string ServiceBusConnectionString = "Endpoint=sb://constructixonline.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=BE6Vf+1KKy4SuYgy0m2xG/iUkLuS8xFUVKOLQwjsTfM=";
@@ -29,10 +24,6 @@ namespace SubmitOrdersToServiceBusDemo
 
             await SendMessagesAsync(40);
         }
-
-        
-
-
         static async Task SendMessagesAsync(int numberOfMessages)
         {
             try
