@@ -58,15 +58,11 @@ namespace ReceiveOrdersFromServiceBusDemo
         {
 
             var messageBody = Encoding.UTF8.GetString(message.Body);
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////
+            // write to log file...
             Log.Information(messageBody);
             // Process the message.
             Console.WriteLine($"Received message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{messageBody}");
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////
-            // write to log file...
-
-
-
-
             // Complete the message so that it is not received again.
             // This can be done only if the queue Client is created in ReceiveMode.PeekLock mode (which is the default).
             await _queueClient.CompleteAsync(message.SystemProperties.LockToken);
