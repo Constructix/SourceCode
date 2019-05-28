@@ -14,10 +14,7 @@ namespace SubmitOrdersToServiceBusDemo
         private static IQueueClient _queueClient;
         static async Task Main(string[] args)
         {
-
             _queueClient = new QueueClient(ServiceBusConnectionString,QueueName);
-
-
             Console.WriteLine(new string('-', 80));
             Console.WriteLine("Press <Enter> key to exit after sending messages.");
             Console.WriteLine(new string('-', 80));

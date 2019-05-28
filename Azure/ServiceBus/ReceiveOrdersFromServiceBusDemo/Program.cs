@@ -9,8 +9,14 @@ using Serilog.Events;
 
 namespace ReceiveOrdersFromServiceBusDemo
 {
+
+
     class Program
     {
+
+
+
+
 
         private const string FileName = @"D:\Files\ReceiveOrders.txt";
         private const string ServiceBusConnectionString = "Endpoint=sb://constructixonline.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=BE6Vf+1KKy4SuYgy0m2xG/iUkLuS8xFUVKOLQwjsTfM=";
@@ -63,10 +69,6 @@ namespace ReceiveOrdersFromServiceBusDemo
             Console.WriteLine($"Received message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{messageBody}");
             ///////////////////////////////////////////////////////////////////////////////////////////////////////
             // write to log file...
-
-
-
-
             // Complete the message so that it is not received again.
             // This can be done only if the queue Client is created in ReceiveMode.PeekLock mode (which is the default).
             await _queueClient.CompleteAsync(message.SystemProperties.LockToken);
