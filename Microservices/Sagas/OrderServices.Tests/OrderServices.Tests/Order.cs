@@ -2,7 +2,7 @@
 
 namespace OrderServices.Tests
 {
-    internal class Order
+    public class Order
     {
         public Guid Id { get; internal set; }
         public OrderStatus Status {get;set;}

@@ -6,21 +6,21 @@ namespace OrderServices.Tests
     public class OrderService
     {
         // Internal 
-        private readonly List<Order> _orders;
-
-        public OrderService()
+        
+        private IRepository<Order, Guid> _orders;
+        public OrderService(IRepository<Order, Guid> orders)
         {
-            _orders = new List<Order>();
+            _orders = orders;
         }
 
         internal List<Order> GetAll()
         {
-            return _orders;
+            return _orders.GetAll();
         }
 
         internal bool CancelOrder(Order newOrder)
         {
-            var foundOrder = _orders.Find(x => x.Id.Equals(newOrder.Id));
+            var foundOrder = _orders.Find(newOrder.Id);
 
             if (foundOrder != null)
             {

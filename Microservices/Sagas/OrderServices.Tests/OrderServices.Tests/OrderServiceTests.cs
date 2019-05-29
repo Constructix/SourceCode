@@ -1,3 +1,4 @@
+using System;
 using Xunit;
 using Shouldly;
 
@@ -5,11 +6,21 @@ namespace OrderServices.Tests
 {
     public class OrderServiceTests
     {
+        private IRepository<Order, Guid> ordersRepository;
         private OrderService orderSvc;
-
         public OrderServiceTests()
         {
-            orderSvc = new OrderService();
+            ordersRepository = new OrderInMemoryRepository();
+            ordersRepository.Add(new Order());
+            ordersRepository.Add(new Order());
+            ordersRepository.Add(new Order());
+            ordersRepository.Add(new Order());
+            ordersRepository.Add(new Order());
+            ordersRepository.Add(new Order());
+            ordersRepository.Add(new Order());
+            ordersRepository.Add(new Order());
+            ordersRepository.Add(new Order());
+            orderSvc = new OrderService(ordersRepository);
         }
 
         [Fact]
