@@ -1,4 +1,4 @@
-﻿namespace OrderServices.Tests
+﻿namespace OrderServices.Domain
 {
     public class OrderStatus
     {

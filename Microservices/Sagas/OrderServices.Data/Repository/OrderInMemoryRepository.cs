@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using OrderServices.Domain;
 
-namespace OrderServices.Tests
+namespace OrderServices.Data
 {
     public class OrderInMemoryRepository : IRepository<Order,Guid>
     {

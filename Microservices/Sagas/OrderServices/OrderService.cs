@@ -1,37 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using OrderServices.Data;
+using OrderServices.Domain;
 
-namespace OrderServices.Tests
+namespace OrderServices
 {
-    public class OrderService
+    public class OrderService : IOrderService
     {
-        // Internal 
-        
         private IRepository<Order, Guid> _orders;
         public OrderService(IRepository<Order, Guid> orders)
         {
             _orders = orders;
         }
 
-        internal List<Order> GetAll()
+        public List<Order> GetAll()
         {
             return _orders.GetAll();
         }
 
-        internal bool CancelOrder(Order newOrder)
+        public bool CancelOrder(Order newOrder)
         {
-            var foundOrder = _orders.Find(newOrder.Id);
+            var orderFound = _orders.Find(newOrder.Id);
 
-            if (foundOrder != null)
+            if (orderFound != null)
             {
-                foundOrder.CancelledOn = DateTime.Now.ToUniversalTime();
-                foundOrder.Status = OrderStatus.Cancelled;
+                orderFound.CancelledOn = DateTime.Now.ToUniversalTime();
+                orderFound.Status = OrderStatus.Cancelled;
                 return true;
             }
             return false;
         }
 
-        internal Order CreateOrder()
+        public Order CreateOrder()
         {
             var newOrder = new Order();
             _orders.Add(newOrder);

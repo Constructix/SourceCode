@@ -1,4 +1,5 @@
 ﻿using System;
+using OrderServices.Domain;
 using Xunit;
 using Shouldly;
 

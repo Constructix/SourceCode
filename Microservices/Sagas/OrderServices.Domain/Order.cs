@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OrderServices.Tests
+namespace OrderServices.Domain
 {
     public class Order
     {
@@ -14,7 +14,5 @@ namespace OrderServices.Tests
             Status = OrderStatus.Created;
             Id = Guid.NewGuid();
         }
-
-        
     }
 }

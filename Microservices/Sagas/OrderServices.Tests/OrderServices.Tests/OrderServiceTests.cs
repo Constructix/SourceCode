@@ -1,6 +1,9 @@
 using System;
 using Xunit;
 using Shouldly;
+using OrderServices;
+using OrderServices.Data;
+using OrderServices.Domain;
 
 namespace OrderServices.Tests
 {

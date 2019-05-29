@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace OrderServices.Tests
+namespace OrderServices.Data
 {
     public interface IRepository<T, K>
     {
