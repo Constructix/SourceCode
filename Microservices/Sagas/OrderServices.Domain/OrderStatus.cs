@@ -16,6 +16,8 @@
 
         public static OrderStatus Created => new OrderStatus("Created");
         public static OrderStatus Cancelled => new OrderStatus("Cancelled");
+        public static OrderStatus Changed => new OrderStatus("Changed");
+        public static OrderStatus Completed => new OrderStatus("Complete");
 
         public static implicit operator string(OrderStatus status)
         {

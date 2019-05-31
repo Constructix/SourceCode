@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OrderServices.Data;
 using OrderServices.Domain;
+using OrderServices.WebAPI.Controllers;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace OrderServices.WebAPI
@@ -24,6 +25,7 @@ namespace OrderServices.WebAPI
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSingleton<IRepository<Order, Guid>, OrderInMemoryRepository>();
+            services.AddSingleton<IAdaptee<Order>, OrdersAdapter>();
             services.AddSingleton<IOrderService, OrderService>();
 
             // Register the Swagger generator, defining 1 or more Swagger documents

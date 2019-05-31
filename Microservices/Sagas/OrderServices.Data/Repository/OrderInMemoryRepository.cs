@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using OrderServices.Domain;
 
 namespace OrderServices.Data
@@ -25,4 +26,35 @@ namespace OrderServices.Data
             return _orders.Find(x => x.Id.Equals(Id));
         }
     }
-}
+
+
+
+    public class GenericRepository<C, E> where C : DbContext where E : class
+    {
+    }
+
+
+
+    public class GenericContext<T> : DbContext where T : class
+    {
+        public DbSet<T> Entities { get; set; }
+
+
+        
+
+
+    }
+
+    public class OrdersContext : DbContext
+    {
+        public DbSet<Order> Orders { get; set; }
+
+
+
+        public OrdersContext()
+        {
+            
+        }
+    }
+
+} 
