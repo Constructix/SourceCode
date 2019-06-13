@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SetEndpointAddressDemo": {
+      "commandName": "Project",
+      "commandLineArgs": "--n https://localhost:4000/"
+    }
+  }
+}
