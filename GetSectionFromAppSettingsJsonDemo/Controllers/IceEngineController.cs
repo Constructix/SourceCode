@@ -11,11 +11,17 @@ namespace GetSectionFromAppSettingsJsonDemo.Controllers
         private IConfiguration configuration;
         private IceEngine iceEngine;
 
+        private IceClientReceiver iceClientReceiver;
+
+
         public IceEngineController(IConfiguration configuration)
         {
             this.configuration = configuration;
             iceEngine = new IceEngine();
             this.configuration.GetSection("IceEngine").Bind(iceEngine);
+
+            iceClientReceiver = this.configuration.GetSection("IceClientReceiver").Get<IceClientReceiver>();
+
         }
 
         [HttpGet]

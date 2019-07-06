@@ -1,8 +1,8 @@
 ﻿namespace GetSectionFromAppSettingsJsonDemo.ConfigurationSettingsPOCO
 {
-    public class FMSClient
+    public class IceClientReceiver
     {
         public string EndPointAddress { get; set; }
-        public Methods Methods { get; set; }
+        public string [] Methods { get; set; }
     }
 }
