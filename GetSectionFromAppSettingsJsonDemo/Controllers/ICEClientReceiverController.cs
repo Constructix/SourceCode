@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Text;
+using GetSectionFromAppSettingsJsonDemo.ConfigurationSettingsPOCO;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace GetSectionFromAppSettingsJsonDemo.Controllers
 {
@@ -9,6 +11,14 @@ namespace GetSectionFromAppSettingsJsonDemo.Controllers
     public class ICEClientReceiverController : ControllerBase
     {
 
+        public ICEClientReceiverController(IConfiguration configuration)
+        {
+            this._configuration = configuration;
+            iceClientReceiver = this._configuration.GetSection("IceClientReceiver").Get<IceClientReceiver>();
+        }
+
+        private IConfiguration _configuration;
+        private IceClientReceiver iceClientReceiver;
         [HttpPost]
         [Route("[action]")]
         public ActionResult<string> SubmitQuery(SubmitQueryRequest queryRequest)
@@ -17,6 +27,12 @@ namespace GetSectionFromAppSettingsJsonDemo.Controllers
             builder.AppendLine("received request forwarding onto the FMS Client.");
 
             return builder.ToString();
+        }
+
+        [HttpGet]
+        public ActionResult<IceClientReceiver> Get()
+        {
+            return iceClientReceiver;
         }
     }
 }
