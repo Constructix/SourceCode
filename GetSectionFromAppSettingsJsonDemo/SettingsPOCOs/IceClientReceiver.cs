@@ -3,6 +3,6 @@
     public class IceClientReceiver
     {
         public string EndPointAddress { get; set; }
-        public WebMethod [] WebMethod { get; set; }
+        public WebMethod [] WebMethods { get; set; }
     }
 }
