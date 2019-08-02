@@ -20,7 +20,8 @@ namespace GetSectionFromAppSettingsJsonDemo.Controllers
             iceEngine = new IceEngine();
             this.configuration.GetSection("IceEngine").Bind(iceEngine);
 
-            iceClientReceiver = this.configuration.GetSection("IceClientReceiver").Get<IceClientReceiver>();
+            //iceClientReceiver = this.configuration.GetSection("IceClientReceiver").Get<IceClientReceiver>();
+            iceEngine = this.configuration.GetSection("IceEngine").Get<IceEngine>();
 
         }
 

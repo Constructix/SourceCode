@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowServiceInNETCoreDemo", "WindowServiceInNETCoreDemo.csproj", "{94AF8990-A329-443B-AAAA-1ED46AF8EBD2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94AF8990-A329-443B-AAAA-1ED46AF8EBD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94AF8990-A329-443B-AAAA-1ED46AF8EBD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94AF8990-A329-443B-AAAA-1ED46AF8EBD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94AF8990-A329-443B-AAAA-1ED46AF8EBD2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C8BEA9D-D8D8-4E8A-9CE4-3791EBCA8140}
+	EndGlobalSection
+EndGlobal
