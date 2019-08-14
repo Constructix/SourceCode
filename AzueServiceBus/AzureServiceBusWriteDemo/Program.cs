@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Azure.Amqp.Serialization;
 using Microsoft.Azure.ServiceBus;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 
 namespace AzureServiceBusDemo
@@ -15,9 +16,18 @@ namespace AzureServiceBusDemo
         private const string QueueName = "ordersqueue";
         private static IQueueClient queueClient;
 
+        private static  IConfiguration _configuration;
         
         static async Task Main(string[] args)
         {
+
+            _configuration = new ConfigurationBuilder()
+                                                .AddJsonFile("AppSettings.json", optional: true, reloadOnChange:true)
+                                                .Build();
+
+            
+            Console.WriteLine($"Connection string: { _configuration["ServiceBusConnection"]}");
+            Console.WriteLine(new string('-', 80));
             Console.WriteLine("Sending data to azure.");
             await MainAsync();
         }
