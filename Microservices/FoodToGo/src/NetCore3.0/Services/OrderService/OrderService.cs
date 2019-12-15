@@ -13,8 +13,6 @@ namespace FTGO.Services.Order
         {
             return new Order();
         }
-
-        
     }
-    
+
 }
