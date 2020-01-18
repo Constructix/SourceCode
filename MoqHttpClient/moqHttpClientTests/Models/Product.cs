@@ -1,6 +1,6 @@
 using System;
 
-namespace moqHttpClientTests
+namespace moqHttpClientTests.Models
 {
     public class Product
     {

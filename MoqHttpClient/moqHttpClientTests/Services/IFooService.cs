@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using moqHttpClientTests.Models;
 
-namespace moqHttpClientTests
+namespace moqHttpClientTests.Services
 {
     public interface IFooService
     {

@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using moqHttpClientTests.Models;
 using Newtonsoft.Json;
 
-namespace moqHttpClientTests
+namespace moqHttpClientTests.Services
 {
     public class FooService : IFooService
     {

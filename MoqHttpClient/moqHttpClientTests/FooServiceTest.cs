@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Moq;
 using Moq.Contrib.HttpClient;
+using moqHttpClientTests.Models;
+using moqHttpClientTests.Services;
 using Newtonsoft.Json;
 using Shouldly;
 using Xunit;

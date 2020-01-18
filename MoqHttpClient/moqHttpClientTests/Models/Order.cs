@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace moqHttpClientTests
+namespace moqHttpClientTests.Models
 {
     public class Order
     {
