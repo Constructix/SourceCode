@@ -21,10 +21,6 @@ namespace moqHttpClientTests
                 .AddJsonFile("appSettings.json")
                 .Build();
             var config = new EndPointConfiguration();
-            
-            
-
-
         }
 
         public async Task<List<Order>> GetOrders()
