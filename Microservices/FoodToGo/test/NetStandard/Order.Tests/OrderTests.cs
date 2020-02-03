@@ -16,11 +16,13 @@ namespace Order.Tests
         [Fact]
         public void DateTimeIsNotNull()
         {
-            var order = new FTGO.Domain.Order();
+            var order = new FTGO.Domain.Order {Created = DateTime.Now};
 
-            order.Created = DateTime.Now;
 
             order.ShouldNotBeNull();
         }
     }
+
+
+    
 }

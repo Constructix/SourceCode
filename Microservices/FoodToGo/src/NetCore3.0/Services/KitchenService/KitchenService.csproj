@@ -1,11 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <PackageReference Include="NodaTime" Version="2.4.7" />
+  </ItemGroup>
+
   <ItemGroup>    
+    <ProjectReference Include="..\..\..\..\DomainObjects\DomainObjects.csproj" />    
+    <ProjectReference Include="..\..\..\NetStandard\Domain\Order\Order.csproj" />    
     <ProjectReference Include="..\BaseServices\FTGOServices.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
 </Project>

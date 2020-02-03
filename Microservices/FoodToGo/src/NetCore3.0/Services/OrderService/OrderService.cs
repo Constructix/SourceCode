@@ -13,6 +13,14 @@ namespace FTGO.Services.Order
         {
             return new Order();
         }
-    }
 
+        /// <summary>
+        /// Creates Order and returns to client.
+        /// </summary>
+        /// <returns></returns>
+        public Order CreateOrder()
+        {
+            return OrderFactory.Create();
+        }
+    }
 }
