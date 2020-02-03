@@ -14,8 +14,8 @@
     <PackageReference Include="coverlet.collector" Version="1.0.1" />
   </ItemGroup>
 
-  <ItemGroup>    
-    <ProjectReference Include="..\..\..\src\NetStandard\Domain\Order\Order.csproj" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\DomainObjects\DomainObjects.csproj" />
   </ItemGroup>
 
 </Project>

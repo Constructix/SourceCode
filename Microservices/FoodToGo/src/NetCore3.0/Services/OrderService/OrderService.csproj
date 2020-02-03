@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>    
-    <ProjectReference Include="..\..\..\NetStandard\Domain\Order\Order.csproj" />    
+    <ProjectReference Include="..\..\..\..\DomainObjects\DomainObjects.csproj" />    
     <ProjectReference Include="..\BaseServices\FTGOServices.csproj" />
   </ItemGroup>
 

@@ -1,6 +1,6 @@
 using System;
 
-namespace FTGO.Services.Kitchen
+namespace FTGO.Domain
 {
     public class Ticket
     {

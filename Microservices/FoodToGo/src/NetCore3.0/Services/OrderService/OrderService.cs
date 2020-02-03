@@ -1,7 +1,7 @@
 namespace FTGO.Services.Order
 {
     using FTGO.Services;
-    using Domain;
+    using FTGO.Domain;
     public class OrderService : IFTOService
     {
         public OrderService()
