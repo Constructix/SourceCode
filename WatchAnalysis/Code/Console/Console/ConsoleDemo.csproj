@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <StartupObject></StartupObject>
+    <AssemblyName>ConsoleDemo</AssemblyName>
+    <RootNamespace>ConsoleDemo</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="WatchListAnalysis">
+      <HintPath>..\..\WatchListAnalysis\src\WatchListAnalysis\bin\Release\netcoreapp3.0\WatchListAnalysis.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

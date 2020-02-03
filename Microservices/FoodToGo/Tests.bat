@@ -1,0 +1,9 @@
+@echo off
+echo Building Solution....
+dotnet build
+echo Solution built....
+@echo  off
+echo Running tests...
+
+dotnet test test\NetCore3.0\Services\FTGOServices\FTGOServices.Tests
+dotnet test test\NetCore3.0\Services\FTGOServices\FTGOServices.Tests

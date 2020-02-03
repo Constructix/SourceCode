@@ -1,0 +1,20 @@
+﻿Title: list
+CODE   NAME            LAST    +/-   OPEN   HIGH    LOW TRADES      VOL
+AMP    AMP FPO [AMP]  180.0    4.0  177.0  182.7  176.0   4731 17858882
+BOQ    BANK QLD FPO   916.0   -2.0  920.0  923.5  916.0   6632  2807750
+GXY    GALAXY RES FP   91.5    0.5   91.0   92.5   90.2    826  2527180
+LPD    LEPIDICO FPO     1.9    0.0    1.9    1.9    1.9     30  3091396
+PLS    PILBARAMIN FP   29.5    1.0   29.5   30.0   29.0   1037  6090192
+SUN    SUNCORP FPO [ 1353.0   12.0 1337.0 1356.0 1332.0   7878  2087819
+TAW    TAWANA FPO [T    0.0    0.0    0.0    0.0    0.0      0        0
+TTS    TATTS GRP FPO    0.0    0.0    0.0    0.0    0.0      0        0
+The data below is the contents of your watch screens in a format suitable for importing into Ezy Chart.
+The format of the data is: Code, Date, Open, High, Low, Close, Volume.
+
+-- DELETE THIS LINE AND ABOVE, SAVE AS TEXT FILE THEN IMPORT --
+AMP,191022,177,182.7,176,180,17858882
+BOQ,191022,920,923.5,916,916,2807750
+GXY,191022,91,92.5,90.2,91.5,2527180
+LPD,191022,1.9,1.9,1.9,1.9,3091396
+PLS,191022,29.5,30,29,29.5,6090192
+SUN,191022,1337,1356,1332,1353,2087819
