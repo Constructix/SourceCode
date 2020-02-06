@@ -15,12 +15,12 @@
             orderManager.OrderEvent += OrderManager_OrderEvent;
             orderManager.OrderDeletedEvent += OrderManager_OrderDeletedEvent;
 
-            orderManager.CreateOrder();
-            orderManager.CreateOrder();
-            orderManager.CreateOrder();
-            orderManager.CreateOrder();
-            orderManager.CreateOrder();
-
+            List<Order> returnOrders=  new List<Order>();
+            returnOrders.Add( orderManager.CreateOrder(Guid.NewGuid()));
+            returnOrders.Add( orderManager.CreateOrder(Guid.NewGuid()));
+            returnOrders.Add( orderManager.CreateOrder(Guid.NewGuid()));
+            returnOrders.Add( orderManager.CreateOrder(Guid.NewGuid()));
+            returnOrders.Add( orderManager.CreateOrder(Guid.NewGuid()));
             orderManager.DeleteOrder(orders.First());
             Console.WriteLine($"Number of Orders Created: {orderManager.TotalOrders}");
         }

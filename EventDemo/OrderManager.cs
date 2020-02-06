@@ -17,18 +17,38 @@ namespace EventDemo
             Orders = orders ?? new List<Order>();
         }
 
-        public void CreateOrder()
+        #region Methods
+        public Order CreateOrder()
         {
+            var orderBuilder = new OrderBuilder();
+            var testOrder = orderBuilder
+                                        .SetId(Guid.NewGuid())
+                                        .SetCreated()
+                                        .Build();
+
             Order newOrder = new Order() { Id = Guid.NewGuid(), Created = DateTime.Now, Status = OrderStatus.Created };
             Orders.Add(newOrder);
             OrderEventArgs orderCreatedEvent = new OrderEventArgs(newOrder) {Message = "Order has been created."};
             OnOrderCreated(orderCreatedEvent);
-        }
 
-        protected virtual  void OnOrderCreated(OrderEventArgs e)
+
+            return newOrder;
+
+        }
+        public Order CreateOrder(Guid Id )
         {
-            EventHandler<OrderEventArgs> handler = OrderEvent;
-            handler?.Invoke(this, e);
+            var orderBuilder = new OrderBuilder();
+            var newOrder  = orderBuilder
+                                .SetId(Id)
+                                .SetCreated()
+                                .Build();
+            Orders.Add(newOrder);
+            OrderEventArgs orderCreatedEvent = new OrderEventArgs(newOrder) {Message = "Order has been created."};
+            OnOrderCreated(orderCreatedEvent);
+
+
+            return newOrder;
+
         }
 
         public void DeleteOrder(Order orderToBeDeleted)
@@ -39,7 +59,7 @@ namespace EventDemo
                 // remove from list and raise an event to indicate order has been deleted from list.
                 Orders.Remove(order);
                 OrderEventArgs orderDeletedEvent = new OrderEventArgs(order);
-                orderDeletedEvent.Message = "Order has been DELETED.";
+                orderDeletedEvent.Message = "-- Order has been DELETED.--";
                 orderDeletedEvent.Order.Status = OrderStatus.Deleted;
                 orderDeletedEvent.Order.Deleted = DateTime.Now;
                 OnOrderDeleted(orderDeletedEvent);
@@ -49,11 +69,22 @@ namespace EventDemo
                 throw new  ItemNotFoundException ();
             }
         }
+        #endregion
 
+        #region Events
+        protected virtual  void OnOrderCreated(OrderEventArgs e)
+        {
+            EventHandler<OrderEventArgs> handler = OrderEvent;
+            handler?.Invoke(this, e);
+        }
         protected virtual void OnOrderDeleted(OrderEventArgs orderDeletedEvent)
         {
             EventHandler<OrderEventArgs> handler = OrderDeletedEvent;
             handler!.Invoke(this, orderDeletedEvent);
         }
+        #endregion
+       
+
+       
     }
 }
