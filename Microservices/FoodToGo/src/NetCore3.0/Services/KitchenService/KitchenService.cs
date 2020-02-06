@@ -1,5 +1,3 @@
-
-
 namespace FTGO.Services.Kitchen
 {
     using System;
