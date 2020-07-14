@@ -1,0 +1,49 @@
+﻿@using MobileDemo.Services
+@model MobileDemo.Models.Mobile
+@inject IMobileService mobiledata
+@{
+    ViewData["Title"] = "Create";
+}
+<form asp-controller="home" asp-action="create" method="get">
+    <div>
+        <label asp-for="name"></label>
+        <div>
+            <input asp-for="name">
+        </div>
+    </div>
+    <div>
+        <label asp-for="model"></label>
+        <div>
+            <input asp-for="model">
+        </div>
+    </div>
+    <div>
+        <label asp-for="price"></label>
+        <div>
+            <input asp-for="price">
+        </div>
+    </div>
+
+    <div>
+        <button type="submit">Create</button>
+    </div>
+
+    <div>
+        Total Employees Count = @mobiledata.GetAll().Count().ToString()
+    </div>
+</form>
+<p></p>
+
+<table>
+    <thead style="background: grey; color: aquamarine; padding: 10px">Name</thead>
+    <thead style="background: grey; color: aquamarine; padding: 10px">Model</thead>
+    <thead style="background: grey; color: aquamarine; padding: 10px">Price</thead>
+    @foreach (var mobile in mobiledata.GetAll())
+    {
+        <tr>
+            <td>@mobile.name</td>
+            <td>@mobile.model</td>
+            <td>@mobile.price</td>
+        </tr>
+    }
+</table>
