@@ -46,7 +46,7 @@
     <Compile Include="ServiceMonitor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\MicoServices.References\MicoServices.References.csproj">
+    <ProjectReference Include="..\MicoServices.References\MicoServices.References.csproj">
       <Project>{3d367c4f-3f56-4f69-84bc-67d8561f8c4c}</Project>
       <Name>MicoServices.References</Name>
     </ProjectReference>

@@ -69,15 +69,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\MicoServices.References\MicoServices.References.csproj">
+    <ProjectReference Include="..\MicoServices.References\MicoServices.References.csproj">
       <Project>{3d367c4f-3f56-4f69-84bc-67d8561f8c4c}</Project>
       <Name>MicoServices.References</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\MicroServices.MailMessages\MicroServices.MailMessages.csproj">
+    <ProjectReference Include="..\MicroServices.MailMessages\MicroServices.MailMessages.csproj">
       <Project>{061A1AA8-434C-4A2E-9F42-61E9173CA6DE}</Project>
       <Name>MicroServices.MailMessages</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\MicroServices.Orders\MicroServices.Orders.csproj">
+    <ProjectReference Include="..\MicroServices.Orders\MicroServices.Orders.csproj">
       <Project>{957baf2a-5123-45ea-b16c-fa777b7e3138}</Project>
       <Name>MicroServices.Orders</Name>
     </ProjectReference>

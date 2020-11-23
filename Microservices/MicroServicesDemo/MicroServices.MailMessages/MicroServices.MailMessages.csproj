@@ -49,7 +49,7 @@
       <Project>{3d367c4f-3f56-4f69-84bc-67d8561f8c4c}</Project>
       <Name>MicoServices.References</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Microservices\MicroServicesDemo\MicroServices.DTO\MicroServices.DTO.csproj">
+    <ProjectReference Include="..\MicroServices.DTO\MicroServices.DTO.csproj">
       <Project>{323E2824-130E-437F-98FA-02CFEECAC374}</Project>
       <Name>MicroServices.DTO</Name>
     </ProjectReference>
