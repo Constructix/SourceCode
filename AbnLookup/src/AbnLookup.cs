@@ -19,9 +19,9 @@ namespace AbnLookup
 
         public async Task<MatchingNamesResponse> NameLookup(AbnNameLookupRequest request)
         {
-            const string Response = "Results";
+            const string Response = "Response";
             var response = await httpClient.GetStringAsync(
-                $@"{_configuration["NameLookupURL"]}?name={request.NameOfEntity}&maxResults={request.MaxResultsToReturn}&callback=&{Response}&guid={_configuration["ApiKey"]}");
+                $@"{_configuration["NameLookupURL"]}?name={request.NameOfEntity}&maxResults={request.MaxResultsToReturn}&callback={Response}&guid={_configuration["ApiKey"]}");
             
 
             StringBuilder responseBuilder = new StringBuilder(response);
