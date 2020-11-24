@@ -42,7 +42,7 @@ namespace AbnLookup.Tests
             var httpClient = new HttpClient(handlerMock.Object);
             IAbnLookup abnLookup = new AbnLookup(httpClient, config);
 
-            var response = await abnLookup.NameLookup(new AbnNameLookupRequest("Constructix", 10));
+            var response = await abnLookup.NameLookup(new NameLookupRequest("Constructix", 10));
                 
             response.Message.ShouldBe(string.Empty);
             response.Names.Any().ShouldBe(true);

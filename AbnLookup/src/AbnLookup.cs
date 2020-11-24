@@ -17,7 +17,7 @@ namespace AbnLookup
             this._configuration = configuration;
         }
 
-        public async Task<MatchingNamesResponse> NameLookup(AbnNameLookupRequest request)
+        public async Task<NameLookupResponse> NameLookup(NameLookupRequest request)
         {
             const string Response = "Response";
             var response = await httpClient.GetStringAsync(
@@ -28,7 +28,7 @@ namespace AbnLookup
             responseBuilder.Remove(0, Response.Length + 1);
             responseBuilder.Remove(responseBuilder.Length - 1, 1);
 
-            return  System.Text.Json.JsonSerializer.Deserialize<MatchingNamesResponse>(responseBuilder.ToString());
+            return  System.Text.Json.JsonSerializer.Deserialize<NameLookupResponse>(responseBuilder.ToString());
         }
     }
 }

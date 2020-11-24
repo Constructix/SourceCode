@@ -44,7 +44,7 @@ namespace AbnLookup
 
             var abnLookUp = new AbnLookup(client, config);
 
-            var response = await abnLookUp.NameLookup(new AbnNameLookupRequest
+            var response = await abnLookUp.NameLookup(new NameLookupRequest
             {
                 NameOfEntity = args[0],
                 MaxResultsToReturn = int.Parse(args[1])

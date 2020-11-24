@@ -2,7 +2,7 @@
 
 namespace AbnLookup.ResponseEntities
 {
-    public class MatchingNamesResponse
+    public class NameLookupResponse
     {
         public string Message { get; set; }
 

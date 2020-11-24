@@ -5,6 +5,6 @@ namespace AbnLookup
 {
     public interface IAbnLookup
     {
-        Task<MatchingNamesResponse> NameLookup(AbnNameLookupRequest request);
+        Task<NameLookupResponse> NameLookup(NameLookupRequest request);
     }
 }
