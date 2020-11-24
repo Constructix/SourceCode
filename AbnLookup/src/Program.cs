@@ -9,15 +9,9 @@ namespace AbnLookup
     {
         static async Task Main(string[] args)
         {
-
-
-
             var builder = new ConfigurationBuilder()
                             .AddJsonFile("appsettings.json");
-
             var config = builder.Build();
-
-
             if (args.Length != 2)
             {
                 Console.WriteLine("Usage: AbnLookup [Name] [NumberOfRecords]");
@@ -37,10 +31,7 @@ namespace AbnLookup
                     Console.WriteLine();
                     Environment.Exit(1);
                 }
-
-
             }
-
             if (string.IsNullOrWhiteSpace(config["ApiKey"]))
             {
                 Console.WriteLine("API Key has not been set. Exiting program.");
