@@ -30,8 +30,8 @@ namespace AbnLookup
             var response = await abnLookUp.NameLookup(new AbnNameLookupRequest
             {
                 NameOfEntity = "Constructix",
-                MaxResultsToReturn = 10,
-                ResponseName = "Response"
+                MaxResultsToReturn = 10
+                
             });
 
             if (string.IsNullOrWhiteSpace(response.Message))

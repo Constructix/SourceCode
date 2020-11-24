@@ -4,7 +4,7 @@
     {
         public string NameOfEntity { get; set; }
         public int MaxResultsToReturn { get; set; }
-        public string ResponseName { get; set; }
+        
         
 
         public AbnNameLookupRequest()
@@ -12,11 +12,10 @@
             
         }
 
-        public AbnNameLookupRequest(string nameOfEntity, int maxResultsToReturn, string responseName)
+        public AbnNameLookupRequest(string nameOfEntity, int maxResultsToReturn)
         {
             NameOfEntity = nameOfEntity;
             MaxResultsToReturn = maxResultsToReturn;
-            ResponseName = responseName;
         }
     }
 }
