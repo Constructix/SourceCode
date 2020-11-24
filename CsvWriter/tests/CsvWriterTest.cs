@@ -47,6 +47,26 @@ namespace CsvWriter.Tests
         }
 
         [Fact]
+        public void CSVWriterWriteSharePricesToFile()
+        {
+            List<Stock> stocks = new List<Stock> { new Stock { Code = "GXY",
+                                                                        DateTime = DateTime.Today,
+                                                                        Ask = 2.00m,
+                                                                        Offer = 2.01m,
+                                                                        High = 2.22m,
+                                                                        Low = 1.95m, Open = 2.15m, Close = 2.00m },
+                                                    new Stock { Code = "GXY",
+                                                                        DateTime = DateTime.Today.AddDays(1),
+                                                                        Ask = 2.15m,
+                                                                        Offer = 2.16m,
+                                                                        High = 2.23m,
+                                                                        Low = 1.90m, Open = 2.00m, Close = 2.15m }};
+            var writer = new Constructix.Utilities.CsvWriter();
+            var fileName = @"D:\Files\shares.csv";
+            writer.Write(fileName, stocks);
+        }
+
+        [Fact]
         public void CSV2WriterTest()
         {
 
