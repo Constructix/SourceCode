@@ -18,11 +18,11 @@ namespace AbnLookup
             var abnLookUp = new AbnLookup(client, config);
 
             var response = await abnLookUp.NameLookup(new NameLookupRequest
-            {
-                NameOfEntity = args[0],
-                MaxResultsToReturn = recordsToRetrieve
+                                                                        {
+                                                                            NameOfEntity = args[0],
+                                                                            MaxResultsToReturn = recordsToRetrieve
 
-            });
+                                                                        });
 
             if (string.IsNullOrWhiteSpace(response.Message))
             {
