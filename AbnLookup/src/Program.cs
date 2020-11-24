@@ -17,14 +17,9 @@ namespace AbnLookup
     {
         static async Task Main(string[] args)
         {
-            var builder = new ConfigurationBuilder();
-#if DEBUG
-            builder.AddUserSecrets<Settings>();
-#else
-            builder.AddJsonFile("appsettings.json");
-#endif
+            var config = SetupConfiguration();
 
-            var config = builder.Build();
+
             if (args.Length != 2)
             {
                 Console.WriteLine("Usage: AbnLookup [Name] [NumberOfRecords]");
@@ -81,6 +76,18 @@ namespace AbnLookup
                 Console.WriteLine(response.Message);
             }
             Environment.Exit(0);
+        }
+
+        private static IConfigurationRoot SetupConfiguration()
+        {
+            var builder = new ConfigurationBuilder();
+#if DEBUG
+            builder.AddUserSecrets<Settings>();
+#else
+            builder.AddJsonFile("appsettings.json");
+#endif
+            var config = builder.Build();
+            return config;
         }
     }
 }
