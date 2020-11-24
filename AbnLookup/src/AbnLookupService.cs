@@ -6,12 +6,12 @@ using Microsoft.Extensions.Configuration;
 
 namespace AbnLookup
 {
-    public class AbnLookup : IAbnLookup
+    public class AbnLookupService : IAbnLookupService
     {
         private readonly HttpClient httpClient;
         private readonly IConfiguration _configuration;
 
-        public AbnLookup(HttpClient client, IConfiguration configuration)
+        public AbnLookupService(HttpClient client, IConfiguration configuration)
         {
             this.httpClient = client;
             this._configuration = configuration;
