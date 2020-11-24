@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbnLookup", "src\AbnLookup.csproj", "{51424F7C-91BC-4880-825E-380DB624EA60}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbnLookup.Tests", "tests\AbnLookup.Tests\AbnLookup.Tests.csproj", "{CDD607F8-73EC-448C-8F88-C136D534143C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51424F7C-91BC-4880-825E-380DB624EA60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51424F7C-91BC-4880-825E-380DB624EA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51424F7C-91BC-4880-825E-380DB624EA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51424F7C-91BC-4880-825E-380DB624EA60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDD607F8-73EC-448C-8F88-C136D534143C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDD607F8-73EC-448C-8F88-C136D534143C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDD607F8-73EC-448C-8F88-C136D534143C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDD607F8-73EC-448C-8F88-C136D534143C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {472E8F8D-35A7-4DFA-998A-251A7E07779B}
+	EndGlobalSection
+EndGlobal
