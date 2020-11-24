@@ -36,11 +36,12 @@ namespace AbnLookup
             }
             else
             {
-
-                int maxRecords;
-                if (!int.TryParse(args[1], out maxRecords))
+                if (!int.TryParse(args[1], out int  maxRecords))
                 {
-                    Console.WriteLine("[NumberOfRecords] - Number of records to return, eg: 10 - returns up to 10 records.");
+                    Console.WriteLine("Usage: AbnLookup [Name] [NumberOfRecords]");
+                    Console.WriteLine();
+                    Console.WriteLine("NumberOfRecords has been specified incorrectly.");
+                    Console.WriteLine("[NumberOfRecords] - Number of records to return,  eg: AbnLookup \"test Company\" \"10\"");
                     Console.WriteLine();
                     Environment.Exit(1);
                 }
