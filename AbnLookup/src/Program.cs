@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
@@ -10,10 +9,37 @@ namespace AbnLookup
     {
         static async Task Main(string[] args)
         {
+
+
+
             var builder = new ConfigurationBuilder()
                             .AddJsonFile("appsettings.json");
 
             var config = builder.Build();
+
+
+            if (args.Length != 2)
+            {
+                Console.WriteLine("Usage: AbnLookup [Name] [NumberOfRecords]");
+                Console.WriteLine();
+                Console.WriteLine("[name] - Name of company, entity to retrieve.");
+                Console.WriteLine("[NumberOfRecords] - Number of records to return, eg: 10 - returns up to 10 records.");
+                Console.WriteLine();
+                Environment.Exit(1);
+            }
+            else
+            {
+
+                int maxRecords;
+                if (!int.TryParse(args[1], out maxRecords))
+                {
+                    Console.WriteLine("[NumberOfRecords] - Number of records to return, eg: 10 - returns up to 10 records.");
+                    Console.WriteLine();
+                    Environment.Exit(1);
+                }
+
+
+            }
 
             if (string.IsNullOrWhiteSpace(config["ApiKey"]))
             {
@@ -29,8 +55,8 @@ namespace AbnLookup
 
             var response = await abnLookUp.NameLookup(new AbnNameLookupRequest
             {
-                NameOfEntity = "Constructix",
-                MaxResultsToReturn = 10
+                NameOfEntity = args[0],
+                MaxResultsToReturn = int.Parse(args[1])
                 
             });
 
