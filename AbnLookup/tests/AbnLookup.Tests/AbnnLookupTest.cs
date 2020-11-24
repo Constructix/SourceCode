@@ -14,6 +14,7 @@ using Xunit;
 using Xunit.Abstractions;
 using System.Net.Http.Json;
 using AbnLookup.ResponseEntities;
+using AbnLookup.Services;
 using Microsoft.Extensions.Configuration;
 
 namespace AbnLookup.Tests

@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using AbnLookup.ResponseEntities;
 
-namespace AbnLookup
+namespace AbnLookup.Services
 {
     public interface IAbnLookupService
     {

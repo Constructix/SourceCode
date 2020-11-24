@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using AbnLookup.ResponseEntities;
 using Microsoft.Extensions.Configuration;
 
-namespace AbnLookup
+namespace AbnLookup.Services
 {
     public class AbnLookupService : IAbnLookupService
     {
