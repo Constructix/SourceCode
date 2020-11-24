@@ -5,12 +5,25 @@ using Microsoft.Extensions.Configuration;
 
 namespace AbnLookup
 {
+
+    public class Settings
+    {
+        public string ApiKey { get; set; }
+        public string NameLookupURL { get; set; }
+    }
+
+
     class Program
     {
         static async Task Main(string[] args)
         {
-            var builder = new ConfigurationBuilder()
-                            .AddJsonFile("appsettings.json");
+            var builder = new ConfigurationBuilder();
+#if DEBUG
+            builder.AddUserSecrets<Settings>();
+#else
+            builder.AddJsonFile("appsettings.json");
+#endif
+
             var config = builder.Build();
             if (args.Length != 2)
             {
@@ -32,6 +45,8 @@ namespace AbnLookup
                     Environment.Exit(1);
                 }
             }
+
+
             if (string.IsNullOrWhiteSpace(config["ApiKey"]))
             {
                 Console.WriteLine("API Key has not been set. Exiting program.");
