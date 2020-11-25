@@ -49,7 +49,14 @@ namespace CsvWriter.Tests
         [Fact]
         public void CSVWriterWriteSharePricesToFile()
         {
-            List<Stock> stocks = new List<Stock> { new Stock { Code = "GXY",
+            List<Stock> stocks = new List<Stock> { 
+                                                    new Stock { Code = "AMP",
+                                                                        DateTime = DateTime.Today.AddDays(-2),
+                                                                        Ask = 3.00m,
+                                                                        Offer = 3.01m,
+                                                                        High = 3.22m,
+                                                                        Low = 2.95m, Open = 3.15m, Close = 3.00m },
+                                                    new Stock { Code = "GXY",
                                                                         DateTime = DateTime.Today,
                                                                         Ask = 2.00m,
                                                                         Offer = 2.01m,
