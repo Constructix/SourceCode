@@ -1,10 +1,12 @@
 ﻿using System.Threading.Tasks;
+using AbnLookup.JsonResponseEntities;
 using AbnLookup.ResponseEntities;
 
 namespace AbnLookup.Services
 {
     public interface IAbnLookupService
     {
-        Task<NameLookupResponse> NameLookup(NameLookupRequest request);
+        Task<MatchingNameLookupResponse> MatchingNameLookup(MatchingNameLookupRequest request);
+        Task<ABNEntity> AbnDetails(ABNLookupRequest request);
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace AbnLookup.ResponseEntities
+﻿namespace AbnLookup.JsonResponseEntities
 {
-    public class AbnEntity
+    public class MachingNameEntity
     {
         public string Abn { get; set; }
         public string AbnStatus { get; set; }

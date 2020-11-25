@@ -18,12 +18,12 @@ namespace AbnLookup
 
             var abnLookUp = new AbnLookupService(client, config);
 
-            var response = await abnLookUp.NameLookup(new NameLookupRequest
-                                                                        {
-                                                                            NameOfEntity = args[0],
-                                                                            MaxResultsToReturn = recordsToRetrieve
+            var response = await abnLookUp.MatchingNameLookup(new MatchingNameLookupRequest
+            {
+                NameOfEntity = args[0],
+                MaxResultsToReturn = recordsToRetrieve
 
-                                                                        });
+            });
 
             if (string.IsNullOrWhiteSpace(response.Message))
             {
@@ -37,6 +37,31 @@ namespace AbnLookup
             else
             {
                 Console.WriteLine(response.Message);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Calling AbnDetails Function");
+            var abnDetailsResponse = await abnLookUp.AbnDetails(new ABNLookupRequest {ABN = "71115295095" });
+
+            if (abnDetailsResponse != null)
+            {
+                if (!string.IsNullOrWhiteSpace(abnDetailsResponse.Message))
+                    Console.WriteLine(abnDetailsResponse.Message);
+                else
+                {
+                    Console.WriteLine($"ABN: {abnDetailsResponse.Abn}");
+                    Console.WriteLine($"AbnStatus: {abnDetailsResponse.AbnStatus}");
+                    Console.WriteLine($"Acn: {abnDetailsResponse.Acn}");
+                    Console.WriteLine($"AddressDate: {abnDetailsResponse.AddressDate}");
+                    Console.WriteLine($"AddressPostcode: {abnDetailsResponse.AddressPostcode}");
+                    Console.WriteLine($"AddressState: {abnDetailsResponse.AddressState}");
+                    Console.WriteLine($"BusinessName: ");
+                    abnDetailsResponse?.BusinessName?.ForEach(x=> Console.WriteLine(x));
+                    Console.WriteLine($"EntityName: {abnDetailsResponse.EntityName}");
+                    Console.WriteLine($"EntityTypeName: {abnDetailsResponse.EntityTypeName}");
+                    Console.WriteLine($"Gst: {abnDetailsResponse.Gst}");
+
+                }
             }
             Environment.Exit(0);
         }

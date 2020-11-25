@@ -32,6 +32,9 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="DataFile\ABNDetails.payload">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="DataFile\ABNResult.payload">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

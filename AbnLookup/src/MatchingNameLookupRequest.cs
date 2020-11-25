@@ -1,18 +1,18 @@
 ﻿namespace AbnLookup
 {
-    public class NameLookupRequest
+    public class MatchingNameLookupRequest
     {
         public string NameOfEntity { get; set; }
         public int MaxResultsToReturn { get; set; }
         
         
 
-        public NameLookupRequest()
+        public MatchingNameLookupRequest()
         {
             
         }
 
-        public NameLookupRequest(string nameOfEntity, int maxResultsToReturn)
+        public MatchingNameLookupRequest(string nameOfEntity, int maxResultsToReturn)
         {
             NameOfEntity = nameOfEntity;
             MaxResultsToReturn = maxResultsToReturn;

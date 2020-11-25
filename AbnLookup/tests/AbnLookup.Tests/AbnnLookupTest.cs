@@ -29,6 +29,8 @@ namespace AbnLookup.Tests
 
         public string AbnTestDataFileAsString() =>File.ReadAllText(PayloadFileName);
 
+        public string ABNDataTestFile() => File.ReadAllText(@"DataFile\ABNDetails.payload");
+
         [Fact]
         public async Task RetrieveDataAsExpected()
         {
@@ -43,7 +45,7 @@ namespace AbnLookup.Tests
             var httpClient = new HttpClient(handlerMock.Object);
             IAbnLookupService abnLookupService = new AbnLookupService(httpClient, config);
 
-            var response = await abnLookupService.NameLookup(new NameLookupRequest("Constructix", 10));
+            var response = await abnLookupService.MatchingNameLookup(new MatchingNameLookupRequest("Constructix", 10));
                 
             response.Message.ShouldBe(string.Empty);
             response.Names.Any().ShouldBe(true);
@@ -73,6 +75,62 @@ namespace AbnLookup.Tests
 
 
         }
+
+
+        [Fact]
+        public async Task RetrieveABNDetailsAsExpected()
+        {
+            var builder = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json");
+
+            var config = builder.Build();
+
+            var handlerMock = SetupHttpMessageHandlerMock(ABNDataTestFile());
+
+
+            var httpClient = new HttpClient(handlerMock.Object);
+            IAbnLookupService abnLookupService = new AbnLookupService(httpClient, config);
+
+            var response = await abnLookupService.AbnDetails(new ABNLookupRequest("16118971476"));
+
+            response.Message.ShouldBe(string.Empty);
+
+
+
+
+            response.ShouldNotBeNull();
+            response?.Abn.ShouldBe("16118971476");
+            response.AbnStatus.ShouldBe("Active");
+            response.Acn.ShouldBe("118971476");
+            response.AddressDate.ShouldBe("2014-09-17");
+            response.AddressPostcode.ShouldBe("4306");
+            response.AddressState.ShouldBe("QLD");
+            response.BusinessName.Any().ShouldBeFalse();
+            response.EntityName.ShouldBe("CONSTRUCTIX PTY LTD");
+            response.EntityTypeCode.ShouldBe("PRV");
+            response.EntityTypeName.ShouldBe("Australian Private Company");
+            response.Gst.ShouldBeNull();
+            response.Message.Length.ShouldBe(0);
+        }
+
+        private Mock<HttpMessageHandler> SetupHttpMessageHandlerMock(string payloadFile)
+        {
+
+            const string MethodName = "SendAsync";
+            var handlerMock = new Mock<HttpMessageHandler>();
+            handlerMock.Protected()
+                .Setup<Task<HttpResponseMessage>>(MethodName,
+                    ItExpr.IsAny<HttpRequestMessage>(),
+                    ItExpr.IsAny<CancellationToken>())
+                .ReturnsAsync(new HttpResponseMessage
+                {
+                    StatusCode = HttpStatusCode.OK,
+                    Content = new StringContent(payloadFile)
+                }).Verifiable();
+            return handlerMock;
+        }
+
+
 
         private Mock<HttpMessageHandler> SetupHttpMessageHandlerMock()
         {
