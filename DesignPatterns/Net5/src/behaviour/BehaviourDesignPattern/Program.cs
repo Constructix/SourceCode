@@ -1,4 +1,5 @@
 ﻿using System;
+using BehaviourDesignPattern.Behaviours;
 
 namespace BehaviourDesignPattern
 {
@@ -35,53 +36,10 @@ namespace BehaviourDesignPattern
     
     // Behaviours
     #region Quack
-    public interface IQuackBehaviour
-    {
-        public void Quack();
-    }
-    public class QuackBehaviour : IQuackBehaviour
-    {
-        public void Quack()
-        {
-            Console.WriteLine("QUACK.....");
-        }
-    }
 
-    public class SqueakBehaviour : IQuackBehaviour
-    {
-        public void Quack()
-        {
-            Console.WriteLine("SQUEAK.....");
-            
-        }
-    }
-    public class MuteBehaviour : IQuackBehaviour
-    {
-        public void Quack()
-        {
-            Console.WriteLine("MUTE......");
-            
-        }
-    }
     #endregion    
     
     #region Fly
-
-    public interface IFlyBehaviour
-    {
-        public void Fly();
-    }
-    
-    public class FlyWithWings : IFlyBehaviour
-    {
-        public void Fly() => Console.WriteLine("FLYING .......");
-       
-    }
-    
-    public class FlyNoWings :IFlyBehaviour
-    {
-        public void Fly() => Console.WriteLine("NOT FLYING......");
-    }
 
     #endregion
 }

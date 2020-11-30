@@ -19,6 +19,15 @@
         <e p="behaviour" t="Include">
           <e p="BehaviourDesignPattern" t="IncludeRecursive">
             <e p="BehaviourDesignPattern.csproj" t="IncludeRecursive" />
+            <e p="Behaviours" t="Include">
+              <e p="FlyNoWings.cs" t="Include" />
+              <e p="FlyWithWings.cs" t="Include" />
+              <e p="IFlyBehaviour.cs" t="Include" />
+              <e p="IQuackBehaviour.cs" t="Include" />
+              <e p="MuteBehaviour.cs" t="Include" />
+              <e p="QuackBehaviour.cs" t="Include" />
+              <e p="SqueakBehaviour.cs" t="Include" />
+            </e>
             <e p="bin" t="ExcludeRecursive" />
             <e p="obj" t="ExcludeRecursive">
               <e p="Debug" t="Include">
