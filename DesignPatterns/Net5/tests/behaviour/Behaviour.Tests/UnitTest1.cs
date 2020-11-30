@@ -10,16 +10,10 @@ namespace Behaviour.Tests
         [Fact]
         public void DuckInstanceCreatedAndQuckBehaviour`()
         {
-            
-            
             IQuackBehaviour quackBehaviour  = new SqueakBehaviour();
             IFlyBehaviour flyBehaviour = new FlyNoWings();
-
             var duck = new Duck(quackBehaviour, flyBehaviour);
-            
             duck.PerformFly();
-            
-            
         }
     }
 }
