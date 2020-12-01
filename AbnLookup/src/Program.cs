@@ -6,6 +6,10 @@ using Microsoft.Extensions.Configuration;
 
 namespace AbnLookup
 {
+
+    
+
+
     class Program
     {
         static async Task Main(string[] args)
@@ -13,8 +17,8 @@ namespace AbnLookup
             var config = SetupConfiguration();
 
             var recordsToRetrieve = ValidateInputParameters(args, config);
-
-            HttpClient client = HttpClientFactory.Create();
+            
+            var client = new HttpClient();
 
             var abnLookUp = new AbnLookupService(client, config);
 
