@@ -15,6 +15,8 @@ namespace polyNetClient
     {
         static async Task Main(string[] args)
         {
+            const int RETRY_LIMIT = 3;
+
             Console.WriteLine("Demostrating Poly, NET resilience and transisent fault-handling library.");
 
             ConsoleColor currentColor = Console.ForegroundColor;
@@ -25,7 +27,7 @@ namespace polyNetClient
             Console.WriteLine();
             Console.ForegroundColor = currentColor;
             Console.WriteLine("Retrieving all weather forecasts...");
-            var retryLimit = 3;
+            
             var retryCount = 0;
             var pauseBetweenFailures = TimeSpan.FromSeconds(2);
 
@@ -34,7 +36,7 @@ namespace polyNetClient
             {
                 var weatherForecastsResponse = await Policy
                     .Handle<HttpRequestException>()
-                    .RetryAsync(3, onRetry: (exception, retryCount) =>
+                    .RetryAsync(RETRY_LIMIT, onRetry: (exception, retryCount) =>
                     {
 
                         Console.WriteLine($" {retryCount} attempt to connect to {polyNetService}");
