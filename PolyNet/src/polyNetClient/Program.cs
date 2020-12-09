@@ -28,13 +28,45 @@ namespace polyNetClient
             var retryLimit = 3;
             var retryCount = 0;
             var pauseBetweenFailures = TimeSpan.FromSeconds(2);
-            
+
             var httpClient = new HttpClient();
-            var weatherForcasts = await httpClient.GetFromJsonAsync<WeatherForecast>(polyNetService);
+            try
+            {
+                var weatherForecastsResponse = await Policy
+                    .Handle<HttpRequestException>()
+                    .RetryAsync(3, onRetry: (exception, retryCount) =>
+                    {
 
+                        Console.WriteLine($" {retryCount} attempt to connect to {polyNetService}");
+                    })
+                    .ExecuteAsync(() =>
+                        {
+                            var result = httpClient.GetFromJsonAsync<List<WeatherForecast>>(polyNetService);
+                            return result;
+                        }
+                    );
+                 
+                Console.WriteLine("Weather forecasts are: ");
 
+                weatherForecastsResponse.ForEach(x=>Console.WriteLine($"{x.Date.ToShortDateString()} {x.Summary} {x.TemperatureC}"));
 
+            }
 
+            catch (HttpRequestException requestException)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"Couldn't connect to {polyNetService}");
+            }
+            
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+           
+                
+
+            
         }
 
         private static void DividByZeroPolicyDemo()
