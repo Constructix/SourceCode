@@ -1,7 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace AZ_FUNC_ConstructixConvertToUpperCase
+namespace AzureFunctions.Data
 {
     public class UpperCaseResponse
     {
