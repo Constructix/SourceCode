@@ -27,12 +27,19 @@ namespace AZ_Func_ConstructixConvertToUpperCase_V2
             {
                 var value = values.First();
             }
+            else
+            {
+                values = new StringValues("Testing stringValues");
+            }
 
             log.LogInformation("UpperCaseFunction has been called.");
 
             string requestBody = await new StreamReader(request.Body).ReadToEndAsync();
             var upperCaseRequest = JsonConvert.DeserializeObject<UpperCaseRequest>(requestBody);
-            var upperCaseResponse = new UpperCaseResponse() { Message = upperCaseRequest.Message.ToUpper(), Created = DateTimeOffset.Now, Values = values.ToList() };
+            var upperCaseResponse = new UpperCaseResponse() { 
+                                                            Message = upperCaseRequest.Message.ToUpper(),
+                                                            Created = DateTimeOffset.Now, 
+                                                            Values = values.ToList() };
 
             return new OkObjectResult(upperCaseResponse);
 
