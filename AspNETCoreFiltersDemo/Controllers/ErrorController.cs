@@ -11,7 +11,7 @@ namespace AspNETCoreFiltersDemo.Controllers
         public IActionResult Get(int id)
         {
             if (id == -1)
-                throw new HttpResponseException() { Status = 400, Value = "There is no Product Id that matches the id supplied."};
+                throw HttpResponseException.InvalidID;
             else
                 return new OkObjectResult("testing ok");
         }

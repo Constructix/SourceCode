@@ -1,2 +1,24 @@
 2021-01-02T19:06:09.1537675+10:00 - On Action before Executing..... Controller - AspNETCoreFiltersDemo.Controllers.ErrorController
 2021-01-02T19:06:09.1648841+10:00 - Executed..... Controller - AspNETCoreFiltersDemo.Controllers.ErrorController
+2021-01-02T19:27:54.9364927+10:00 - On Action before Executing..... Controller - AspNETCoreFiltersDemo.Controllers.ErrorController
+2021-01-02T19:27:54.9442844+10:00 - Executed..... Controller - AspNETCoreFiltersDemo.Controllers.ErrorController
+2021-01-02T19:27:59.3835004+10:00 - On Action before Executing..... Controller - AspNETCoreFiltersDemo.Controllers.ErrorController
+2021-01-02T19:27:59.3900997+10:00 - Executed..... Controller - AspNETCoreFiltersDemo.Controllers.ErrorController
+2021-01-02T19:39:17.8325231+10:00 - On Action before Executing..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
+2021-01-02T19:39:17.8443891+10:00 - Executed..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
+2021-01-02T19:39:48.0419837+10:00 - On Action before Executing..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
+2021-01-02T19:39:48.0529144+10:00 - Executed..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
+2021-01-02T19:39:52.3876923+10:00 - On Action before Executing..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
+2021-01-02T19:39:52.3977593+10:00 - Executed..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
+2021-01-02T19:39:53.5703540+10:00 - On Action before Executing..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
+2021-01-02T19:39:53.5810142+10:00 - Executed..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
+2021-01-02T19:39:53.9590790+10:00 - On Action before Executing..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
+2021-01-02T19:39:53.9688286+10:00 - Executed..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
+2021-01-02T19:39:54.3163339+10:00 - On Action before Executing..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
+2021-01-02T19:39:54.3245722+10:00 - Executed..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
+2021-01-02T19:39:54.4880598+10:00 - On Action before Executing..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
+2021-01-02T19:39:54.4973742+10:00 - Executed..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
+2021-01-02T19:39:54.6526559+10:00 - On Action before Executing..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
+2021-01-02T19:39:54.6614499+10:00 - Executed..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
+2021-01-02T19:39:54.8196927+10:00 - On Action before Executing..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
+2021-01-02T19:39:54.8308756+10:00 - Executed..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
