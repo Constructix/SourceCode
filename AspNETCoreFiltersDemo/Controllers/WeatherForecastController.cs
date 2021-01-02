@@ -7,35 +7,6 @@ using System.Threading.Tasks;
 
 namespace AspNETCoreFiltersDemo.Controllers
 {
-
-    public class ErrorApplicationException : Exception
-    {
-
-    }
-
-    public class HttpResponseException : Exception
-    {
-        public int Status { get; set; } = 500;
-
-        public object Value { get; set; }
-    }
-
-  
-
-    [ApiController]
-    [Route("[controller]")]
-    public class ErrorController : ControllerBase
-    {
-        [HttpGet]
-        public IActionResult Get(int id)
-        {
-            if (id == -1)
-                throw new HttpResponseException() { Status = 400, Value = "There is no Product Id that matches the id supplied."};
-            else
-                return new OkObjectResult("testing ok");
-        }
-    }
-
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
