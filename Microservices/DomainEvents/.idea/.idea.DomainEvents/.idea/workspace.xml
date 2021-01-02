@@ -22,7 +22,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d35b5d53-95a0-4aa2-8d5c-f6975401b8e3" name="Default Changelist" comment="" />
+    <list default="true" id="d35b5d53-95a0-4aa2-8d5c-f6975401b8e3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DomainEvents/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DomainEvents/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DomainEvents/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DomainEvents/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DomainEvents/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DomainEvents/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DomainEvents.tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/tests/DomainEvents.tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DomainEventsTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/DomainEventsTests.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,13 +36,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/tests/DomainEventsTests.cs" />
-      </list>
-    </option>
   </component>
   <component name="ProjectId" id="1l4q1DuOYrg6LNbO6vOWik0i39b" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -78,13 +77,15 @@
       <option name="presentableId" value="Default" />
       <updated>1606866495603</updated>
       <workItem from="1606866501224" duration="3106000" />
+      <workItem from="1607592536027" duration="1612000" />
+      <workItem from="1608252908149" duration="177000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -96,6 +97,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

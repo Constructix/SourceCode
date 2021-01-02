@@ -1,0 +1,2 @@
+2021-01-02T19:06:09.1537675+10:00 - On Action before Executing..... Controller - AspNETCoreFiltersDemo.Controllers.ErrorController
+2021-01-02T19:06:09.1648841+10:00 - Executed..... Controller - AspNETCoreFiltersDemo.Controllers.ErrorController

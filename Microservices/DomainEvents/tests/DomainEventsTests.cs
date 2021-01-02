@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Shouldly;
+using FluentAssertions;
 using Xunit;
 
 namespace DomainEvents.tests
@@ -26,8 +26,9 @@ namespace DomainEvents.tests
         public void CreateOrderEventCreated()
         {
             var orderCreated = new OrderCreated( new Order(), new List<OrderItem>{ new OrderItem()});
-            orderCreated.ShouldNotBe(null);
-            orderCreated.ShouldBeOfType<OrderCreated>();
+            orderCreated.Should().NotBeNull();
+            orderCreated.Should().BeOfType<OrderCreated>();
+            orderCreated.EventType.Should().NotBeNullOrWhiteSpace();
         }
     }
 

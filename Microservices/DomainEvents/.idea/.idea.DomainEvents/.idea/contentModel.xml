@@ -9,9 +9,9 @@
     <e p="C:\Users\rjjon\.nuget\packages\xunit.runner.visualstudio\2.4.3\build\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll" t="Include" />
     <e p="C:\Users\rjjon\.nuget\packages\xunit.runner.visualstudio\2.4.3\build\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll" t="Include" />
     <e p="C:\Users\rjjon\.nuget\packages\xunit.runner.visualstudio\2.4.3\build\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll" t="Include" />
-    <e p="C:\Users\rjjon\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\rjjon\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_DomainEvents.-1164603308.00" t="ExcludeRecursive" />
-    <e p="C:\Users\rjjon\AppData\Roaming\JetBrains\Rider2020.2\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\rjjon\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\rjjon\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_DomainEvents.-1164603308.00" t="ExcludeRecursive" />
+    <e p="C:\Users\rjjon\AppData\Roaming\JetBrains\Rider2020.3\scratches" t="IncludeRecursive" />
     <e p="D:\Dev\GitHub\SourceCode\Microservices\DomainEvents" t="IncludeFlat">
       <e p="DomainEvents.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />
