@@ -15,13 +15,13 @@ namespace polyNetClient
     {
         static async Task Main(string[] args)
         {
-            const int RETRY_LIMIT = 3;
+            const int RETRY_LIMIT = 5;
 
             Console.WriteLine("Demostrating Poly, NET resilience and transisent fault-handling library.");
 
             ConsoleColor currentColor = Console.ForegroundColor;
 
-            var polyNetService = @"https://localhost:44308/WeatherForecast";
+            var polyNetService = @"https://localhost:5002/WeatherForecast"; //@"https://localhost:44308/WeatherForecast";
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"Connecting to: {polyNetService}");
             Console.WriteLine();
@@ -38,8 +38,10 @@ namespace polyNetClient
                     .Handle<HttpRequestException>()
                     .RetryAsync(RETRY_LIMIT, onRetry: (exception, retryCount) =>
                     {
-
-                        Console.WriteLine($" {retryCount} attempt to connect to {polyNetService}");
+                        if(retryCount == 1)
+                            Console.WriteLine($" {retryCount} attempt to connect to {polyNetService}");
+                        else
+                            Console.WriteLine($" {retryCount} attempts to connect to {polyNetService}");
                     })
                     .ExecuteAsync(() =>
                         {
@@ -58,6 +60,12 @@ namespace polyNetClient
             {
                 Console.WriteLine();
                 Console.WriteLine($"Couldn't connect to {polyNetService}");
+
+
+                var refused = requestException.Message.Contains("actively refused it",
+                    StringComparison.InvariantCultureIgnoreCase);
+                if(refused)
+                    Console.WriteLine(requestException.Message);
             }
             
             catch (Exception e)
