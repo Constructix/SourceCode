@@ -22,3 +22,9 @@
 2021-01-02T19:39:54.6614499+10:00 - Executed..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
 2021-01-02T19:39:54.8196927+10:00 - On Action before Executing..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
 2021-01-02T19:39:54.8308756+10:00 - Executed..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
+2021-01-02T19:49:36.1947436+10:00 - On Action before Executing..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
+2021-01-02T19:49:36.2131263+10:00 - Executed..... Controller - AspNETCoreFiltersDemo.Controllers.WeatherForecastController
+2021-01-02T19:49:53.5011904+10:00 - On Action before Executing..... Controller - AspNETCoreFiltersDemo.Controllers.ErrorController
+2021-01-02T19:49:53.5182758+10:00 - Executed..... Controller - AspNETCoreFiltersDemo.Controllers.ErrorController
+2021-01-02T19:49:58.0251097+10:00 - On Action before Executing..... Controller - AspNETCoreFiltersDemo.Controllers.ErrorController
+2021-01-02T19:49:58.0494329+10:00 - Executed..... Controller - AspNETCoreFiltersDemo.Controllers.ErrorController
