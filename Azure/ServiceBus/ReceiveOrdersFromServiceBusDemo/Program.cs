@@ -2,8 +2,9 @@
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Azure.ServiceBus;
+using Azure.Messaging.ServiceBus;
 using Microsoft.Extensions.Configuration;
+using OrdersDomain;
 using Serilog;
 using Serilog.Events;
 
@@ -11,76 +12,53 @@ namespace ReceiveOrdersFromServiceBusDemo
 {
     class Program
     {
+        private const string ServiceBusConnectionString = "Endpoint=sb://ordersqueue.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=KdrsC5sFmQmc6y3Erbx1DdBZtzmoSNcQkVsgZXA0irI=";
+        private const string QueueName = "orders";
 
-        private const string FileName = @"D:\Files\ReceiveOrders.txt";
-        private const string ServiceBusConnectionString = "Endpoint=sb://constructixonline.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=BE6Vf+1KKy4SuYgy0m2xG/iUkLuS8xFUVKOLQwjsTfM=";
-        private const string QueueName = "ordersqueue";
-
-        private static IQueueClient _queueClient;
+        
         static async Task Main(string[] args)
         {
-            Log.Logger = new LoggerConfiguration().MinimumLevel.Information().WriteTo
-                .RollingFile(FileName, LogEventLevel.Information)
-                .CreateLogger();
-
-            Log.Information("Reading ReceiveOrders has started.");
-
-            _queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
+            await ReceiveMessageAsync();
+        }
 
 
-            Console.WriteLine(new String('-', 80));
-            Console.WriteLine($"-- Reading from {QueueName}" );
-            Console.WriteLine(new String('-', 80));
+        private async static Task ReceiveMessageAsync()
+        {
+            await using (ServiceBusClient svcBusClient = new ServiceBusClient(ServiceBusConnectionString))
+            {
+                ServiceBusProcessor processor = svcBusClient.CreateProcessor(QueueName, new ServiceBusProcessorOptions());
 
+                processor.ProcessMessageAsync += Processor_ProcessMessageAsync;
+                processor.ProcessErrorAsync += ErrorHandler;
+                processor.StartProcessingAsync();
+
+
+                Console.WriteLine("Reading from queue to obtain orders from the orders queue.");
+                Console.ReadLine();
+
+                Console.WriteLine("Stopping the receiver.....");
+                await processor.StopProcessingAsync();
+                Console.WriteLine("Stopping the queue...");
+
+            }
+        }
+
+        private static Task ErrorHandler(ProcessErrorEventArgs arg)
+        {
             
-            Console.WriteLine("Press <Enter> key to exit after sending messages.");
-            Console.WriteLine(new string('-', 80));
-            await ReadMessagesAsync();
-            Console.ReadLine();
-            _queueClient.CloseAsync();
-            Log.Information("Reading ReceiveOrders has Completed.");
+            Console.WriteLine($"\tError Encountered: {arg.Exception.Message}");
+            return  Task.CompletedTask;
         }
 
-        private static async Task ReadMessagesAsync()
+        private static async Task Processor_ProcessMessageAsync(ProcessMessageEventArgs arg)
         {
-           Console.WriteLine($"Retrieving from queue [{QueueName}].......");
-
-
-           var messageHandlerOptions = new MessageHandlerOptions(ExceptionReceivedHandler)
-           {
-               MaxConcurrentCalls = 1,
-               AutoComplete = false
-           };
-           _queueClient.RegisterMessageHandler(ProcessMessagesAsync, messageHandlerOptions);
+            string body = arg.Message.Body.ToString();
+            var order = Newtonsoft.Json.JsonConvert.DeserializeObject<Order> (body);
+            Console.WriteLine($"{order.Id} - {order.Created.ToString()}");
+            await arg.CompleteMessageAsync(arg.Message);
         }
 
-        private static async Task ProcessMessagesAsync(Message message, CancellationToken token)
-        {
 
-            var messageBody = Encoding.UTF8.GetString(message.Body);
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////
-            // write to log file...
-            Log.Information(messageBody);
-            // Process the message.
-            Console.WriteLine($"Received message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{messageBody}");
-            // Complete the message so that it is not received again.
-            // This can be done only if the queue Client is created in ReceiveMode.PeekLock mode (which is the default).
-            await _queueClient.CompleteAsync(message.SystemProperties.LockToken);
-
-            // Note: Use the cancellationToken passed as necessary to determine if the queueClient has already been closed.
-            // If queueClient has already been closed, you can choose to not call CompleteAsync() or AbandonAsync() etc.
-            // to avoid unnecessary exceptions.
-        }
-
-        private static Task ExceptionReceivedHandler(ExceptionReceivedEventArgs exceptionReceivedEventArgs)
-        {
-            Console.WriteLine($"Message handler encountered an exception {exceptionReceivedEventArgs.Exception}.");
-            var context = exceptionReceivedEventArgs.ExceptionReceivedContext;
-            Console.WriteLine("Exception context for troubleshooting:");
-            Console.WriteLine($"- Endpoint: {context.Endpoint}");
-            Console.WriteLine($"- Entity Path: {context.EntityPath}");
-            Console.WriteLine($"- Executing Action: {context.Action}");
-            return Task.CompletedTask;
-        }
+      
     }
 }

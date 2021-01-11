@@ -1,49 +1,39 @@
 ﻿using System;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Azure.ServiceBus;
+using Azure.Messaging.ServiceBus;
 using OrdersDomain;
 
 namespace SubmitOrdersToServiceBusDemo
 {
     class Program
     {
-        private const string ServiceBusConnectionString = "Endpoint=sb://constructixonline.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=BE6Vf+1KKy4SuYgy0m2xG/iUkLuS8xFUVKOLQwjsTfM=";
-        private const string QueueName = "ordersqueue";
-
-        private static IQueueClient _queueClient;
+        private const string ServiceBusConnectionString =
+            "Endpoint=sb://ordersqueue.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=KdrsC5sFmQmc6y3Erbx1DdBZtzmoSNcQkVsgZXA0irI=";
+        private const string QueueName = "orders";
         static async Task Main(string[] args)
         {
-            _queueClient = new QueueClient(ServiceBusConnectionString,QueueName);
-            Console.WriteLine(new string('-', 80));
-            Console.WriteLine("Press <Enter> key to exit after sending messages.");
-            Console.WriteLine(new string('-', 80));
 
-            await SendMessagesAsync(40);
-        }
-        static async Task SendMessagesAsync(int numberOfMessages)
-        {
-            try
+            
+            const int totalOrders = 10;
+            Console.WriteLine($"Sending total: {totalOrders} to {QueueName}");
+            await using (ServiceBusClient svcBusClient = new ServiceBusClient(ServiceBusConnectionString))
             {
-                for (int index = 0; index < numberOfMessages; index++)
+                for (int i = 0; i < 10; i++)
                 {
+                    var order = new Order();
 
-                    var orderAsString = Order.ToJson(new Order());
-                    Console.WriteLine($"Sending Message - {orderAsString}");
-                    var message = new Message(Encoding.ASCII.GetBytes(orderAsString));
-                    
-                    await _queueClient.SendAsync(message);
+                    ServiceBusSender sender = svcBusClient.CreateSender(QueueName);
+                    ServiceBusMessage msg = new ServiceBusMessage(Order.ToJson(order));
+
+                    await sender.SendMessageAsync(msg);
+                    Console.WriteLine($"Sending Order[{i+1}] Id: {order.Id}");
                 }
+            }
 
-                await _queueClient.CloseAsync();
-            }
-            catch (Exception e)
-            {
-                
-                Console.WriteLine($"{DateTime.Now} :: Exception : {e.Message}");
-            }
-          
+            Console.WriteLine($"Completed sending {totalOrders} orders.");
         }
+
     }
 
    
