@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RestSharp" Version="105.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AzureFunctions.Data\AzureFunctions.Data.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+  <PackageReference Include="RestSharp" Version="106.11.8-alpha.0.11" />
+    <PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="106.11.8-alpha.0.11" />
+    <PackageReference Include="RestSharp" Version="106.11.8-alpha.0.11" />
+    <PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="106.11.8-alpha.0.11" />
+  </ItemGroup>
+</Project>

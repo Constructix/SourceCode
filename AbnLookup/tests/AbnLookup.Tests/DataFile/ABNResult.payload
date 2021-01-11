@@ -1,0 +1,103 @@
+Response({
+  "Message": "",
+  "Names": [
+    {
+      "Abn": "16118971476",
+      "AbnStatus": "0000000001",
+      "IsCurrent": true,
+      "Name": "CONSTRUCTIX PTY LTD",
+      "NameType": "Entity Name",
+      "Postcode": "4306",
+      "Score": 100,
+      "State": "QLD"
+    },
+    {
+      "Abn": "56139516037",
+      "AbnStatus": "0000000002",
+      "IsCurrent": true,
+      "Name": "CONSTRUCTEX PTY. LTD.",
+      "NameType": "Entity Name",
+      "Postcode": "2203",
+      "Score": 93,
+      "State": "NSW"
+    },
+    {
+      "Abn": "97610123316",
+      "AbnStatus": "0000000001",
+      "IsCurrent": true,
+      "Name": "CONSTRUCTFX PTY LTD",
+      "NameType": "Entity Name",
+      "Postcode": "4216",
+      "Score": 90,
+      "State": "QLD"
+    },
+    {
+      "Abn": "70166986974",
+      "AbnStatus": "0000000001",
+      "IsCurrent": true,
+      "Name": "CONSTRUCTIA",
+      "NameType": "Business Name",
+      "Postcode": "2570",
+      "Score": 90,
+      "State": "NSW"
+    },
+    {
+      "Abn": "84162495490",
+      "AbnStatus": "0000000002",
+      "IsCurrent": true,
+      "Name": "CONSTRUCTIA PTY LTD",
+      "NameType": "Entity Name",
+      "Postcode": "2570",
+      "Score": 90,
+      "State": "NSW"
+    },
+    {
+      "Abn": "31103110809",
+      "AbnStatus": "0000000002",
+      "IsCurrent": true,
+      "Name": "CONSTRUCTIT",
+      "NameType": "Business Name",
+      "Postcode": "4505",
+      "Score": 90,
+      "State": "QLD"
+    },
+    {
+      "Abn": "78870883200",
+      "AbnStatus": "0000000001",
+      "IsCurrent": true,
+      "Name": "CONSTRUCTIT",
+      "NameType": "Trading Name",
+      "Postcode": "6050",
+      "Score": 90,
+      "State": "WA"
+    },
+    {
+      "Abn": "43080584385",
+      "AbnStatus": "0000000001",
+      "IsCurrent": true,
+      "Name": "CONSTRUCTIV",
+      "NameType": "Trading Name",
+      "Postcode": "3691",
+      "Score": 90,
+      "State": "VIC"
+    },
+    {
+      "Abn": "71115295095",
+      "AbnStatus": "0000000001",
+      "IsCurrent": true,
+      "Name": "CONSTRUCTIV PTY. LTD.",
+      "NameType": "Entity Name",
+      "Postcode": "3185",
+      "Score": 90,
+      "State": "VIC"
+    },
+    {
+      "Abn": "93770962860",
+      "AbnStatus": "0000000001",
+      "IsCurrent": true,
+      "Name": "Constructiv Pty. Ltd.",
+      "NameType": "Trading Name",
+      "Postcode": "3185",
+      "Score": 90,
+      "State": "VIC"
+    }]})
