@@ -12,8 +12,8 @@ namespace ReceiveOrdersFromServiceBusDemo
 {
     class Program
     {
-        private const string ServiceBusConnectionString = "Endpoint=sb://ordersqueue.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=KdrsC5sFmQmc6y3Erbx1DdBZtzmoSNcQkVsgZXA0irI=";
-        private const string QueueName = "orders";
+        private const string ServiceBusConnectionString = "Endpoint=sb://constructix-svc-bsns-suppliers.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=e5cyQ7s3t0kwEaaEpCGFGSyllXP3qCE5agWhPUwm3M4=";
+        private const string QueueName = "suppliers";
 
         
         static async Task Main(string[] args)

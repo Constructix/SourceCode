@@ -9,12 +9,12 @@ namespace SubmitOrdersToServiceBusDemo
     class Program
     {
         private const string ServiceBusConnectionString =
-            "Endpoint=sb://ordersqueue.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=KdrsC5sFmQmc6y3Erbx1DdBZtzmoSNcQkVsgZXA0irI=";
-        private const string QueueName = "orders";
+            "Endpoint=sb://constructix-svc-bsns-suppliers.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=e5cyQ7s3t0kwEaaEpCGFGSyllXP3qCE5agWhPUwm3M4=";
+        private const string QueueName = "suppliers";
         static async Task Main(string[] args)
         {
             const int StartOrderIndex = 0;
-            const int TotalOrders = 10;
+            const int TotalOrders = 60;
             Console.WriteLine($"Sending total: {TotalOrders} to {QueueName}");
             await using (ServiceBusClient svcBusClient = new ServiceBusClient(ServiceBusConnectionString))
             {
