@@ -23,6 +23,7 @@ namespace ServiceBusMockPoc.Tests
         {
             var  _configuration = new ConfigurationBuilder()
                 .AddJsonFile("appSettings.json")
+                .AddUserSecrets("e7c63561-0369-4c01-a654-f75a865f034d")
                 .Build();
 
 
@@ -32,7 +33,7 @@ namespace ServiceBusMockPoc.Tests
             svcCollection.AddScoped<INotificationService, NotificationService>();
             svcCollection.AddAzureClients(x =>
             {
-                x.AddServiceBusClient("Endpoint=sb://constructix-sb-breakfix-eip-ae.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=wgU5Xd9eY4oLrcmW8CSrW7QKpUB63dAcQ5E7mVFj0d8=");
+                x.AddServiceBusClient(_configuration["ServiceBusConnection"]);
             });
             var provider = svcCollection.BuildServiceProvider();
             return provider;
